@@ -1,0 +1,59 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+shotGeometry = "iorckt00.xsi"
+shotSound = "imiss01a.wav"
+
+renderName = "salvo.render"
+
+xplGround = Null
+xplVehicle = "b_wviper_a"
+xplBuilding = "b_wviper_a"
+
+ammoCost = 30
+lifeSpan = 9.0
+shotSpeed = 150.0
+
+damageValue(N) = 39 // none
+damageValue(L) = 20 // light
+damageValue(H) = 10 // heavy
+
+damageValue(S) = 20 // standard
+damageValue(D) = 5 // deflection
+damageValue(A) = 10 // absorbtion
+
+[MissileClass]
+omegaTurn = 1.5
+
+[ThermalMissileClass]
+coneAngle = 0.4
+
+//////////////////////////////////////////////////////////////////////
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 4
+particleClass1 = "xsalvocar.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "xsalvocar.puff"
+particleCount2 = 4
+particleVeloc2 = "4.5 4.5 4.5"
+particleClass3 = "xsalvocar.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+particleClass4 = "xsalvocar.Shock"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+explSound = "hit_2.wav"
+
+damageRadius = 0.0
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorbtion

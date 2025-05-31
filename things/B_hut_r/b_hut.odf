@@ -1,0 +1,17 @@
+[GameObjectClass]
+geometryName = "b_hut.xsi"
+collisionRadius = 1.0
+geometryScale = 0.2
+classLabel = "powered"
+scrapCost = 0
+scrapValue = 25
+maxHealth = 500
+unitName = "Borg hut"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+explosionName = "xnormxpl"
+ownsTerrain = 1
+canCollide = 1
+
+armorClass = M

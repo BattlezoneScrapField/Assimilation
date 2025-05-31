@@ -1,0 +1,134 @@
+[GameObjectClass]
+baseName = "bvcons"
+classLabel = "constructionrig"
+cockpitName = "ivcons_cockpit.xsi"
+geometryName = "bvcons_idle.xsi"
+
+animCount = 12
+
+animName1 = "idle"
+animFile1 = "bvcons_idle.xsi"
+
+animName2 = "idle2"
+animFile2 = "bvcons_idle.xsi"
+
+animName3 = "idle3"
+animFile3 = "bvcons_idle.xsi"
+
+animName4 = "sitdown"
+animFile4 = "bvcons_Cons1.xsi"
+
+animName5 = "walk"
+animFile5 = "bvcons_walk.xsi"
+
+animName6 = "turn"
+animFile6 = "bvcons_TURN.xsi"
+
+animName7 = "death"
+animFile7 = "bvcons_death.xsi"
+
+animName8 = "death2"
+animFile8 = "bvcons_death.xsi"
+
+animName9 = "death3"
+animFile9 = "bvcons_death.xsi"
+
+animName10 = "cons"
+animFile10 = "bvcons_Cons1.xsi"
+
+animName11 = "cons2"
+animFile11 = "bvcons_Cons.xsi"
+
+animName12 = "cons3"
+animFile12 = "bvcons_Cons1.xsi"
+
+collisionRadius = 7.0
+scrapValue = 20
+scrapCost = 40
+buildTime = 6.0
+maxHealth = 3000
+maxAmmo = 0
+collisionRadius = 5.0
+unitName = "Constructor"
+aiName = "RigFriend"
+aiName2 = "RigEnemy"
+heatSignature = 2.2
+imageSignature = 5.0
+radarSignature = 0.1
+explosionName = "b_car_ex"
+
+armorClass = L
+
+[CraftClass]
+rangeScan = 400.0f
+periodScan = 5.0f
+velocJam = 5.0f
+TeamTransferrable = false
+
+selectUser1Msg = "ivcons01.wav"
+selectUser2Msg = "ivcons11.wav"
+selectWaitMsg = "ivcons04.wav"
+selectGoMsg = "ivcons02.wav"
+selectOtherMsg = "ivcons10.wav"
+selectFollowMsg = "ivcons03.wav"
+recycleMsg = "ivcons09.wav"
+attackMsg = "ivcons04.wav"
+goMsg = "ivcons05.wav"
+goObjectMsg = "ivcons02.wav"
+user1Msg = "ivcons12.wav"
+user2Msg = "ivcons13.wav"
+followMsg = "ivcons06.wav"
+otherMsg = "ivcons08.wav"
+diedMsg = ""
+holdMsg = "ivcons10.wav"
+
+
+[HoverCraftClass]
+velocForward = 7.0
+velocReverse = 4.0
+velocStrafe = 0.0
+accelThrust = 20.0
+accelBrake = 70.0
+
+soundThrust = "icons01.wav"
+
+accelDragStop = 2.0
+accelJump = 0.0
+
+setAltitude = -0.9 // how high off the ground
+
+alphaTrack = 20.0
+alphaDamp = 5.0
+
+pitchPitch = 0.0 //nose up
+pitchThrust = 0.0 //nose down
+
+rollStrafe = 0.0 //rolls while strafing
+omegaSpin = 3.0 //spinning in place speed
+omegaTurn = 2.0 //turning while moving speed
+alphaSteer = 2.0 //how fast it responds to steering
+rollSteer = 0.0 //rolls while steering
+
+accelDragFull = 0.0 //nothing
+
+
+
+[DeployableClass]
+timeDeploy = 2.0
+timeUndeploy = 2.0
+soundDeploy = "avartle0.wav"
+soundUndeploy = "avartle4.wav"
+
+[ConstructionRigClass]
+buildItem1 = "bbpgen"
+buildItem2 = "bbfact"
+buildItem3 = "bbcbun"
+buildItem4 = "bbsbay"
+buildItem5 = "bbarmo"
+buildItem6 = "bbgtow"
+buildItem7 = "bbtrain"
+buildItem8 = "bbtrans"
+buildItem9 = "bbtech"
+
+soundBuild = "ivrecye3.wav"
+soundFinish = "ivrecye5.wav"

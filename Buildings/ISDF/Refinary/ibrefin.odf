@@ -1,0 +1,38 @@
+[GameObjectClass]
+geometryName = "ibrefin.xsi"
+classLabel = "powered"
+scrapCost = 20
+scrapValue = 5
+maxHealth = 5000
+maxAmmo = 0
+unitName = "ISDF Refinery"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+explosionName = "xnormxpl"
+isAssault = 1
+ownsTerrain = 1
+isSingle = 1
+powerCost = 2
+
+armorClass = H
+buildSupport = "A"
+buildRequire = "F"
+requireCount = 0
+
+provideCount = 1
+provideName1 = "ibrefin"
+
+lightHard1 = "hp_light_1"
+lightName1 = "iblite"
+lightHard2 = "hp_light_2"
+lightName2 = "iblite"
+lightHard3 = "hp_light_3"
+lightName3 = "iblite"
+lightHard4 = "hp_light_4"
+lightName4 = "iblite"
+
+[BuildingClass]
+soundAmbient = "ipgen01.wav"
+bldEdge = "wwww"

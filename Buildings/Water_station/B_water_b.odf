@@ -1,0 +1,21 @@
+[GameObjectClass]
+geometryName = "B_water_b.xsi"
+geometryScale = 3.0
+classLabel = "i76Building"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 99990
+maxAmmo = 0
+unitName = "Water Pumping station"
+heatSignature = 20.0
+imageSignature = 20.0
+radarSignature = 30.0
+collisionRadius = 1.0
+explosionName = "Xnuke_B"
+ownsTerrain = 1
+isAssault = 1
+armorClass = H
+
+[BuildingClass]
+bldEdge = "wwww"
+soundAmbient = "menv02.wav"

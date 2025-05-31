@@ -1,0 +1,55 @@
+[GameObjectClass]
+geometryName = "Bmortcan00.xsi"
+classLabel = "turret"
+collisionRadius = 1.0
+scrapCost = 80
+scrapValue = 40
+maxHealth = 7500
+maxAmmo = 10000 // 0 is *not* treated as infinite ammo!
+unitName = "Borg Mortar Cannon"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 2.0
+isAssault = 1
+
+armorClass = H
+buildSupport = "A"
+buildRequire = "F"
+
+requireCount = 1
+requireName1 = "bbtech"
+requireText1 = "Technical Center Required.."
+
+provideCount = 0
+
+lightHard1 = "hp_emit_1"
+lightName1 = "omnired"
+
+
+weaponMask = 00011
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "b776573"
+weaponAssault1 = 0
+
+
+turretCount = 2
+turretName1 = "turret_x"
+turretName2 = "turret_y"
+
+[BuildingClass]
+soundAmbient = "igtow01.wav"
+
+[CraftClass]
+rangeScan = 440
+periodScan = 1.0
+velocJam = 8.0
+weaponPitch = 1.5
+steerFactor = 1.0
+engageRange = 400
+attackTask = "TurretAttack"
+
+[TurretCraftClass]
+omegaTurret = 2.0
+detectRange = 450

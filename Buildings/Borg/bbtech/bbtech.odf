@@ -1,0 +1,42 @@
+[GameObjectClass]
+geometryName = "bbtech.xsi"
+classLabel = "powered"
+animCount = 1
+animName1 = "loop"
+animFile1 = "bbtech.xsi"
+scrapCost = 100
+scrapValue = 50
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Technical Center"
+heatSignature = 5.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 4.0
+isAssault = 1
+
+armorClass = H
+
+requireCount = 3
+requireName1 = "bbarmo"
+requireText1 = "Armory Required"
+requireName2 = "bbsbay"
+requireText2 = "Service Bay Required"
+requireName3 = "bbtrans"
+requireText3 = "Transsever Required"
+
+provideCount = 1
+provideName1 = "bbtech"
+
+lightHard1 = "hp_light_1"
+lightName1 = "o_orange_nf"
+
+[BuildingClass]
+soundAmbient = "iabomb01.wav"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 280

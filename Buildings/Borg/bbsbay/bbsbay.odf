@@ -1,0 +1,52 @@
+[GameObjectClass]
+geometryName = "bbsbay.xsi"
+classLabel = "supplydepot"
+collisionRadius = 1.0
+scrapCost = 45
+scrapValue = 20
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Service Bay"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+
+armorClass = H
+
+requireCount = 2
+requireName1 = "bbfact"
+requireText1 = "Factory Required"
+requireName2 = "bbcbun"
+requireText2 = "R-Bunker Required"
+
+provideCount = 1
+provideName1 = "bbsbay"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniyellow"
+lightHard2 = "hp_light_2"
+lightName2 = "omniyellow"
+
+[BuildingClass]
+soundAmbient = "sdow01.wav"
+[BuildingClass]
+tunnelCount = 1
+
+tunnel01X0 = 1
+tunnel01Z0 = 1
+tunnel01Dx = 6
+tunnel01Dz = 4
+tunnel01Edge = "twwt"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[SupplyDepotClass]
+supplyRange = 32.0
+supplyRate = 150.0
+supplySound = "mnu_empt.wav"
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 190

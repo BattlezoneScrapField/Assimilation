@@ -1,0 +1,55 @@
+[GameObjectClass]
+mrmFactor = 0
+geometryName = "Bs_gun1.xsi"
+geometryScale = 5.5
+classLabel = "turret"
+collisionRadius = 1.0
+scrapCost = 0
+scrapValue = 0
+powerCost = 0
+maxHealth = 6000
+maxAmmo = 10000
+unitName = "Primiter Defence"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+explosionName = "ScndEx"
+heatSignature = 5.0
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1
+
+armorClass = H
+
+buildSupport = "A"
+buildRequire = "F"
+
+requireCount = 0
+
+///// WEAPON ////////////////////
+
+weaponMask = 00001
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "BTPlass"
+
+/////////////////////////////////
+
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+[BuildingClass]
+soundAmbient = "sgtow01.wav"
+
+[CraftClass]
+rangeScan = 800.0
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 0.2
+engageRange = 800
+
+[TurretCraftClass]
+powerTap1 = "HP_TAP_1"
+powerName = "fblung"
+omegaTurret = 2.0
+detectRange = 200

@@ -1,0 +1,78 @@
+[GameObjectClass]
+geometryName = "B_ast01s.xsi"
+geometryScale = 0.03
+animCount = 0
+collisionRadius = 7.0
+classLabel = "tug"
+scrapValue = 0
+scrapCost = 0
+buildTime = 0
+maxHealth = 4000
+maxAmmo = 0
+unitName = "Rock"
+aiName = "TugFriend"
+aiName2 = "TugFriend"
+heatSignature = 0.0
+imageSignature = 0.2
+radarSignature = 0.1
+isAssault = 0
+explosionName = "xnormxpl"
+
+armorClass = N
+
+requireCount = 0
+
+[CraftClass]
+weightInTons = 0.1
+rangeScan = 0.0f
+periodScan = 0.0f
+velocJam = 0.0f
+
+braccelFactor = 0.00
+strafeFactor = 0.0
+steerFactor = 1.0
+omegaFactor = 0.2
+velFactor = 0.2
+
+avoidSpeed = 20
+topSpeed = 30
+
+[HoverCraftClass]
+setAltitude = 42.0
+accelDragStop = 0.0
+accelDragFull = 0.0
+alphaTrack = 5.0
+alphaDamp = 3.0
+pitchPitch = 0.1
+pitchThrust = 0.2
+rollStrafe = 0.1
+rollSteer = 0.1
+
+velocForward = 15.0
+velocReverse = 2.0
+velocStrafe = 2.0
+accelThrust = 20.0
+accelBrake = 0.0
+omegaSpin = 1.0
+omegaTurn = 1.0
+alphaSteer = 1.0
+accelJump = 0.0
+
+soundThrust = "b_asteroid.wav"
+soundSteer = "b_asteroid.wav"
+
+[TugClass]
+dockSpeed = 0.0
+fieldRadius = 0.0
+fieldOffset = 0.0
+accelCenter = 0.0
+accelEdge = 0.0
+accelDrag = 0.0
+alphaDamp = 0.0
+alphaTrack = 0.0
+soundDeploy = NULL
+soundUndeploy = NULL
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 380

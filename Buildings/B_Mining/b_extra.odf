@@ -1,0 +1,32 @@
+[GameObjectClass]
+geometryName = "b_extra.xsi"
+classLabel = "i76building"
+scrapCost = 35
+scrapValue = 57
+maxHealth = 7490
+maxAmmo = 0
+unitName = "Borg Mining Station"
+heatSignature = 3.0
+imageSignature = 1.0
+radarSignature = 0.0
+collisionRadius = 1.0
+isAssault = 0
+ownsTerrain = 1
+explosionName = "Xnuke_0"
+
+armorClass = H
+buildSupport = "A"
+buildRequire = "F"
+
+lightHard1 = "hp_light_1"
+lightName1 = "iblite"
+lightHard2 = "hp_light_2"
+lightName2 = "iblite"
+lightHard3 = "hp_light_3"
+lightName3 = "iblite"
+lightHard4 = "hp_light_4"
+lightName4 = "iblite"
+
+[BuildingClass]
+soundAmbient = "stationn_gun.wav"
+bldEdge = "wwww"

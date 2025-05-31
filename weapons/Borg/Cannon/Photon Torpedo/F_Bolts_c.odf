@@ -1,0 +1,15 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "F_Bolts_a"
+ordName = "B_plas"
+wpnReticle = "gplasma"
+wpnName = "Frag bolts"
+fireSound = "B_plas.wav"
+wpnCategory = "CANN"
+flashName = "B_plas.Flash"
+aiRange = 260
+isAssault = 0
+
+[CannonClass]
+shotDelay = 0.4
+shotAlternate = 0

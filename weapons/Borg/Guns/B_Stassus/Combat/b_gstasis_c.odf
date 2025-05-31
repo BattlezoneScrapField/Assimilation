@@ -1,0 +1,26 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "b_gstasis_a"
+ordName = "b_stasis_c"
+wpnName = "Stassus Gun"
+fireSound = "b_stassus01.wav"
+wpnReticle = "gminigun"
+wpnCategory = "GUN"
+isAssault = 0
+flashName = "b_gstasis_c.flash"
+aiRange = 140
+
+[CannonClass]
+shotDelay = 0.1
+shotVariance = 0.01
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 0 140"
+finishColor = "120 0 50 150"
+startRadius = 2.0
+finishRadius = 0.75
+animateTime = 0.1
+geomName = "g_sflash.xsi"

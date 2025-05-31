@@ -1,0 +1,46 @@
+[GameObjectClass]
+geometryName = "b_station.xsi"
+geometryScale = 0.2
+classLabel = "i76building"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 700000
+addHealth = 5
+maxAmmo = 0
+unitName = "Space Station"
+heatSignature = 5.0
+imageSignature = 5.0
+radarSignature = 5.0
+collisionRadius = 1.0
+explosionName = "Xnuke_B"
+ownsTerrain = 1
+isAssault = 1
+armorClass = H
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"
+lightHard3 = "hp_light_3"
+lightName3 = "spotblue2"
+lightHard4 = "hp_light_4"
+lightName4 = "spotblue2"
+
+[BuildingClass]
+[BuildingClass]
+bldEdge = "tttt"
+tunnelCount = 1
+
+tunnel01X0 = 0
+tunnel01Z0 = 0
+tunnel01DX = 49
+tunnel01DZ = 50
+tunnel01Edge = "tttt"
+
+soundAmbient = "amb_fwd.wav"
+
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 330
+dontShiftLOD = 1

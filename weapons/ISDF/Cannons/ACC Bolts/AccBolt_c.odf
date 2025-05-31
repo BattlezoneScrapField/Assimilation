@@ -1,0 +1,137 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "gblueg_c"
+ordName = "gblueg_c"
+wpnName = "ACC Bolts"
+flashName = "gblueg_c.Flash"
+fireSound = "gatst03.wav"
+wpnReticle = "gatstab"
+wpnCategory = "CANN"
+isAssault = 0
+aiRange = 360
+
+[CannonClass]
+shotDelay = 0.5
+shotAlternate = 0
+
+[Flash]
+renderBase = "draw_light"
+startColor = "55 155 255 255" 
+finishColor = "55 155 255 255"
+startRadius = 3.0
+finishRadius = 1.0
+animateTime = 0.1
+latitudeBands = 8
+longitudeSegments = 16
+
+//--------------------------------------------------------------------
+
+[OrdnanceClass]
+classLabel = "BULLET"
+shotSound = "igtow04.wav"
+shotGeometry = NULL
+shotRadius = 5.0
+xplGround = NULL
+xplVehicle = "gblueg_c"
+xplBuilding = "gblueg_c"
+
+renderName = "gblueg_c.render"
+
+ammoCost = 13
+lifeSpan = 3.8 // 300m
+shotSpeed = 120.0
+
+damageValue(N) = 120 // none
+damageValue(L) = 115 // light
+damageValue(H) = 100 // heavy
+
+damageValue(S) = 115 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 120 // absorbption
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "gblueg_c.flare1"
+
+
+[Flare1]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "55 155 255 255" 
+finishColor = "55 155 255 255" 
+startRadius = 0.4
+finishRadius = 0.02
+rotationRate = 10.0
+animateTime = 0.02
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 0.02
+
+//--------------------------------------------------------------------
+
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 3
+particleClass1 = "gblueg_c.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "gblueg_c.puff"
+particleCount2 = 20
+particleVeloc2 = "30.0 30.0 30.0"
+particleClass3 = "gblueg_c.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+
+explSound = "hit_1.wav"
+damageRadius = 2.0
+
+damageValue(N) = 175 // none
+damageValue(L) = 160 // light
+damageValue(H) = 250 // heavy
+
+damageValue(S) = 55 // standard
+damageValue(D) = 60 // deflection
+damageValue(A) = 60 // absorbtion
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "55 55 255 255"
+finishColor = "55 50 255 0"
+startRadius = 2.0
+finishRadius = 20.0
+animateTime = 1.0
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "55 55 255 255"
+finishColor = "50 50 255 0"
+startRadius = 2.0
+finishRadius = 0.2
+animateTime = 1.0
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_light"
+startColor = "55 55 255 1275"
+finishColor = "50 50 255 0"
+startRadius = 40.0
+finishRadius = 40.0
+animateTime = 1.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

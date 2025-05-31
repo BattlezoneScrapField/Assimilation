@@ -1,0 +1,29 @@
+[GameObjectClass]
+geometryName = "B_dummy1.xsi"
+geometryScale = .8
+classLabel = "weaponmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 1E6 // amount mine holds for weapon
+unitName = "Sparks"
+isAssault = 0
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = 1
+armorClass = N
+canCollide = 0
+canDetect = 0 
+canInteract = 0
+
+weaponHard1 = "hp_weapon_1"
+weaponName1 = "b_sparks1a"
+
+[MineClass]
+lifeSpan = 1E6 
+
+[WeaponMineClass]
+searchRadius = 110.0
+heightScale = 2.0 // 2.0
+

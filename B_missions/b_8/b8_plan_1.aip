@@ -1,0 +1,164 @@
+[Start]
+scrapCount = 40
+consClass = "bvcons"
+scavClass = "bvscav"
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 1
+
+[Plan1]
+planType = "BuildMinimums"
+planPriority = 170
+buildType1 = "b_turret"
+buildCount1 = 2
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan2]
+planType = "Hold"
+planPriority = 160
+holdType1 = "b_turret"
+holdCount1 = 1
+holdPoint = "spawn"
+
+[Plan3]
+planType = "Hold"
+planPriority = 150
+holdType1 = "b_turret"
+holdCount1 = 1
+holdPoint = "btug"
+
+[Plan4]
+planType = "BuildMinimums"
+planPriority = 140
+buildType1 = "B_sphere"
+buildCount1 = 2
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan5]
+planType = "Attacker"
+planPriority = 130
+targetType = "ibrecy_b"
+attackType1 = "b_sphere"
+attackType2 = "b_sphere"
+doNextOnFail = 1
+
+[Plan6]
+planType = "BuildMinimums"
+planPriority = 120
+buildType1 = "b_scout"
+buildCount1 = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan7]
+planType = "Attacker"
+planPriority = 110
+targetType = "b_isdf_cons"
+attackType1 = "b_scout"
+maxAttacks = 2
+doNextOnFail = 1
+
+[Plan8]
+planType = "BuildMinimums"
+planPriority = 100
+buildType1 = "B_sphere"
+buildCount1 = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan9]
+planType = "Attacker"
+planPriority = 90
+targetType = "ivtug_b"
+attackType1 = "b_sphere"
+doNextOnFail = 1
+
+[Plan10]
+planType = "BuildMinimums"
+planPriority = 80
+planCondition = "HisExists"
+planConditionClass = "ibpgen"
+planConditionCount = 1
+buildType1 = "B_cube"
+buildCount1 = 1
+buildType2 = "b_sphere"
+buildCount2 = 2
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan11]
+planType = "Attacker"
+planPriority = 70
+planCondition = "HisExists"
+planConditionClass = "ibpgen"
+planConditionCount = 1
+targetType = "b_isdf_cons"
+attackType1 = "b_cube"
+attackType2 = "b_sphere"
+attackType3 = "b_sphere"
+doNextOnFail = 1
+
+[Plan12]
+planType = "BuildMinimums"
+planPriority = 60
+buildType1 = "B_sphere"
+buildCount1 = 1
+buildType2 = "b_cube"
+buildCount2 = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan13]
+planType = "Attacker"
+planPriority = 50
+targetType = "ibpgen"
+attackType1 = "b_sphere"
+attackType2 = "b_cube"
+doNextOnFail = 1
+
+[Plan14]
+planType = "BuildMinimums"
+planPriority = 40
+buildType1 = "B_cube"
+buildCount1 = 3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan15]
+planType = "Hold"
+planPriority = 30
+holdType1 = "b_cube"
+holdCount1 = 3
+holdPoint = "pod1"
+
+[Plan16]
+planType = "BuildMinimums"
+planPriority = 20
+buildType1 = "B_sphere"
+buildCount1 = 3
+buildType2 = "b_cube"
+buildCount2 = 4
+buildType3 = "b_scout"
+buildCount3 = 3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan17]
+planType = "Attacker"
+planPriority = 10
+targetType = "ibfact_b"
+attackType1 = "b_cube"
+attackType2 = "b_cube"
+attackType3 = "b_cube"
+attackType4 = "b_sphere"
+attackType5 = "b_sphere"
+attackType6 = "b_sphere"
+attackType7 = "b_scout"
+attackType8 = "b_scout"
+attackType9 = "b_scout"
+attackType10 = "b_cube"
+doNextOnFail = 1
+

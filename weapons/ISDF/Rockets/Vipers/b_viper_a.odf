@@ -1,0 +1,15 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "b_viper_a"
+ordName = "b_wviper_a"
+wpnName = "Vipers LG"
+fireSound = "bs_lanch.wav"
+wpnReticle = "gsalvo"
+wpnCategory = "ROCK"
+aiRange = 800
+isAssault = 1
+
+[CannonClass]
+shotDelay = 5.0
+salvoCount = 5
+salvoDelay = 1.0

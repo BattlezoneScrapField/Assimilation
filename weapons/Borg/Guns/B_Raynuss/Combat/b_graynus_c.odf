@@ -1,0 +1,26 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "b_graynus_a"
+ordName = "b_raynus_c"
+wpnName = "RayNuss Gun"
+fireSound = "b_raynus00.wav"
+wpnReticle = "gminigun"
+wpnCategory = "GUN"
+isAssault = 0
+flashName = "b_graynus_c.flash"
+aiRange = 160
+
+[CannonClass]
+shotDelay = 0.1
+shotVariance = 0.2
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 140"
+finishColor = "166 80 124 150"
+startRadius = 3.0
+finishRadius = 0.75
+animateTime = 0.4
+geomName = "g_sflash.xsi"

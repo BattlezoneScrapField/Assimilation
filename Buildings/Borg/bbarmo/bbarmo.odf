@@ -1,0 +1,76 @@
+[GameObjectClass]
+baseName = "ibarmo"
+geometryName = "bbarmo00.xsi"
+classLabel = "armory"
+collisionRadius = 1.0
+scrapCost = 60
+scrapValue = 30
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Armory"
+aiName = "ArmoryProcess"
+aiName2 = "ArmoryProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+
+requireCount = 1
+requireName1 = "bbfact"
+requireText1 = "Factory Required"
+
+provideCount = 1
+provideName1 = "bbarmo"
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue"
+
+armorClass = H
+
+[BuildingClass]
+soundAmbient = "iarm01.wav"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[FactoryClass]
+soundBuild = "ibrecy02.wav"
+soundFinish = "iapc04.wav"
+
+reloadMsg = "ivrecy12.wav"
+rescueMsg = "ivrecy13.wav"
+
+[ArmoryGroup1]
+buildLabel = "Supplies"
+buildItem1 = "aprepa"
+buildItem2 = "apammo"
+
+[ArmoryGroup2]
+buildLabel = "Cannons"
+buildItem1 = "apmini3"
+buildItem2 = ""
+buildItem3 = "aparray"
+buildItem4 = ""
+buildItem5 = ""
+buildItem6 = ""
+buildItem7 = ""
+
+[ArmoryGroup3]
+buildLabel = "Rockets"
+buildItem1 = "apshd3"
+buildItem2 = ""
+buildItem3 = ""
+buildItem4 = "Apbtorpedo"
+buildItem5 = ""
+buildItem6 = ""
+
+[ArmoryGroup4]
+buildLabel = "Mortars"
+buildItem1 = "apmort3"
+buildItem2 = ""
+buildItem3 = ""
+buildItem4 = ""
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 250

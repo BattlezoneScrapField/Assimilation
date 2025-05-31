@@ -1,0 +1,52 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "B_plas1"
+ordName = "B_plas1"
+wpnReticle = "gplasma"
+wpnName = "Plasma Cannon"
+fireSound = "B_plas.wav"
+wpnCategory = "CANN"
+flashName = "B_plas.Flash"
+aiRange = 360
+isAssault = 0
+
+[CannonClass]
+shotDelay = 0.8
+salvoCount = 2
+salvoDelay = 0.20
+shotVariance = 0.1
+
+[Flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 80 127"
+finishColor = "0 255 0 0"
+startRadius = 3.0
+finishRadius = 1.0
+animateTime = 0.1
+latitudeBands = 8
+longitudeSegments = 16
+
+//--------------------------------------------------------------------
+
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xtechit"
+xplVehicle = "xtechit"
+xplBuilding = "xtechit"
+
+renderName = "B_plas.render"
+
+ammoCost = 35
+lifeSpan = 4.0
+shotSpeed = 200.0
+
+damageValue(N) = 80 // none // 300 + 100
+damageValue(L) = 75 // light // 240 + 70
+damageValue(H) = 50 // heavy // 200 + 50
+
+damageValue(S) = 69 // standard // 240 + 50
+damageValue(D) = 89 // deflection // 300 + 100
+damageValue(A) = 30 // absorbtion // 200 + 50

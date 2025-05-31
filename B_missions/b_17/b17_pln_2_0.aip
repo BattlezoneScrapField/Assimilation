@@ -1,0 +1,202 @@
+[Start]
+scrapCount = 120
+consClass = "bvcons"
+scavClass = "bvscav"
+
+[Cheat]
+moneyAmount = 10
+moneyDelay = 2
+
+[Plan1]
+planType = "BuildMinimums"
+planPriority = 250
+buildType1 = "bvcons"
+buildCount1 = 2
+buildIfNoIdle = 1
+
+[Plan2]
+planType = "BaseBuildMinimums"
+planPriority = 240
+buildType1 = "bbpgen"
+buildLoc1 = "power1"
+doNextOnFail = 1
+
+[Plan3]
+planType = "BaseBuildMinimums"
+planPriority = 230
+buildType1 = "bbpgen"
+buildLoc1 = "power2"
+doNextOnFail = 1
+
+[Plan4]
+planType = "BaseBuildMinimums"
+planPriority = 220
+buildType1 = "bbpgen"
+buildLoc1 = "power3"
+doNextOnFail = 1
+
+[Plan5]
+planType = "BaseBuildMinimums"
+planPriority = 210
+buildType1 = "bbpgen"
+buildLoc1 = "power4"
+doNextOnFail = 1
+
+[Plan6]
+planType = "BaseBuildMinimums"
+planPriority = 200
+buildType1 = "bbpgen"
+buildCount1 = 6
+doNextOnFail = 1
+
+[Plan7]
+planType = "BaseBuildMinimums"
+planPriority = 190
+buildType1 = "bbcbun"
+buildLoc1 = "relay"
+doNextOnFail = 1
+
+[Plan8]
+planType = "BaseBuildMinimums"
+planPriority = 180
+buildType1 = "bbgtow"
+buildLoc1 = "gun1"
+doNextOnFail = 1
+
+[Plan9]
+planType = "BaseBuildMinimums"
+planPriority = 170
+buildType1 = "bbgtow"
+buildLoc1 = "gun2"
+doNextOnFail = 1
+
+[Plan10]
+planType = "BaseBuildMinimums"
+planPriority = 160
+buildType1 = "bbgtow"
+buildLoc1 = "gun3"
+doNextOnFail = 1
+
+[Plan11]
+planType = "BaseBuildMinimums"
+planPriority = 150
+buildType1 = "bbgtow"
+buildLoc1 = "gun4"
+doNextOnFail = 1
+
+[Plan12]
+planType = "BaseBuildMinimums"
+planPriority = 140
+buildType1 = "bbgtow"
+buildLoc1 = "gun5"
+doNextOnFail = 1
+
+[Plan13]
+planType = "BaseBuildMinimums"
+planPriority = 130
+buildType1 = "bbgtow"
+buildLoc1 = "gun6"
+doNextOnFail = 1
+
+[Plan14]
+planType = "BaseBuildMinimums"
+planPriority = 120
+buildType1 = "bbfact"
+buildLoc1 = "factory"
+doNextOnFail = 1
+
+[Plan15]
+planType = "BaseBuildMinimums"
+planPriority = 110
+buildType1 = "bbarmo"
+buildLoc1 = "amory"
+doNextOnFail = 1
+
+[Plan16]
+planType = "BaseBuildMinimums"
+planPriority = 100
+buildType1 = "bbsbay"
+doNextOnFail = 1
+
+[Plan17]
+planType = "BaseBuildMinimums"
+planPriority = 90
+buildType1 = "bbtrain"
+buildLoc1 = "teck"
+doNextOnFail = 1
+
+[Plan18]
+planType = "BaseBuildMinimums"
+planPriority = 80
+buildType1 = "bbtrans"
+buildLoc1 = "air1"
+doNextOnFail = 1
+
+[Plan19]
+planType = "BaseBuildMinimums"
+planPriority = 70
+buildType1 = "bbtech"
+buildLoc1 = "training"
+doNextOnFail = 1
+
+[Plan20]
+planType = "ClearArea"
+planPriority = 60
+targetType = "ibrecy_bb"
+
+[Plan21]
+planType = "Attacker"
+planPriority = 50
+targetType = "ibpgen"
+attackType1 = "bvscout01"
+attackType2 = "bvscout01"
+maxAttacks = 80
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan22]
+planType = "Attacker"
+planPriority = 40
+targetType = "ivtug_b"
+attackType1 = "bvscout00"
+attackType2 = "bvscout00"
+maxAttacks = 80
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan23]
+planType = "Attacker"
+planPriority = 30
+targetType = "ibgtow"
+attackType1 = "B_arme00"
+maxAttacks = 80
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan24]
+planType = "Attacker"
+planPriority = 20
+targetType = "ibtrain"
+attackType1 = "bvscout02"
+attackType2 = "bvscout02"
+attackType3 = "B_arme01"
+attackType4 = "bvzat"
+attackType5 = "bvzat"
+maxAttacks = 80
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan25]
+planType = "Attacker"
+planPriority = 10
+targetType = "ibbomb"
+attackType1 = "B_arme00"
+attackType2 = "B_arme00"
+attackType3 = "B_arme01"
+attackType4 = "B_arme01"
+attackType5 = "bvscout01"
+attackType6 = "bvscout01"
+maxAttacks = 80
+buildIfNoIdle = 1
+doNextOnFail = 1
+

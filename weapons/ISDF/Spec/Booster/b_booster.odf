@@ -1,0 +1,136 @@
+//Hard copy came from ({MSL}Black Hunter) <Thanks a lot you are a star :)
+//E-Mail: bz2_black_hunter1@hotmail.com
+
+//Grouped and modified for this mod by Me Shane......
+
+
+[GameObjectClass]
+geometryName = "apspec00.xsi"
+classLabel = "wpnpower"
+scrapCost = 30
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 0
+unitName = NULL
+aiName = "PowerUpProcess"
+
+requireCount = 1
+requireName1 = "ibfact"
+requireText1 = "Build Factory"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omnired"
+
+[PowerUpClass]
+soundPickup = "pickup01.wav"
+soundReject = "reject.wav"
+
+[WeaponPowerupClass]
+weaponName = "b_booster"
+
+///////////////////////////////////////////////////////////////////
+[WeaponClass]
+classLabel = "cannon" // "machinegun"
+altName = NULL
+ordName = "b_booster"
+wpnName = "Booster"
+fireSound = "b_booster1.wav"
+wpnReticle = "gphantom.0"
+wpnCategory = "SPEC"
+isAssault = 0
+flashName = "b_booster.render"
+
+[CannonClass]
+shotDelay = 0.1
+shotVariance = 0.05
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "b_booster.Light"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 100 100 750"
+finishColor = "255 50 50 0"
+startRadius = 15.0
+finishRadius = 0.0
+animateTime = 0.4
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+//////////////////////////////////////////////////////////////////////
+
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+xplGround = "b_booster"
+xplVehicle = "b_booster"
+xplBuilding = "b_booster"
+xplExpire = "b_booster"
+
+ammoCost = 30.0
+lifeSpan = 0.001
+shotSpeed = 0.01
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // assault
+
+//////////////////////////////////////////////////////////////////////
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 2
+particleClass1 = "b_booster.core"
+particleCount1 = 1
+particleVeloc1 = "2.5 2.5 -7.0"
+particleClass2 = "b_booster.light1"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+explSound = NULL
+damageRadius = 0.0
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+kickRadius = 70.0
+kickOmega = 0.0
+kickVeloc = 7.1
+
+[core]
+simulateBase = "sim_null"
+lifeTime = 0.8
+renderBase = "draw_twirl"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 1000"
+finishColor = "255 255 0 1000"
+startRadius = 0.6
+finishRadius = 5.0
+animateTime = 0.8
+
+[light1]
+simulateBase = "sim_null"
+lifeTime = 0.9
+renderBase = "draw_light"
+startColor = "255 255 0 1000"
+finishColor = "255 255 0 1000"
+startRadius = 20.0
+finishRadius = 0.0
+lifeTime = 1.0
+animateTime = 1.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

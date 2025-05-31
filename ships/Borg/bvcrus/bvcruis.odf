@@ -1,0 +1,122 @@
+[GameObjectClass]
+baseName = "ivtank"
+geometryName = "bvcruis.xsi"
+cockpitName = "ivmisl_cockpit.xsi"
+geometryScale = 6.0
+classLabel = "wingman"
+scrapValue = 30
+scrapCost = 65
+customCost = 75
+buildTime = 15
+customTime = 20
+maxHealth = 5000
+maxAmmo = 5500
+addAmmo = 20
+addHealth = 20
+unitName = "Cruiser"
+aiName = "SupportProcess"
+aiName2 = "SupportProcess"
+explosionName = "xplshipssp"
+
+heatSignature = 5.0
+imageSignature = 5.5
+radarSignature = 2.1
+
+isAssault = 1
+
+armorClass = H
+
+requireCount = 4
+requireName1 = "bbfact"
+requireText1 = "Build Factory"
+requireName2 = "bbcbun"
+requireText2 = "Build Relay Bunk"
+requireName3 = "bbarmo"
+requireText3 = "Build Armory"
+requireName4 = "bbtrain"
+requireText4 = "Build Traning"
+
+/////// weapons ///////////////////
+
+weaponMask = 00011
+
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "GBtorp_c"
+weaponAssault1 = 0
+weaponHard2 = "HP_CANNON_2"
+weaponName2 = ""
+weaponAssault2 = 0
+
+////////////////////////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"
+lightHard3 = "hp_light_3"
+lightName3 = "spotred"
+lightHard4 = "hp_light_4"
+lightName4 = "spotred"
+
+[CraftClass]
+rangeScan = 420.0f
+periodScan = 5.0f
+velocJam = 5.0f
+engageRange = 380
+
+braccelFactor = 0.05f;
+strafeFactor = 0.1f;
+steerFactor = 1.0f;
+omegaFactor = 0.4f;
+velFactor = 0.2f;
+
+avoidSpeed = 30;
+topSpeed = 30;
+
+selectGoMsg = "borg1.wav"
+selectAttackMsg = "borg4.wav"
+selectFollowMsg = "borg1.wav"
+selectOtherMsg = "borg2.wav"
+
+goMsg = "borg1.wav"
+attackMsg = "borg4.wav"
+followMeMsg = "borg1.wav"
+reloadMsg = "borg6.wav"
+repairMsg = "borg6.wav"
+rescueMsg = "borg7.wav"
+recycleMsg = "borg3.wav"
+otherMsg = "borg5.wav"
+
+user1Msg = "bmbr9.wav"
+diedMsg = "borg4.wav"
+
+attackTask = "AssaultTankAttack"
+subAttackTask = "SupportSubAttack"
+subAttackClass = "AN"
+// A:- include air units as attack targets
+// N:- doesn't need to deploy to sub attack
+// S:- doesn't move towards unit in sub attack
+
+[HoverCraftClass]
+velocForward = 35.5 // []
+velocReverse = 20.0 // []
+velocStrafe = 30.0 // []
+accelThrust = 24.0 //acceleration []
+accelDragStop = 6.0 //how fast it stops once hands are off controls []
+accelJump = 15.0 // []
+setAltitude = 5.5 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself [5.]
+alphaDamp = 8.0 //shocks [5.]
+
+pitchPitch = 0.25 // nose up [.1]
+pitchThrust = 0.1 // nose down [.14]
+
+rollStrafe = 0.09 // rolls while strafing [2.]
+omegaSpin = 3.0 // spinning in place speed [2.2]
+omegaTurn = 3.0 // turning while moving speed [3.0]
+alphaSteer = 5.5 // how fast it responds to steering [4.9]
+rollSteer = 0.12 // rolls while steering [2.0]
+
+soundThrust = "itank01h.wav"
+soundTurbo = "avrckte1.wav"

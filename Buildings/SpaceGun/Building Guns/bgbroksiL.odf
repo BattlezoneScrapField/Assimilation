@@ -1,0 +1,54 @@
+[GameObjectClass]
+geometryName = "bgrok_2.xsi"
+geometryScale = 0.1
+classLabel = "turret"
+collisionRadius = 1.0
+scrapCost = 0
+scrapValue = 0
+powerCost = 0
+maxHealth = 987
+maxAmmo = 10000
+unitName = "Rocket Launcher"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+explosionName = "xnormxpl"
+heatSignature = 3.0
+imageSignature = 3.0
+radarSignature = 2.0
+isAssault = 1
+
+armorClass = L
+
+requireCount = 0
+
+///// WEAPON ////////////////////
+
+weaponMask = 00011
+weaponHard1 = "hp_rocket_1"
+weaponName1 = "b_viper_a"
+
+/////////////////////////////////
+
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+[BuildingClass]
+soundAmbient = "stationn_gun.wav"
+
+[CraftClass]
+rangeScan = 900.0
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 0.5
+engageRange = 800.0
+
+[TurretCraftClass]
+omegaTurret = 2.0
+detectRange = 800.0
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 300
+dontShiftLOD = 0

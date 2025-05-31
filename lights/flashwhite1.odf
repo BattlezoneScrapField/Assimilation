@@ -1,0 +1,23 @@
+//Taken from the FE Armory and Altered for the mod.. :)
+
+[light1]
+simulateBase = "sim_smoke"
+lifeTime = 10800.0
+renderBase = "draw_emit"
+emitName = "flashwhite1.light1emit"
+emitDelay = 2.0
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "0.0 1.0 0.0"
+
+[light1emit]
+simulateBase = "sim_null"
+lifeTime = 0.8
+renderBase = "draw_light"
+startColor = "255 255 255 255" //255 255 63
+finishColor = "255 0 0 0"
+startRadius = 130.0
+finishRadius = 130.0
+animateTime = 4.0
+attenuateConstant = 0.0
+attenuateLinear = 2.0
+attenuateQuadratic = 0.0

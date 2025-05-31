@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "cannon"
+ordName = "btorp_c"
+altName = "gBtorp_a"
+wpnName = "Borg Photon Torp"
+fireSound = "torpA.wav"
+wpnReticle = "gsalvo"
+wpnCategory = "ROCK"
+aiRange = 380
+isAssault = 0
+
+[CannonClass]
+shotDelay = 1.7
+shotAlternate = 0

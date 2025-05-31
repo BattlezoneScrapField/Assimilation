@@ -1,0 +1,206 @@
+// =================
+// VEHICLE EXPLOSION
+// =================
+
+
+explSound = "b_bang1.wav"
+damageRadius = 45.0
+damageValue(N) = 0
+damageValue(L) = 50
+damageValue(H) = 50
+damageValue(S) = 50
+damageValue(D) = 50
+damageValue(A) = 50
+kickRadius = 30.0
+kickOmega = 10.0
+kickVeloc = 15.0
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 10
+
+particleClass1 = "b_car_ex.light"
+particleCount1 = 3
+particleVeloc1 = "0.0 1.0 3.0"
+
+particleClass2 = "b_car_ex.ring"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "b_car_ex.sparks"
+particleCount3 = 10
+particleVeloc3 = "150.0 150.0 150.0"
+
+particleClass4 = "b_car_ex.FlameEmitter"
+particleCount4 = 4
+particleVeloc4 = "0.0 10.0 0.0"
+
+particleClass5 = "b_car_ex.Chunks"
+particleCount5 = 30
+particleVeloc5 = "50.0 80.0 50.0"
+particleBias5 = "0.0 0.0 0.0"
+
+particleClass6 = "b_car_ex.SmokeEmitter"
+particleCount6 = 5
+particleVeloc6 = "10.0 20.0 10.0"
+
+particleClass7 = "b_car_ex.puff"
+particleCount7 = 30
+particleVeloc7 = "80.0 80.0 80.0"
+
+particleClass8 = "b_car_ex.ring1"
+particleCount8 = 1
+particleVeloc8 = "0.0 0.0 0.0"
+
+particleClass9 = "b_car_ex.ring2"
+particleCount9 = 1
+particleVeloc9 = "0.0 1.0 0.0"
+
+particleClass10 = "b_car_ex.ring3"
+particleCount10 = 1
+particleVeloc10 = "0.0 1.0 0.0"
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 0 255"
+finishColor = "200 0 0 0"
+startRadius = 0.3
+finishRadius = 0.1
+animateTime = 4.0
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 2.0
+renderBase = "draw_light"
+startColor = "255 150 0 3055"
+finishColor = "255 0 0 0"
+startRadius = 60.0
+finishRadius = 60.0
+animateTime = 2.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[sparks]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "0 225 0 200"
+finishColor = "255 0 0 0"
+startRadius = 0.1
+finishRadius = 0.0
+trailTime = 2.0
+segmentTime = 0.5
+
+
+[FlameEmitter]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_twirl"
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 128"
+finishColor = "255 0 0 0"
+startRadius = 1.0
+finishRadius = 9.0
+animateTime = 6.0
+rotationRate = 5.0
+
+[SmokeEmitter]
+simulateBase = "sim_dust"
+lifeTime = 8.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = " 0 0 0 255"
+finishColor = "127 127 127 0"
+startRadius = 1.0
+finishRadius = 30.0
+animateTime = 8.0
+rotationRate = 5.0
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 4.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 225 225 255"
+finishColor = "200 0 0 0"
+startRadius = 0.3
+finishRadius = 0.1
+animateTime = 4.0
+
+[ring]
+simulateBase = "sim_null"
+lifeTime = 1.5
+renderBase = "draw_sphere"
+textureName = "fireup.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 175"
+finishColor = "0 0 255 0"
+startRadius = 3.0
+finishRadius = 50.0
+animateTime = 1.5
+latitudeBands = 8
+longitudeSegments = 16
+
+[ring1]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_sphere"
+textureName = "carsphere.tga" //ring2
+textureBlend = "one one modulate"
+startColor = "193 13 255 50"
+finishColor = "193 0 0 0"
+startRadius = 3.0
+finishRadius = 26.0
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16
+
+[ring2]
+simulateBase = "sim_null"
+lifeTime = 0.4
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "193 13 255 100"
+finishColor = "193 0 0 0"
+startRadius = 3.0
+finishRadius = 28.0
+animateTime = 0.4
+latitudeBands = 8
+longitudeSegments = 16
+
+[ring3]
+simulateBase = "sim_null"
+lifeTime = .5
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "193 13 255 160"
+finishColor = "193 0 0 0"
+startRadius = 3.0
+finishRadius = 30.0
+animateTime = 0.4
+latitudeBands = 8
+longitudeSegments = 16
+
+[Chunks]
+simulateBase = "sim_ember"
+lifeTime = 8.0
+renderBase = "draw_twirl" //sprite
+textureName = "dirt.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "193 13 255 225"
+finishColor = "193 0 0 50"
+startRadius = 0.4
+finishRadius = 0.4
+animateTime = 8.0

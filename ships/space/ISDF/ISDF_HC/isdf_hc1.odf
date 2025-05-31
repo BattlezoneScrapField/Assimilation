@@ -1,0 +1,105 @@
+[GameObjectClass]
+baseName = "isdf_hc"
+geometryName = "isdf_hc.xsi"
+unitIcon = "icon_ISDF_hc.tga"
+geometryScale = 0.05
+classLabel = "assaulttank"
+BoxCollide = 1
+scrapValue = 0
+scrapCost = 0
+customCost = 0
+buildTime = 0
+customTime = 0
+maxHealth = 29000
+addHealth = 50
+maxAmmo = 40000
+addAmmo = 200.0
+unitName = "ISDF Heavy Cruiser"
+aiName = "AssaultTankProcess"
+aiName2 = "AssaultTankProcess"
+heatSignature = 3.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssualt = 1
+armorClass = H
+needPilot = 1
+explosionName = "Xnuke_B"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "ivpdrop2.trail"
+effectHard2 = "hp_emit_2"
+effectName2 = "ivpdrop2.trail"
+effectHard3 = "hp_emit_3"
+effectName3 = "ivpdrop2.trail"
+effectHard4 = "hp_emit_4"
+effectName4 = "ivpdrop2.trail"
+effectHard5 = "hp_emit_5"
+effectName5 = "ivpdrop2.trail"
+effectHard6 = "hp_emit_6"
+effectName6 = "ivpdrop2.trail"
+
+//////////////////////////////
+
+weaponMask = 00001
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "B_beemhc"
+weaponAssault1 = 1
+
+weaponHard2 = "hp_cannon_1"
+weaponName2 = "B_beemhc"
+weaponAssault2 = 1
+
+//////////////////////////////
+
+turretCount = 3
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+turretName3 = "hp_cannon_2"
+
+
+[CraftClass]
+rangeScan = 500.0
+periodScan = 5.0
+velocJam = 0.0
+engageRange = 400
+
+braccelFactor = 0.01
+velFactor = 0.4
+steerFactor = 1.2
+omegaFactor = 0.2
+strafeFactor = 0.1
+
+selectWaitMsg = "ivatank04.wav"
+selectAttackMsg = "ivatank01.wav"
+selectFollowMsg = "ivatank08.wav"
+selectGoMsg = "ivatank02.wav"
+selectOtherMsg = "ivatank04.wav"
+
+goMsg = "ivatank05.wav"
+attackMsg = "ivatank06.wav"
+followMeMsg = "ivatank08.wav"
+followMsg = "ivatank08.wav"
+repairMsg = "ivatank09.wav"
+reloadMsg = "ivatank09.wav"
+rescueMsg = "ivatank10.wav"
+recycleMsg = "ivatank11.wav"
+otherMsg = "ivatank04.wav" 
+holdMsg = "ivatank12.wav"
+
+user1Msg = ""  
+killedMsg = "ivatank07.wav"
+diedMsg = ""
+
+[TrackedVehicleClass]
+omegaSpin = 4.0
+velocForward = 15.0
+velocReverse = 5.0
+accelThrust = 10.0
+
+engineSound	= "iatank01.wav"
+treadSound = "iatank02.wav"
+
+[AssaultTankClass]
+yawRate = 2.0
+pitchMin = -1.5
+pitchMax = 1.5

@@ -1,0 +1,74 @@
+[GameObjectClass]
+baseName = "B_zat"
+geometryName = "ZAT.xsi"
+geometryScale = 0.3
+classLabel = "wingman"
+scrapValue = 0
+scrapCost = 0
+buildTime = 0.5
+maxHealth = 50
+maxAmmo = 200
+addAmmo = 5
+unitName = "Borg Zat"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+heatSignature = 0.2
+imageSignature = 0.3
+radarSignature = 0.2
+explosionName = "b_car_ex"
+canSnipe = 0
+
+armorClass = L
+needPilot = 1
+
+/////// weapons ///////////////////
+
+weaponMask = 00011
+weaponHard1 = "HP_HAND_1"
+weaponName1 = "BorgUBM2"
+weaponAssault1 = 0
+weaponHard2 = "HP_HAND_1"
+weaponName2 = "BorgUBM2"
+weaponAssault2 = 0
+
+//////////////////////////////////
+
+[CraftClass]
+rangeScan = 450.0f
+periodScan = 5.0f
+velocJam = 10.0f
+
+braccelFactor = 0.05f;
+strafeFactor = 0.1f;
+steerFactor = 1.0f;
+omegaFactor = 0.2f;
+velFactor = 0.2f;
+
+avoidSpeed = 20;
+topSpeed = 40;
+
+
+
+[HoverCraftClass]
+velocForward = 35.0 
+velocReverse = 35.0
+velocStrafe = 35.0
+accelThrust = 50.0
+accelBrake = 75.0
+accelDragStop = 28.0
+accelJump = 25.0
+
+setAltitude = 20.0
+alphaTrack = 8.0
+alphaDamp = 8.0
+
+pitchPitch = 2.6
+pitchThrust = 0.45
+
+rollStrafe = 1.0 //rolls while strafing []
+omegaSpin = 3.0 //spinning in place speed []
+omegaTurn = 5.3 //turning while moving speed []
+alphaSteer = 4.0 //how fast it responds to steering []
+rollSteer = 2.2 //rolls while steering []
+
+soundThrust = "waspmsl.wav"

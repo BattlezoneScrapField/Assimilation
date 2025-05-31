@@ -1,0 +1,41 @@
+[GameObjectClass]
+geometryName = "b_lbcanp.xsi"
+classLabel = "powerplant"
+geometryScale = 0.3
+scrapCost = 0
+scrapValue = 0
+maxHealth = 3000
+maxAmmo = 0
+unitName = "Power Distributor"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+canCollide = 1
+ownsTerrain = 0
+isAssault = 1
+
+armorClass = H
+requireCount = 0
+provideCount = 0
+
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniblue"
+lightHard2 = "hp_light_2"
+lightName2 = "omniblue"
+
+
+[BuildingClass]
+soundAmbient = "ipgen01.wav"
+
+[PoweredBuildingClass]
+detectRange = 60
+
+[Lod1]
+geometryName = "b_lbcanpL1.xsi" ;geometry for lod1
+distance = 100
+
+[Lod2]
+geometryName = "Polycont.xsi" ;geometry for lod2
+distance = 200

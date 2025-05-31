@@ -1,0 +1,16 @@
+[GameObjectClass]
+geometryName = "b_tower.xsi"
+geometryScale = 0.3
+classLabel = "powered"
+collisionRadius = 1.0
+scrapCost = 0
+scrapValue = 85
+maxHealth = 1000
+unitName = "Borg Tower"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+explosionName = "xnormxpl"
+ownsTerrain = 1
+
+armorClass = H

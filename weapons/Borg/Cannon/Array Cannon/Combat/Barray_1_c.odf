@@ -1,0 +1,20 @@
+[OrdnanceClass]
+classLabel = "beam"
+shotGeometry = NULL
+xplGround = "xblastgnd"
+xplVehicle = "xblastcar"
+xplBuilding = "xblastbld"
+
+renderName = "Barray_1_a.render"
+
+ammoCost = 20
+lifeSpan = 150e-3 // 150m
+shotSpeed = 1e3
+
+damageValue(N) = 150
+damageValue(L) = 120
+damageValue(H) = 100
+
+damageValue(S) = 120
+damageValue(D) = 10
+damageValue(A) = 300

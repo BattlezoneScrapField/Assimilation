@@ -1,0 +1,1075 @@
+
+[objects]
+
+theplayer
+astr1
+astr
+user
+borg3
+exitnav
+borg2
+cargoen
+spark1
+spark
+navdum
+dummy
+shipblow
+cargo
+nav3
+Building1
+nav2
+borg1
+nav1
+pod
+scout1
+recy
+
+
+[positions]
+
+aststor,0,0,0
+damagepos,0,0,0
+
+
+[variables]
+
+Count2,0
+Count1,0
+healthleft,0
+health,0
+skillnumber,0
+
+
+[text]
+Skillset,
+"Skill Setting at %i Good Luck..."
+
+Defenkd,
+"Build a defence force around\nyour recy.. Collect the scrap\nblobs also only 2.."
+
+evacuate,
+"Make sure the transport gets to\nthe E-A Pagusus Safly..\n it will take 3 mins to\nevauate everyone from the ship.."
+
+safyly,
+"Make sure the transport gets\nto your recy safly"
+
+exitrecy,
+"You must excort your recy to\nthe exitpoint for it to jump\ninto hyperspace..\nA Nav is marked"
+
+pods,
+"Get the powerup to help you"
+
+
+[routine,Choices,1,true]
+ally,1,2
+getbylabel,shipblow,"dship"
+createp,recy,"B_ivrecy_1",1,"recy"
+AddScrap,1,40
+runspeed,recycheck,1,true
+FreeCamera
+wait,5
+IFaceExec,"b_Skill.cfg"
+
+loop:
+
+IfaceSetInt,"mission.var2",0
+ConsoleWord,"cfg executed 1"
+IFaceActivate,"Option_window"
+
+FUNKY:
+IFaceGetInt,"mission.var2"
+ifeq,0,FUNKY
+
+
+IFaceGetInt,"mission.var1",skillnumber
+
+ifeq,4,Are_you_sure
+ifeq,3,skill3
+ifeq,2,skill2
+ifeq,1,skill1
+
+
+jumpto,hahadone
+
+Are_you_sure:
+IfaceSetInt,"mission.wa1",0
+IfaceSetInt,"mission.wa2",0
+ConsoleWord,"cfg executed 2"
+
+ConsoleWord,"runn"
+IFaceActivate,"Thewarning"
+
+FUNKY1:
+IFaceGetInt,"mission.wa1"
+ifeq,0,pass
+FreeFinish
+jumpto,hardest
+
+pass:
+IFaceGetInt,"mission.wa2"
+ifeq,0,FUNKY1
+jumpto,loop
+
+//////////////////////////////////////////////////
+
+hardest:
+ConsoleWord,"Setup on insane skill %i",skillnumber
+Clear
+display,Skillset,blue,skillnumber
+startsound,"locked3.wav"
+runspeed,skill4,1,true
+
+Jumpto,endline
+
+//////////////////////////////////////////////////
+
+skill3:
+ConsoleWord,"Setup on skill %i",skillnumber
+Clear
+display,Skillset,blue,skillnumber
+startsound,"locked3.wav"
+runspeed,skill3,1,true
+
+Jumpto,endline
+
+//////////////////////////////////////////////////
+
+skill2:
+ConsoleWord,"Setup on skill %i",skillnumber
+Clear
+display,Skillset,blue,skillnumber
+startsound,"locked3.wav"
+runspeed,skill2,1,true
+
+Jumpto,endline
+
+//////////////////////////////////////////////////
+
+skill1:
+ConsoleWord,"Setup on skill %i",skillnumber
+Clear
+display,Skillset,blue,skillnumber
+startsound,"locked3.wav"
+runspeed,skill1,1,true
+
+Jumpto,endline
+
+//////////////////////////////////////////////////
+
+hahadone:
+
+endline:
+FreeFinish
+
+
+[routine,skill2,0,false]
+createp,scout1,"ivspacesc",1,"support"
+createp,pod,"b_apbolts",1,"cannon"
+BeaconOn,pod
+startsound,"b14_sound_1.wav"
+wait,21
+
+Clear
+display,Defenkd,White
+startsound,"locked3.wav"
+
+createp,nav1,"ibnav",1,"pool1"
+SetName,nav1,"Scrap Blob 1"
+BeaconOn,nav1
+wait,20
+goto,scout1,"scoutpath",1
+wait,10
+runspeed,attac0_skill2,1,true
+wait,10
+startsound,"b14_sound_2.wav"
+wait,60
+startsound,"b14_sound_3.wav"
+createp,nav2,"ibnav",1,"pool2"
+SetName,nav2,"Scrap Blob 2"
+BeaconOn,nav2
+wait,19
+remove,scout1
+Wait,520
+runspeed,attac0_skill2,0,false
+runspeed,attac1_skill2,1,true
+wait,200
+startsound,"b14_sound_5.wav"
+wait,90
+startsound,"b14_sound_4.wav"
+set,healthleft,100
+createp,nav3,"ibnav",1,"shipdamaged"
+SetName,nav3,"Damaged Transport ship %i% Health",healthleft
+BeaconOn,nav3
+runspeed,transport01,1,True
+
+looptime:
+wait,6
+	add,healthleft,-1,healthleft
+	SetName,nav3,"Damaged Transport ship %i, Percent",healthleft
+	add,Count1,1,Count1
+	iflt,100,looptime
+	set,Count1,0
+createp,dummy,"ivspacesc",2,"dummy"
+getpos,shipblow,damagepos
+create,navdum,"pspwn_1",0,damagepos
+Runspeed,damreq,1,true
+campath,"cam1",5000,2000,navdum
+remove,navdum
+remove,dummy
+remove,nav3
+
+STILL_ALIVE:
+isaround,cargo
+ifeq,true,STILL_ALIVE
+
+wait,5
+runspeed,attac0_skill2,0,false
+runspeed,attac1_skill2,0,false
+
+createp,exitnav,"ibnav",1,"enemy5"
+SetName,exitnav,"Exit Point"
+BeaconOn,exitnav
+
+runspeed,recycheck,0,false
+remove,recy
+clear
+display,exitrecy,white
+createp,recy,"B_ivrecy_1",1,"recy"
+getplayer,theplayer
+Follow,recy,theplayer,0
+runspeed,recycheck,1,true
+
+loop3:
+wait,1
+
+x7:
+isaround, borg3
+ifeq,false,passa7
+attack,borg3,recy,1
+jumpto,xa7
+passa7:
+createp,borg3,"bs_sphere",5,"enemy2"
+setskill,borg3,3
+jumpto,x7
+xa7:
+
+distobject,recy,exitnav
+ifgt,150,loop3
+
+Succeed,1,"b14_textw1.obj"
+
+
+
+//////////////////////////////////////////////////////
+[routine,attac0_skill2,0,false]
+loop:
+createp,borg1,"bs_sphere",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,80
+createp,borg1,"bs_sphere",5,"enemy2"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy3"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,80
+createp,borg1,"bs_sphere",5,"enemy4"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy4"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,80
+createp,borg1,"bs_sphere",5,"enemy5"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy6"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,80
+
+getbylabel,Building1,"unnamed_ivscav_s1"
+isaround, Building1
+ifeq,false,pass4
+
+x7:
+isaround, borg1
+ifeq,false,passa7
+attack,borg1,Building1,1
+jumpto,xa7
+passa7:
+createp,borg1,"bs_sphere",5,"enemy4"
+setskill,borg1,3
+jumpto,x7
+xa7:
+pass4:
+
+
+Jumpto,loop
+
+[routine,attac1_skill2,0,false]
+loop:
+createp,borg1,"bs_sphere",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,20
+createp,borg1,"bs_sphere",5,"enemy2"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_cube",5,"enemy3"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,30
+createp,borg1,"bs_sphere",5,"enemy4"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_scout",5,"enemy4"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,20
+createp,borg1,"bs_sphere",5,"enemy5"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy6"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,30
+
+getbylabel,Building1,"unnamed_ivscav_s1"
+isaround, Building1
+ifeq,false,pass4
+
+x7:
+isaround, borg2
+ifeq,false,passa7
+attack,borg2,Building1,1
+jumpto,xa7
+passa7:
+createp,borg2,"bs_sphere",5,"enemy4"
+setskill,borg2,3
+jumpto,x7
+xa7:
+pass4:
+Jumpto,loop
+
+//////////////////////////////////////////////////////
+
+
+
+[routine,skill1,0,false]
+createp,scout1,"ivspacesc",1,"support"
+createp,pod,"b_apbolts",1,"cannon"
+BeaconOn,pod
+startsound,"b14_sound_1.wav"
+wait,21
+
+Clear
+display,Defenkd,White
+display,pods,blue
+startsound,"locked3.wav"
+
+createp,nav1,"ibnav",1,"pool1"
+SetName,nav1,"Scrap Blob 1"
+BeaconOn,nav1
+wait,20
+goto,scout1,"scoutpath",1
+wait,10
+runspeed,attac0_skill1,1,true
+wait,10
+startsound,"b14_sound_2.wav"
+wait,60
+startsound,"b14_sound_3.wav"
+createp,nav2,"ibnav",1,"pool2"
+SetName,nav2,"Scrap Blob 2"
+BeaconOn,nav2
+wait,19
+remove,scout1
+Wait,520
+runspeed,attac0_skill1,0,false
+runspeed,attac1_skill1,1,true
+wait,200
+startsound,"b14_sound_5.wav"
+wait,90
+startsound,"b14_sound_4.wav"
+set,healthleft,100
+createp,nav3,"ibnav",1,"shipdamaged"
+SetName,nav3,"Damaged Transport ship %i% Health",healthleft
+BeaconOn,nav3
+runspeed,transport01,1,True
+
+looptime:
+wait,6
+	add,healthleft,-1,healthleft
+	SetName,nav3,"Damaged Transport ship %i, Percent",healthleft
+	add,Count1,1,Count1
+	iflt,100,looptime
+	set,Count1,0
+createp,dummy,"ivspacesc",2,"dummy"
+getpos,shipblow,damagepos
+create,navdum,"pspwn_1",0,damagepos
+Runspeed,damreq,1,true
+campath,"cam1",5000,2000,navdum
+remove,navdum
+remove,dummy
+remove,nav3
+
+STILL_ALIVE:
+isaround,cargo
+ifeq,true,STILL_ALIVE
+
+wait,5
+runspeed,attac0_skill1,0,false
+runspeed,attac1_skill1,0,false
+
+createp,exitnav,"ibnav",1,"enemy5"
+SetName,exitnav,"Exit Point"
+BeaconOn,exitnav
+
+runspeed,recycheck,0,false
+remove,recy
+clear
+display,exitrecy,white
+createp,recy,"B_ivrecy_1",1,"recy"
+getplayer,theplayer
+Follow,recy,theplayer,0
+runspeed,recycheck,1,true
+
+loop3:
+wait,20
+
+x7:
+isaround, borg3
+ifeq,false,passa7
+attack,borg3,recy,1
+jumpto,xa7
+passa7:
+createp,borg3,"bs_sphere",5,"enemy2"
+setskill,borg3,3
+jumpto,x7
+xa7:
+
+distobject,recy,exitnav
+ifgt,150,loop3
+
+Succeed,1,"b14_textw1.obj"
+
+
+
+//////////////////////////////////////////////////////
+[routine,attac0_skill1,0,false]
+loop:
+createp,borg1,"bs_sphere",5,"enemy1"
+attack,borg1,recy,1
+wait,80
+createp,borg1,"bs_sphere",5,"enemy2"
+attack,borg1,recy,1
+wait,80
+createp,borg1,"bs_sphere",5,"enemy4"
+attack,borg1,recy,1
+wait,80
+createp,borg1,"bs_sphere",5,"enemy5"
+attack,borg1,recy,1
+wait,80
+
+Jumpto,loop
+
+[routine,attac1_skill1,0,false]
+loop:
+createp,borg1,"bs_sphere",5,"enemy1"
+attack,borg1,recy,1
+wait,20
+createp,borg1,"bs_cube",5,"enemy3"
+attack,borg1,recy,1
+wait,50
+createp,borg1,"bs_sphere",5,"enemy5"
+attack,borg1,recy,1
+wait,30
+Jumpto,loop
+
+//////////////////////////////////////////////////////
+
+
+
+
+
+[routine,skill3,0,false]
+createp,scout1,"ivspacesc",1,"support"
+createp,pod,"b_apbolts",1,"cannon"
+BeaconOn,pod
+startsound,"b14_sound_1.wav"
+wait,21
+
+Clear
+display,Defenkd,White
+startsound,"locked3.wav"
+
+createp,nav1,"ibnav",1,"pool1"
+SetName,nav1,"Scrap Blob 1"
+BeaconOn,nav1
+wait,20
+goto,scout1,"scoutpath",1
+wait,10
+runspeed,attac0_skill2,1,true
+wait,10
+startsound,"b14_sound_2.wav"
+wait,60
+startsound,"b14_sound_3.wav"
+createp,nav2,"ibnav",1,"pool2"
+SetName,nav2,"Scrap Blob 2"
+BeaconOn,nav2
+wait,19
+remove,scout1
+Wait,520
+runspeed,attac0_skill3,0,false
+runspeed,attac1_skill3,1,true
+wait,200
+startsound,"b14_sound_5.wav"
+wait,90
+startsound,"b14_sound_4.wav"
+set,healthleft,100
+createp,nav3,"ibnav",1,"shipdamaged"
+SetName,nav3,"Damaged Transport ship %i% Health",healthleft
+BeaconOn,nav3
+runspeed,transport01,1,True
+
+looptime:
+wait,6
+	add,healthleft,-1,healthleft
+	SetName,nav3,"Damaged Transport ship %i, Percent",healthleft
+	add,Count1,1,Count1
+	iflt,100,looptime
+	set,Count1,0
+createp,dummy,"ivspacesc",2,"dummy"
+getpos,shipblow,damagepos
+create,navdum,"pspwn_1",0,damagepos
+Runspeed,damreq,1,true
+campath,"cam1",5000,2000,navdum
+remove,navdum
+remove,dummy
+remove,nav3
+
+STILL_ALIVE:
+isaround,cargo
+ifeq,true,STILL_ALIVE
+
+wait,5
+runspeed,attac0_skill3,0,false
+runspeed,attac1_skill3,0,false
+
+createp,exitnav,"ibnav",1,"enemy5"
+SetName,exitnav,"Exit Point"
+
+runspeed,recycheck,0,false
+remove,recy
+clear
+display,exitrecy,white
+createp,recy,"B_ivrecy_1",1,"recy"
+getplayer,theplayer
+Follow,recy,theplayer,0
+runspeed,recycheck,1,true
+
+loop3:
+wait,20
+
+x7:
+isaround, borg3
+ifeq,false,passa7
+attack,borg3,recy,1
+jumpto,xa7
+passa7:
+createp,borg3,"bs_scout",5,"enemy2"
+setskill,borg3,3
+wait,9
+jumpto,x7
+xa7:
+
+distobject,recy,exitnav
+ifgt,150,loop3
+
+Succeed,1,"b14_textw1.obj"
+
+
+
+//////////////////////////////////////////////////////
+[routine,attac0_skill3,0,false]
+loop:
+createp,borg1,"bs_sphere",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,80
+createp,borg1,"bs_sphere",5,"enemy2"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,80
+createp,borg1,"bs_sphere",5,"enemy4"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy3"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy4"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,80
+createp,borg1,"bs_sphere",5,"enemy5"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy6"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy6"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,80
+
+Jumpto,loop
+
+[routine,attac1_skill3,0,false]
+loop:
+createp,borg1,"bs_sphere",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_scout",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,20
+createp,borg1,"bs_cube",5,"enemy3"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_cube",5,"enemy3"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,20
+createp,borg1,"bs_sphere",5,"enemy5"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy5"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_scout",5,"enemy5"
+setskill,borg1,3
+attack,borg1,recy,1
+
+wait,20
+createp,borg1,"bs_sphere",5,"enemy2"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_cube",5,"enemy6"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_scout",5,"enemy4"
+setskill,borg1,3
+attack,borg1,recy,1
+
+wait,30
+Jumpto,loop
+
+//////////////////////////////////////////////////////
+
+
+
+[routine,skill4,0,false]
+createp,scout1,"ivspacesc",1,"support"
+createp,pod,"b_apbolts",1,"cannon"
+BeaconOn,pod
+startsound,"b14_sound_1.wav"
+wait,21
+
+Clear
+display,Defenkd,White
+startsound,"locked3.wav"
+
+createp,nav1,"ibnav",1,"pool1"
+SetName,nav1,"Scrap Blob 1"
+BeaconOn,nav1
+wait,20
+goto,scout1,"scoutpath",1
+wait,10
+runspeed,attac0_skill4,1,true
+wait,10
+startsound,"b14_sound_2.wav"
+wait,60
+startsound,"b14_sound_3.wav"
+createp,nav2,"ibnav",1,"pool2"
+SetName,nav2,"Scrap Blob 2"
+BeaconOn,nav2
+wait,19
+remove,scout1
+Wait,520
+runspeed,attac0_skill4,0,false
+runspeed,attac1_skill4,1,true
+wait,200
+startsound,"b14_sound_5.wav"
+wait,90
+startsound,"b14_sound_4.wav"
+set,healthleft,100
+createp,nav3,"ibnav",1,"shipdamaged"
+SetName,nav3,"Damaged Transport ship %i% Health",healthleft
+BeaconOn,nav3
+runspeed,transport01,1,True
+
+looptime:
+wait,6
+	add,healthleft,-1,healthleft
+	SetName,nav3,"Damaged Transport ship %i, Percent",healthleft
+	add,Count1,1,Count1
+	iflt,100,looptime
+	set,Count1,0
+createp,dummy,"ivspacesc",2,"dummy"
+getpos,shipblow,damagepos
+create,navdum,"pspwn_1",0,damagepos
+Runspeed,damreq,1,true
+campath,"cam1",5000,2000,navdum
+remove,navdum
+remove,dummy
+remove,nav3
+
+STILL_ALIVE:
+isaround,cargo
+ifeq,true,STILL_ALIVE
+
+wait,5
+runspeed,attac0_skill4,0,false
+runspeed,attac1_skill4,0,false
+
+createp,exitnav,"ibnav",1,"enemy5"
+SetName,exitnav,"Exit Point"
+
+runspeed,recycheck,0,false
+remove,recy
+clear
+display,exitrecy,white
+createp,recy,"B_ivrecy_1",1,"recy"
+getplayer,theplayer
+Follow,recy,theplayer,0
+runspeed,recycheck,1,true
+
+loop3:
+wait,20
+
+x7:
+isaround, borg3
+ifeq,false,passa7
+attack,borg3,recy,1
+jumpto,xa7
+passa7:
+createp,borg3,"bs_cube",5,"enemy2"
+setskill,borg3,3
+wait,4
+jumpto,x7
+xa7:
+
+distobject,recy,exitnav
+ifgt,150,loop3
+
+Succeed,1,"b14_textw1.obj"
+
+
+
+//////////////////////////////////////////////////////
+[routine,attac0_skill4,0,false]
+loop:
+createp,borg1,"bs_sphere",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,80
+createp,borg1,"bs_cube",5,"enemy2"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,80
+createp,borg1,"bs_cube",5,"enemy4"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy3"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_scout",5,"enemy4"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,80
+createp,borg1,"bs_sphere",5,"enemy5"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_cube",5,"enemy6"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_sphere",5,"enemy6"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,80
+
+Jumpto,loop
+
+[routine,attac1_skill4,0,false]
+loop:
+createp,borg1,"bs_cube",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_cube",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_scout",5,"enemy1"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,20
+createp,borg1,"bs_cube",5,"enemy3"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_cube",5,"enemy3"
+setskill,borg1,3
+attack,borg1,recy,1
+wait,20
+createp,borg1,"bs_cube",5,"enemy5"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_scout",5,"enemy5"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_scout",5,"enemy5"
+setskill,borg1,3
+attack,borg1,recy,1
+
+wait,20
+createp,borg1,"bs_cube",5,"enemy2"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_cube",5,"enemy6"
+setskill,borg1,3
+attack,borg1,recy,1
+createp,borg1,"bs_scout",5,"enemy4"
+setskill,borg1,3
+attack,borg1,recy,1
+
+wait,30
+Jumpto,loop
+
+//////////////////////////////////////////////////////
+
+
+
+[routine,damreq,0,false]
+getbylabel,spark1,"unnamed_b_spark2a"
+Remove,spark1
+getbylabel,spark1,"unnamed_b_sparks1"
+Remove,spark1
+getbylabel,spark1,"unnamed_b_sparks1"
+Remove,spark1
+getbylabel,spark1,"unnamed_b_sparks1"
+Remove,spark1
+ConsoleWord,"damage seqrunning"
+runspeed,damagedtreas,0,false
+wait,3
+hidetimer
+damage,shipblow,20000
+looptime:
+	getbylabel,spark,"spark"
+	Remove,spark
+	add,Count2,1,Count2
+	iflt,32,looptime
+	set,Count2,0
+
+
+[routine,transport01,0,false]
+createp,cargo,"ISDF_frNW",2,"trans"
+BeaconOn,cargo
+clear
+display,evacuate,white
+startsound,"locked3.wav"
+runspeed,cargocheck,1,true
+Retreat,cargo,"shipdamaged",0
+
+loop1:
+wait,1
+distobject,nav3,cargo
+ifgt,280,loop1
+stop,cargo,0
+wait,5
+stop,cargo,0
+wait,5
+stop,cargo,0
+startsound,"apc2.wav"
+
+starttimer, 200
+wait,200
+Retreat,cargo,"cannon",0
+startsound,"apc3.wav"
+clear
+display,evacuate,green
+display,safyly,white
+startsound,"locked3.wav"
+
+wait,10
+createp,cargoen,"bs_sphere",5,"enemy1"
+setskill,cargoen,3
+attack,cargoen,cargo,0
+wait,5
+startsound,"apc1.wav"
+loop2:
+wait,3
+Follow,cargo,recy,0
+distobject,recy,cargo
+ifgt,300,loop2
+clear
+display,evacuate,green
+display,safyly,green
+startsound,"locked3.wav"
+runspeed,cargocheck,0,false
+remove,cargo
+
+[routine,recycheck,0,false]
+
+STILL_ALIVE:
+isaround,recy
+ifeq,true,STILL_ALIVE
+
+Fail,1,"b14_textf1.obj"
+
+[routine,cargocheck,0,false]
+
+STILL_ALIVE:
+isaround,cargo
+ifeq,true,STILL_ALIVE
+
+Fail,1,"b14_textf2.obj"
+
+[routine,damagedtreas,1,true]
+wait,10
+STILL_ALIVE:
+isaround,shipblow
+ifeq,true,STILL_ALIVE
+
+Fail,1,"b14_textf3.obj"
+
+[routine,killpilota,1,true]
+wait,10
+loop2:
+wait,1
+getbylabel,user,"unnamed_isuser"
+
+distobject,recy,user
+ifgt,80,pass
+jumpto,loop2
+
+pass:
+remove,user
+jumpto,loop2
+
+[routine,astgofix,1,true]
+consoleword,"Rocks 1"
+astroloop01:
+	getbylabel,astr,"unnamed_B_astrmc4"
+	
+	isaround,astr
+	ifeq,false,astroloop02
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrma4",0,aststor
+	Stop,astr1,0
+	Jumpto,astroloop01
+
+astroloop02:
+consoleword,"Rocks 2"
+	getbylabel,astr,"unnamed_B_astrma1"
+
+	isaround,astr
+	ifeq,false,astroloop03
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrma2",5,aststor
+	Stop,astr1,0
+	Jumpto,astroloop02
+
+
+astroloop03:
+consoleword,"Rocks 3"
+	getbylabel,astr,"unnamed_B_astrma5"
+
+	isaround,astr
+	ifeq,false,astroloop04
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrmc4",0,aststor
+	Stop,astr1,0
+	Jumpto,astroloop03
+
+
+astroloop04:
+consoleword,"Rocks 4"
+	getbylabel,astr,"unnamed_B_astrma6"
+
+	isaround,astr
+	ifeq,false,astroloop05
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrmb4",0,aststor
+	Stop,astr1,0
+	Jumpto,astroloop04
+
+astroloop05:
+consoleword,"Rocks 5"
+	getbylabel,astr,"unnamed_B_astrmc5"
+
+	isaround,astr
+	ifeq,false,astroloop06
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrma5",0,aststor
+	Stop,astr1,0
+	Jumpto,astroloop05
+
+astroloop06:
+consoleword,"Rocks 6"
+	getbylabel,astr,"unnamed_B_astrmb4"
+
+	isaround,astr
+	ifeq,false,astroloop07
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrmb5",0,aststor
+	Stop,astr1,0
+	Jumpto,astroloop06
+
+astroloop07:
+consoleword,"Rocks 7"
+	getbylabel,astr,"unnamed_B_astrmc6"
+
+	isaround,astr
+	ifeq,false,astroloop08
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrmb6",0,aststor
+	Stop,astr1,0
+	Jumpto,astroloop07
+
+astroloop08:
+
+consoleword,"Rocks Done"

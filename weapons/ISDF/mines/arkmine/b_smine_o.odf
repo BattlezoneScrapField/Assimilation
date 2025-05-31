@@ -1,0 +1,12 @@
+[WeaponClass]
+baseName = "gmitsmin"
+classLabel = "dispenser"
+wpnName = "Ark Mine"
+fireSound = ""
+wpnReticle = "gmitsmin"
+wpnPriority = 4
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 6.0
+objectClass = "b_spmine"

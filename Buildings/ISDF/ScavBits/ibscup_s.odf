@@ -1,0 +1,26 @@
+[GameObjectClass]
+mrmFactor = 0
+geometryName = "ibscup_s.xsi"
+classLabel = "extractor"
+scrapCost = 40
+scrapValue = 20
+maxHealth = 9000
+maxAmmo = 0
+unitName = "Extractor"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+explosionName = "xnormxpl"
+isAssault = 1
+canInteract=1 // for missile lock
+
+armorClass = H
+
+[BuildingClass]
+
+[ExtractorClass]
+initDelay = 5.0
+scrapDelay = 0.3
+scrapHold = 20
+detectRange = 100

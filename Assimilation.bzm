@@ -1,0 +1,6 @@
+BZ2MM5
+DName("Assimilation Mod");
+Pak("Assimilation.pak");
+DescriptionF("Assimilation.des");
+Replace("pilots","AssimPilot","Assimpilots.bak");
+Replace("saved","Assimsaved","Assimsaved.bak");

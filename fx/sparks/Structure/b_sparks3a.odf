@@ -1,0 +1,15 @@
+[WeaponClass]
+classLabel = "cannon"
+ordName = "b_sparks2b"
+wpnName = "sparks"
+fireSound = "bltm01.wav"
+wpnReticle = "gbolt" 
+wpnCategory = "CANN"
+flashName = "b_sparks2a.flash"
+aiRange = 500
+
+[CannonClass]
+shotDelay = 2.5
+salvoCount = 8
+salvoDelay = 0.7
+shotVariance = 1.7

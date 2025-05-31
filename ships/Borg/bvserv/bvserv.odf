@@ -1,0 +1,78 @@
+[GameObjectClass]
+baseName = "bvserv"
+geometryName = "bvserv00.xsi"
+cockpitName = "ivserv_cockpit.xsi"
+geometryScale = 2.0
+classLabel = "service"
+animCount = 0
+scrapValue = 40
+scrapCost = 50
+buildTime = 10.0
+maxHealth = 2500
+maxAmmo = 1200
+unitName = "Service Bot"
+aiName = "ServiceProcess"
+aiName2 = "ServiceProcess"
+heatSignature = 0.1
+imageSignature = 1.0
+radarSignature = 0.0
+isAssault = 0
+explosionName = "b_car_ex"
+
+armorClass = L
+
+requireCount = 1
+requireName1 = "bbsbay"
+requireText1 = "Service Bay Required"
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotwhite"
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 5.0f
+velocJam = 5.0f
+
+braccelFactor = 0.09
+velFactor = 0.3
+steerFactor = 1.4
+omegaFactor = 0.2
+strafeFactor = 0.1
+
+TeamTransferrable = true
+
+selectAttackMsg = "bvyes01.wav"
+selectGoMsg = "bvfol01.wav"
+selectFollowMsg = "bvfol01.wav"
+selectOtherMsg = "bvyes01.wav"
+
+goMsg = "bvfol01.wav"
+goObjectMsg = "bvyes01.wav"
+attackMsg = "bvser01.wav"
+followMeMsg = "bvyes01.wav"
+followMsg = "bvfol01.wav"
+repairMsg = "bvser02.wav"
+reloadMsg = "bvser02.wav"
+rescueMsg = "bvno01.wav"
+recycleMsg = "bvrecy01.wav"
+holdMsg = "bvhold01.wav"
+user1Msg = "bvyes01.wav"
+killedMsg = ""
+diedMsg = ""
+
+[TrackedVehicleClass]
+omegaSpin = 2.0
+velocForward = 20.0
+velocReverse = 15.0
+accelThrust = 10.0
+
+engineSound	= "iserv01.wav"
+treadSound = "iserv02.wav"
+
+[ServiceTruck]
+supplyRange = 20.0
+supplyRadius = 15.0
+supplyRate = 40.0
+supplySound = "mnu_empt.wav"
+supplyEffect = "ivserv.supply"
+supplyHard = "hp_special_1"

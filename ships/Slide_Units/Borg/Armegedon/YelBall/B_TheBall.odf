@@ -1,0 +1,58 @@
+[OrdnanceClass]
+classLabel = "BULLET"
+shotSound = "igtow04.wav"
+shotGeometry = NULL
+shotRadius = 2.0
+xplGround = "bballgnd"
+xplVehicle = "bballcar"
+xplBuilding = "bballcar"
+
+renderName = "B_TheBall.render"
+
+ammoCost = 38
+lifeSpan = 3.0 // 300m
+shotSpeed = 150.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 80 // light
+damageValue(H) = 16 // heavy
+
+damageValue(S) = 80 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 16 // absorbption
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "B_TheBall.flare1"
+renderName2 = "B_TheBall.TrailR"
+
+[Flare1]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "128 128 128 255"
+finishColor = "252 3 202 0"
+startRadius = 0.4
+finishRadius = 0.02
+rotationRate = 10.0
+animateTime = 0.02
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 0.02
+
+[TrailR]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "128 128 128 255"
+finishColor = "0 3 0 0"
+startRadius = 0.2
+finishRadius = 0.001
+rotationRate = 0.6
+animateTime = 0.6
+emitDelay = 0.08
+emitVelocity = "0.1 0.1 0.0"
+emitVariance = "15.0 15.0 0.0"
+emitLife = 0.6

@@ -1,0 +1,74 @@
+[GameObjectClass]
+geometryName = "B_SpaceQube.xsi"
+glowTexture = "bocube.bmp"
+geometryScale = 35.0
+classLabel = "wingman"
+scrapValue = 0
+scrapCost = 0
+customCost = 0
+buildTime = 0.0
+customTime = 0.0
+maxHealth = 199000
+addHealth = 5.5
+maxAmmo = 6000
+addAmmo = 5.5
+unitName = "Borg Cube"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+heatSignature = 0.5
+imageSignature = 2.5
+radarSignature = 0.1
+isAssault = 1
+armorClass = H
+needPilot = 1
+explosionName = "xplshipssp"
+
+//////////////////////////////
+
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "B_plasin"
+weaponAssault1 = 0
+weaponHard3 = "HP_SHIELD"
+weaponName3 = "gshield"
+
+//////////////////////////////
+
+[CraftClass]
+rangeScan = 500.0f
+periodScan = 2.0f
+velocJam = 5.0f
+engageRange = 350
+
+braccelFactor = 1.2
+velFactor = 1.4
+steerFactor = 2.0
+omegaFactor = 0.5
+strafeFactor = 1.5
+
+avoidSpeed = 28
+topSpeed = 28
+
+[HoverCraftClass]
+velocForward = 25.0
+velocReverse = 20.0
+velocStrafe = 20.0
+accelThrust = 25.0
+accelDragStop = 5.0
+accelJump = 18.0
+aiAccelDrag = 10
+
+setAltitude = 40.0
+
+alphaTrack = 21.0
+alphaDamp = 8.0
+
+pitchPitch = 0.90
+pitchThrust = 0.05
+
+rollStrafe = 0.1
+omegaSpin = 4.5
+omegaTurn = 4.5
+alphaSteer = 5.5
+rollSteer = 0.1
+
+soundThrust = "bgimp.wav"

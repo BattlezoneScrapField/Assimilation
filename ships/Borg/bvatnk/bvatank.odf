@@ -1,0 +1,112 @@
+[GameObjectClass]
+baseName = "ivatank"
+geometryName = "bvatank00.xsi"
+classLabel = "assaulttank"
+scrapValue = 40
+scrapCost = 70
+customCost = 85
+buildTime = 15.0
+customTime = 20.0
+maxHealth = 5000
+maxAmmo = 4900
+addAmmo = 10
+unitName = "Termination Unit"
+aiName = "AssaultTankProcess"
+aiName2 = "AssaultTankProcess"
+heatSignature = 0.5
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1
+canSnipe = 0
+explosionName = "b_car_ex"
+
+armorClass = H
+	
+requireCount = 4
+requireName1 = "bbfact"
+requireText1 = "Factory Required"
+requireName2 = "bbcbun"
+requireText2 = "Relay Bunk Required"
+requireName3 = "bbsbay"
+requireText3 = "Service Bay Required"
+requireName4 = "bbsbay"
+requireText4 = "Traning Required"
+
+/////// weapons ///////////////////
+
+weaponMask = 00001
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "Barray_0_a"
+weaponAssault1 = 1
+
+////////////////////////////////////
+
+effectHard1 = "hp_spark_1"
+effectName1 = "b_trails.effecta3set"
+effectHard2 = "hp_spark_2"
+effectName2 = "b_trails.effecta3set"
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotred"
+
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 4.0f
+velocJam = 0.0f
+engageRange = 175
+
+braccelFactor = 0.01
+velFactor = 0.4
+steerFactor = 1.2
+omegaFactor = 0.2
+strafeFactor = 0.1
+
+selectWaitMsg = "bvhold00.wav"
+selectAttackMsg = "bvtermin00.wav"
+selectFollowMsg = "bvfollow00.wav"
+selectGoMsg = "bvnav00.wav"
+selectOtherMsg = "bvready00.wav"
+
+goMsg = "bvtagrtL00.wav"
+attackMsg = "bvtermin00.wav"
+followMeMsg = "bvfollow00.wav"
+followMsg = "bvfollow00.wav"
+repairMsg = ""
+reloadMsg = ""
+rescueMsg = ""
+recycleMsg = "bvrecy00.wav"
+otherMsg = "bvready00.wav" 
+holdMsg = "bvhold00.wav"
+
+user1Msg = ""  
+killedMsg = "bvready00.wav"
+diedMsg = ""
+
+attackTask = "AssaultTankAttack"
+subAttackTask = "SupportSubAttack"
+subAttackClass = "AN"
+// A:- include air units as attack targets
+// N:- doesn't need to deploy to sub attack
+// S:- doesn't move towards unit in sub attack
+
+[TrackedVehicleClass]
+omegaSpin = 4.0
+velocForward = 15.0
+velocReverse = 5.0
+accelThrust = 10.0
+
+engineSound	= "Bengin.wav"
+treadSound = "Bengin.wav"
+
+
+[AssaultTankClass]
+yawRate = 4.0
+pitchMin = -1.3
+pitchMax = 1.2
+
+recoilName1 = "recoil_1"
+laserName1 = "recoil_1"

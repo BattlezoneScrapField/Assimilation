@@ -1,0 +1,52 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "Space_fazer"
+ordName = "Space_fa_a"
+wpnName = "LX54A Lazer"
+fireSound = "B_RAIL.WAV"
+wpnReticle = "grifle"
+wpnCategory = "GUN"
+isAssault = 1
+flashName = "Space_fa_a.flash"
+aiRange = 200
+
+[CannonClass]
+shotDelay = 0.3
+shotAlternate = 0
+ 
+[flash]
+renderBase = "draw_twirl_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "48 255 0 255"
+finishColor = "252 255 0 0"
+startRadius = 0.3
+finishRadius = 0.1
+animateTime = 2.0
+emitDelay = 0.002
+emitVariance = "0.5 0.5 0.5"
+emitLife = 1.5
+
+//--------------------------------------------------------------------
+
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+xplGround = NULL
+xplVehicle = "xblastcar"
+xplBuilding = "xblastbld"
+
+renderName = "Space_fazer.render"
+
+ammoCost = 3.0
+lifeSpan = 200e-6 // 200m
+shotSpeed = 1e6
+
+damageValue(N) = 25 // none // 400
+damageValue(L) = 19 // light // 300
+damageValue(H) = 10 // heavy // 150
+
+damageValue(S) = 24 // standard // 250
+damageValue(D) = 10 // deflection // 400
+damageValue(A) = 19 // absorbtion // 150

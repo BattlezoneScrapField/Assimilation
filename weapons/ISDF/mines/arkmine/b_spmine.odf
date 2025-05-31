@@ -1,0 +1,29 @@
+[GameObjectClass]
+geometryName = "B_dummy1.xsi"
+geometryScale = .8
+classLabel = "weaponmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 100
+maxAmmo = 200
+unitName = "Ark Mine"
+isAssault = 0
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = 1
+armorClass = N
+
+weaponHard1 = "hp_weapon_1"
+weaponName1 = "garc_c"
+
+[MineClass]
+lifeSpan = 10
+
+
+[WeaponMineClass]
+heightScale = 5.0 // 2.0
+searchRadius = 250.0
+setAltitude = 40.0
+
+

@@ -1,0 +1,58 @@
+[GameObjectClass]
+geometryName = "bgcann_1.xsi"
+geometryScale = 1.0
+classLabel = "turret"
+collisionRadius = 1.0
+scrapCost = 0
+scrapValue = 0
+maxHealth = 5999
+maxAmmo = 10000
+unitName = "Beem Cannon"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+explosionName = "xnormxpl"
+heatSignature = 3.0
+imageSignature = 2.0
+radarSignature = 2.0
+isAssault = 1
+
+armorClass = H
+
+requireCount = 0
+
+///// WEAPON ////////////////////
+
+weaponMask = 00001
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "B_beemM1"
+
+/////////////////////////////////
+
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotwhite"
+lightHard2 = "hp_light_2"
+lightName2 = "spotwhite"
+
+[BuildingClass]
+soundAmbient = "stationn_gun.wav"
+
+[CraftClass]
+rangeScan = 900.0
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 0.5
+engageRange = 900.0
+
+[TurretCraftClass]
+omegaTurret = 2.0
+detectRange = 910
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 300
+dontShiftLOD = 0

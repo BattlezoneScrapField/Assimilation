@@ -1,0 +1,432 @@
+
+[objects]
+
+enemyplayer
+user
+pilot
+Mother
+nav3
+nav2
+enemycruiser
+support
+Null
+point20
+point19
+point18
+point17
+point16
+point15
+point14
+point13
+point12
+point11
+point10
+point9
+point8
+point7
+point6
+point5
+point4
+point3
+point2
+point1
+nav1
+spawn
+theplayer
+team4
+team3
+team2
+team1
+team0
+wing1
+
+
+[positions]
+
+camoffset,0,50,0
+point20pos,0,0,0
+point19pos,0,0,0
+point18pos,0,0,0
+point17pos,0,0,0
+point16pos,0,0,0
+point15pos,0,0,0
+point14pos,0,0,0
+point13pos,0,0,0
+point12pos,0,0,0
+point11pos,0,0,0
+point10pos,0,0,0
+point9pos,0,0,0
+point8pos,0,0,0
+point7pos,0,0,0
+point6pos,0,0,0
+point5pos,0,0,0
+point4pos,0,0,0
+point3pos,0,0,0
+point2pos,0,0,0
+point1pos,0,0,0
+
+
+[variables]
+
+Count1,0
+
+
+[text]
+followyour,
+"Follow your team leader..."
+
+loading,
+"Loading Objects..."
+
+supplost,
+"You LOST Your Support ship.."
+
+nottheship,
+"Attack the Space Fighters\nbut not that cruiser,\nDo not attack the cruiser.."
+
+Destroy,
+"Destroy all Fighters located\nat the navs.."
+
+Attackfighters,
+"Attack the Fighters but leave\nthe main ship alone\nThe ISDF Mothership is on it's\nway.."
+
+[routine,Main,1,true]
+Ally,1,2
+createp,enemycruiser,"ISDF_frei",0,"enemyfreight"
+createp,nav3,"pspwn_1",1,"sqaud5"
+clear
+display,loading,blue
+startsound,"locked3.wav"
+
+make8ships0:
+	createp,wing1,"ivspaceta",5,"sqaud1"
+	add,Count1,1,Count1
+	iflt,8,make8ships0
+	set,Count1,0
+
+make8ships1:
+	createp,wing1,"ivspaceta",5,"sqaud2"
+	add,Count1,1,Count1
+	iflt,8,make8ships1
+	set,Count1,0
+
+make8ships2:
+	createp,wing1,"ivspaceta",5,"sqaud3"
+	add,Count1,1,Count1
+	iflt,8,make8ships2
+	set,Count1,0
+
+createp,team0,"ivspaceta",2,"team1"
+setname,team0,"Bravo Leader"
+createp,team1,"ivspaceta",2,"team1"
+goto,team1,"sqaud2",1
+wait,3
+createp,team2,"ivspaceta",1,"team1"
+createp,team3,"ivspaceta",1,"team1"
+createp,team4,"ivspaceta",1,"team1"
+
+createp,support,"ivsupport",1,"team1"
+follow,support,theplayer,0
+
+Getplayer,theplayer
+FOLLOW,team2,theplayer,0
+FOLLOW,team3,theplayer,0
+FOLLOW,team4,theplayer,0
+setgroup,team2,1
+setgroup,team3,1
+setgroup,team4,1
+
+startsound,"b12_sound_9.wav"
+campath,"cam1",5000,4000,theplayer
+
+startsound,"b12_sound_1.wav"
+
+wait,5
+goto,team0,"sqaud1",1
+BeaconOn,team0
+
+clear
+display,followyour,white
+startsound,"locked3.wav"
+
+createp,spawn,"pspwn_1",0,"sqaud1"
+getplayer,theplayer
+
+loopa0:
+wait,1
+distobject,spawn,team0
+ifgt,750,loopa0
+
+createp,nav1,"ibnav",1,"sqaud1"
+setname,nav1,"Enemy 1"
+BeaconOn,nav1
+
+startsound,"b12_sound_2.wav"
+wait,5
+startsound,"b12_sound_4.wav"
+wait,15
+startsound,"b12_sound_8.wav"
+
+loop1:
+wait,1
+getplayer,theplayer
+distobject,spawn,theplayer
+ifgt,400,loop1
+
+clear
+display,followyour,green
+display,nottheship,white
+startsound,"locked3.wav"
+
+wait,50
+set,Count1,0
+make3ships01:
+	createp,wing1,"ivspaceta",1,"team1"
+	setgroup,wing1,6
+	add,Count1,1,Count1
+	iflt,3,make3ships01
+	set,Count1,0
+
+make3ships02:
+	createp,wing1,"ivspaceta",1,"team1"
+	setgroup,wing1,4
+	add,Count1,1,Count1
+	iflt,3,make3ships02
+	set,Count1,0
+
+make3ships03:
+	createp,wing1,"ivspaceta",1,"team1"
+	setgroup,wing1,5
+	add,Count1,1,Count1
+	iflt,3,make3ships03
+	set,Count1,0
+clear
+display,Destroy,white
+startsound,"locked3.wav"
+
+createp,nav1,"ibnav",1,"sqaud2"
+setname,nav1,"Enemy 2"
+BeaconOn,nav1
+
+createp,nav2,"ibnav",1,"sqaud3"
+setname,nav2,"Enemy 3"
+BeaconOn,nav2
+
+createp,nav3,"pspwn_1",1,"sqaud5"
+
+startsound,"b12_sound_3.wav"
+
+loop2:
+wait,1
+getplayer,theplayer
+distobject,nav2,theplayer
+ifgt,300,loop2
+
+BeaconOff,nav2
+BeaconOff,nav1
+
+createp,nav1,"ibnav",1,"sqaud4"
+setname,nav1,"Enemy Point 1"
+BeaconOn,nav1
+
+createp,nav2,"ibnav",1,"sqaud5"
+setname,nav2,"Enemy Point 2"
+BeaconOn,nav2
+
+clear
+display,Destroy,green
+display,Attackfighters,white
+startsound,"locked3.wav"
+
+getplayer,theplayer
+make3ships4:
+	createp,wing1,"ivspaceta",5,"sqaud4"
+	attack,wing1,theplayer,1
+	add,Count1,1,Count1
+	iflt,3,make3ships4
+	set,Count1,0
+
+make3ships5:
+	createp,wing1,"ivspaceta",5,"sqaud5"
+	attack,wing1,theplayer,1
+	add,Count1,1,Count1
+	iflt,3,make3ships5
+	set,Count1,0
+
+createp,Mother,"ISDF_MothrX",2,"isdfmother"
+goto,Mother,"sqaud5",1
+wait,10
+startsound,"b12_sound_7.wav"
+
+loop3:
+wait,1
+goto,Mother,"sqaud5",1
+distobject,nav3,Mother
+ifgt,400,loop3
+stop,Mother,0
+
+lookat,Mother,enemycruiser,1
+lookat,enemycruiser,Mother,1
+
+clear
+display,Destroy,green
+display,Attackfighters,green
+startsound,"locked3.wav"
+runspeed,clip2,1,true
+startsound,"b12_sound_5.wav"
+campath,"cam2",6000,5000,Mother
+runspeed,clip2,0,false
+
+startsound,"b12_sound_6.wav"
+
+Succeed,7,"b12_text2.obj"
+
+[routine,clip2,0,false]
+wait,28
+setteam,enemycruiser,5
+setpteam,enemycruiser,1
+attack,enemycruiser,Mother,1
+setpteam,enemycruiser,1
+wait,10
+attack,Mother,enemycruiser,1
+
+
+[routine,Astroids,1,true]
+getbylabel,point1,"as1"
+getbylabel,point2,"as2"
+getbylabel,point3,"as3"
+getbylabel,point4,"as4"
+getbylabel,point5,"as5"
+getbylabel,point6,"as6"
+getbylabel,point7,"as7"
+getbylabel,point8,"as8"
+getbylabel,point9,"as9"
+getbylabel,point10,"as10"
+getbylabel,point11,"as11"
+getbylabel,point12,"as12"
+getbylabel,point13,"as13"
+getbylabel,point14,"as14"
+getbylabel,point15,"as15"
+getbylabel,point16,"as16"
+getbylabel,point17,"as17"
+getbylabel,point18,"as18"
+getbylabel,point19,"as19"
+getbylabel,point20,"as20"
+
+getpos,point1,point1pos
+getpos,point2,point2pos
+getpos,point3,point3pos
+getpos,point4,point4pos
+getpos,point5,point5pos
+getpos,point6,point6pos
+getpos,point7,point7pos
+getpos,point8,point8pos
+getpos,point9,point9pos
+getpos,point10,point10pos
+getpos,point11,point11pos
+getpos,point12,point12pos
+getpos,point13,point13pos
+getpos,point14,point14pos
+getpos,point15,point15pos
+getpos,point16,point16pos
+getpos,point17,point17pos
+getpos,point18,point18pos
+getpos,point19,point19pos
+getpos,point20,point20pos
+
+Loop:
+
+create,Null,"met1",0,point1pos
+wait,1
+create,Null,"met1",0,point2pos
+wait,1
+create,Null,"met1",0,point3pos
+wait,1
+create,Null,"met1",0,point4pos
+wait,1
+create,Null,"met2",0,point20pos
+wait,1
+create,Null,"met1",0,point5pos
+wait,1
+create,Null,"met2",0,point19pos
+wait,1
+create,Null,"met1",0,point6pos
+wait,1
+create,Null,"met1",0,point7pos
+wait,1
+create,Null,"met1",0,point8pos
+wait,1
+create,Null,"met1",0,point9pos
+wait,1
+create,Null,"met1",0,point18pos
+wait,1
+create,Null,"met1",0,point17pos
+wait,1
+create,Null,"met1",0,point10pos
+wait,1
+create,Null,"met1",0,point11pos
+wait,1
+create,Null,"met1",0,point16pos
+wait,1
+create,Null,"met1",0,point12pos
+wait,1
+create,Null,"met1",0,point15pos
+wait,1
+create,Null,"met1",0,point13pos
+wait,1
+create,Null,"met1",0,point14pos
+Jumpto,Loop
+
+[routine,support,1,true]
+wait,56
+loop:
+isaround,support
+ifeq,True,pass0a
+display,supplost,red
+startsound,"locked3.wav"
+runspeed,support,0,false
+jumpto,enda
+
+pass0a:
+wait,1
+getplayer,theplayer
+distobject,support,theplayer
+ifgt,70,passa
+AddAmmo,theplayer,200
+AddHealth,theplayer,200
+
+passa:
+distobject,support,team2
+ifgt,70,passb
+AddAmmo,team2,800
+AddHealth,team2,800
+
+passb:
+distobject,support,team3
+ifgt,70,passc
+AddAmmo,team2,250
+AddHealth,team2,250
+
+passc:
+distobject,support,team4
+ifgt,70,loop
+AddAmmo,team2,250
+AddHealth,team2,250
+
+jumpto,loop
+
+enda:
+
+[routine,remove_Pilot,1,true]
+loop:
+getbylabel,pilot,"unnamed_ispilo"
+remove,pilot
+wait,1
+jumpto,loop
+
+[routine,killpilota,1,true]
+loop2:
+wait,1
+getbylabel,user,"unnamed_isuser"
+remove,user
+jumpto,loop2

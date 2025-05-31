@@ -1,0 +1,38 @@
+[GameObjectClass]
+geometryName = "B_gate.xsi"
+geometryScale = 7.0
+classLabel = "i76building"
+scrapCost = 8
+scrapValue = 3
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Borg Trans-Warp Hud Gate"
+heatSignature = 5.0
+imageSignature = 5.0
+radarSignature = 5.0
+collisionRadius = 1.0
+ownsTerrain = 1
+isAssault = 1
+armorClass = H
+explosionName = "xnormxpl"
+
+lightHard1 = "hp_light_1"
+lightName1 = "B_light"
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"
+lightHard3 = "hp_light_3"
+lightName3 = "spotblue2"
+lightHard4 = "hp_light_4"
+lightName4 = "spotblue2"
+
+[BuildingClass]
+bldEdge = "wwww"
+tunnelCount = 1
+
+tunnel01X0 = 0
+tunnel01Z0 = 1
+tunnel01DX = 8
+tunnel01DZ = 9
+tunnel01Edge = "twtw"
+
+soundAmbient = "amb_fwd.wav"

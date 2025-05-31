@@ -1,0 +1,28 @@
+[Start]
+scrapCount = 20
+consClass = "bvcons"
+scavClass = "bvscav"
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 30
+
+[Plan1]
+planType = "BuildMinimums"
+planPriority = 20
+buildType1 = "B_arme"
+buildCount1 = 2
+buildType2 = "B_armebe"
+buildCount2 = 2
+buildIfNoIdle = 1
+
+[Plan2]
+planType = "Attacker"
+planPriority = 10
+targetType = "ibrecy_b"
+attackType1 = "B_armebe"
+attackType2 = "B_armebe"
+attackType3 = "B_arme"
+attackType4 = "B_arme"
+doNextOnFail = 1
+

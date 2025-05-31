@@ -1,0 +1,28 @@
+[GameObjectClass]
+geometryName = "B_node.xsi"
+classLabel = "powerplant"
+animCount = 0
+scrapCost = 0
+scrapValue = 55
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Planertery Node"
+heatSignature = 0.1
+imageSignature = 0.0
+radarSignature = 0.2
+explosionName = "xnormxpl"
+isAssault = 1
+
+armorClass = H
+requireCount = 0
+provideCount = 0
+
+[BuildingClass]
+soundAmbient = "stationn_gun.wav"
+
+[PoweredBuildingClass]
+detectRange = 800
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 190

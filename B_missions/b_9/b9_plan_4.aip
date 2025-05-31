@@ -1,0 +1,50 @@
+[Start]
+scrapCount = 20
+consClass = "bvcons"
+scavClass = "bvscav"
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 30
+
+[Plan1]
+planType = "BuildMinimums"
+planPriority = 50
+buildType1 = "b_scout"
+buildCount1 = 8
+buildType2 = "b_turret"
+buildCount2 = 3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan2]
+planType = "Attacker"
+planPriority = 40
+targetType = "ibrefin"
+attackType1 = "b_scout"
+attackType2 = "b_scout"
+doNextOnFail = 1
+
+[Plan3]
+planType = "Attacker"
+planPriority = 30
+targetType = "ibpgen"
+attackType1 = "b_scout"
+attackType2 = "b_scout"
+doNextOnFail = 1
+
+[Plan4]
+planType = "Attacker"
+planPriority = 20
+targetType = "ibrecy_b"
+attackType1 = "b_scout"
+attackType2 = "b_scout"
+doNextOnFail = 1
+
+[Plan5]
+planType = "Attacker"
+planPriority = 10
+targetType = "ibgtow"
+attackType1 = "b_turret"
+doNextOnFail = 1
+

@@ -1,0 +1,431 @@
+
+[objects]
+
+Object1
+Object2
+Object3
+Object4
+Object5
+Object6
+Object7
+Object8
+Object9 <2>
+Object11
+Object12
+Object13 <2>
+Object15
+Object16
+Object17
+Object18
+Object19
+Object20
+Object21
+Object22
+Object23
+Object24
+Object25
+
+[positions]
+
+Position1, 243,665,442
+
+[variables]
+
+Variable1, 0
+Variable2, 0
+Variable3, 0
+Variable4, 0
+Variable5, 0
+Variable6, 0
+Variable7, 0
+
+[text]
+
+_Text1,
+"Get into a ship on the space\nstation deck.."
+
+_Text2,
+"Follow Major Cameron to the site\nof the disturbance.."
+
+_Text3,
+"Wait for further orders..."
+
+_Text4,
+"Investigate the unknown ship of\npossible Borg origin.."
+
+_Text5,
+"Get back to the space station..."
+
+_Text6,
+"Defend the cruiser from delta\nwings attack, you will have to locate\nthem and attack, if you fail you can\nrepeat this mission again without\nresetting"
+
+//--------------------------------------------------------------------
+[routine,_Routine1,1,true]
+	Ally,1,2
+	Ally,3,2
+	TeamColor,3,0,0,255
+	Wait,2
+	Createp,Object19,"ivspaceta",2,"units"
+	SetSkill,Object19,3
+	SetName,Object19,"Major Cameron"
+	BeaconOn,Object19
+	StartSound,"b15_sound_1.wav"
+	Wait,10
+	BeaconOn,Object22
+	StartSound,"b15_sound_2.wav"
+	Wait,5
+LOC_13:
+	Createp,Object18,"ivspaceta",2,"units"
+	SetSkill,Object18,3
+	Patrol,Object18,"patrol2",1
+	SetName,Object18,"Zata Team"
+	Add,Variable7,1,Variable7
+	IfLT,3,LOC_13
+	Set,Variable7,0
+	GetPlayer,Object17
+	Createp,Object16,"ivspaceta",2,"units"
+	Patrol,Object16,"meatenemy",1
+	SetName,Object16,"Kapa Wing"
+	Createp,Object15,"ivspaceta",2,"units"
+	Patrol,Object15,"meatenemy",1
+	SetName,Object15,"Kapa Wing"
+	Createp,Object13,"ivspaceta",2,"units"
+	Patrol,Object13,"meatenemy",1
+	SetName,Object13,"Kapa Wing"
+	Clear
+	Display,_Text1,white
+LOC_32:
+	GetByLabel,Object12,"unnamed_isuser"
+	IsAround,Object12
+	IfEQ,1,LOC_32
+	Clear
+	Display,_Text1,green
+	Display,_Text2,white
+	StartSound,"locked3.wav"
+	Wait,3
+	Follow,Object19,Object22,1
+	GetPlayer,Object17
+LOC_42:
+	Createp,Object18,"ivspaceta",1,"units"
+	SetSkill,Object18,3
+	Follow,Object18,Object17,0
+	SetName,Object18,"Alfa Team"
+	Add,Variable7,1,Variable7
+	IfLT,2,LOC_42
+	Set,Variable7,0
+LOC_49:
+	GetPlayer,Object17
+	DistObject,Object17,Object22
+	IfGT,200,LOC_49
+	Clear
+	Display,_Text1,green
+	Display,_Text2,green
+	Display,_Text3,white
+	StartSound,"locked3.wav"
+	StartSound,"b15_sound_3.wav"
+	Wait,9
+	StartSound,"b15_sound_4.wav"
+	Wait,3
+	Remove,Object16
+	Remove,Object15
+	Remove,Object13
+	StartSound,"b15_sound_5.wav"
+	Wait,10
+	StartSound,"b15_sound_6.wav"
+	Wait,10
+	StartSound,"b15_sound_7.wav"
+	Createp,Object11,"bs_domin",0,"enemy"
+	SetSkill,Object11,3
+	Createp,Object16,"ivspaceta",2,"units"
+	SetSkill,Object16,3
+	GoTo,Object16,"enemy",1
+	SetName,Object16,"Ioda Wing"
+	Createp,Object15,"ivspaceta",2,"units"
+	SetSkill,Object15,3
+	Patrol,Object15,"enemy",1
+	SetName,Object15,"Ioda Wing"
+	Createp,Object13,"ivspaceta",2,"units"
+	SetSkill,Object13,3
+	Follow,Object13,Object17,1
+	SetName,Object13,"Ioda Wing"
+LOC_83:
+	GetPlayer,Object17
+	DistObject,Object17,Object13
+	IfGT,300,LOC_83
+	Stop,Object16,1
+	Stop,Object15,1
+	StartSound,"b15_soun_12.wav"
+	Clear
+	Display,_Text2,green
+	Display,_Text3,green
+	Display,_Text4,white
+	StartSound,"locked3.wav"
+	BeaconOn,Object11
+LOC_95:
+	GetPlayer,Object17
+	DistObject,Object17,Object11
+	IfGT,300,LOC_95
+	StartSound,"b15_soun_13.wav"
+	Wait,15
+	Remove,Object11
+	Createp,Object11,"bs_domin",5,"enemy"
+	SetSkill,Object11,3
+	Attack,Object11,Object17,1
+	Wait,2
+	Clear
+	Display,_Text4,red
+	StartSound,"locked3.wav"
+	StartSound,"b15_soun_14.wav"
+LOC_109:
+	IsAround,Object11
+	IfEQ,1,LOC_109
+	Clear
+	Display,_Text4,green
+	Display,_Text5,white
+	StartSound,"b15_soun_15.wav"
+	Follow,Object19,Object17,1
+	Wait,30
+LOC_117:
+	Clear
+	Display,_Text6,white
+	Createp,Object9,"isdfCru01",1,"units"
+	SetName,Object9,"Orion"
+	StartSound,"b15_sound_8.wav"
+	Wait,11
+	StartSound,"b15_soun_10.wav"
+	Wait,8
+	StartSound,"b15_sound_9.wav"
+	Createp,Object8,"ivspacebo1",3,"enemy"
+	SetSkill,Object8,3
+	Attack,Object8,Object9,1
+	Createp,Object7,"ivspacebo2",3,"enemy"
+	SetSkill,Object7,3
+	Attack,Object7,Object9,1
+	Wait,20
+LOC_133:
+	Wait,1
+	IsAround,Object9
+	IfEQ,0,LOC_142
+	IsAround,Object8
+	IfEQ,1,LOC_133
+	IsAround,Object7
+	IfEQ,1,LOC_133
+	StartSound,"b15_soun_16.wav"
+	JumpTo,LOC_171
+LOC_142:
+	StopSound,Variable6
+	Wait,6
+	StopSound,Variable5
+	StartSound,"b15_soun_11.wav"
+	Wait,8
+	Clear
+	Display,_Text6,green
+	IFaceExec,"B_mission15.cfg"
+	IFaceSetInt,"mission.ch1",0
+	IFaceSetInt,"mission.ch2",0
+	ConsoleWord,"cfg executed 1"
+	IFaceActivate,"B_opwin_1"
+	FreeCamera
+LOC_155:
+	IFaceGetInt,"mission.ch1"
+	IfEQ,0,LOC_166
+	FreeFinish
+	Remove,Object8
+	Remove,Object7
+	UnAlly,3,1
+	GetPlayer,Object17
+	TeamColor,3,0,0,255
+	AddAmmo,Object17,8000
+	AddHealth,Object17,5000
+	JumpTo,LOC_117
+LOC_166:
+	IFaceGetInt,"mission.ch2"
+	IfEQ,0,LOC_155
+	FreeFinish
+	Succeed,1,"b15_textw1.obj"
+	JumpTo,LOC_174
+LOC_171:
+	Clear
+	Display,_Text6,green
+	Succeed,5,"b15_textw2.obj"
+LOC_174:
+
+//--------------------------------------------------------------------
+[routine,_Routine2,1,true]
+LOC_175:
+	Wait,1
+	IsAround,Object9
+	IfEQ,0,LOC_175
+LOC_178:
+	Wait,1
+	GetCurHealth,Object9
+	IfGT,8000,LOC_178
+	StartSound,"b15_soun_d1.wav",Variable6
+LOC_182:
+	Wait,1
+	GetCurHealth,Object9
+	IfGT,3000,LOC_182
+	Ally,3,1
+	StopSound,Variable6
+	StartSound,"b15_soun_d2.wav",Variable5
+	Remove,Object9
+	JumpTo,LOC_175
+
+//--------------------------------------------------------------------
+[routine,_Routine3,1,true]
+LOC_191:
+	Wait,4
+LOC_192:
+	IsAround,Object25
+	IfEQ,0,LOC_196
+	GoTo,Object25,"rgo1",1
+	JumpTo,LOC_198
+LOC_196:
+	Createp,Object25,"B_astrma1",5,"rock1"
+	JumpTo,LOC_192
+LOC_198:
+	IsAround,Object24
+	IfEQ,0,LOC_202
+	GoTo,Object24,"rgo1",1
+	JumpTo,LOC_204
+LOC_202:
+	Createp,Object24,"B_astrma1",5,"rock2"
+	JumpTo,LOC_198
+LOC_204:
+	IsAround,Object23
+	IfEQ,0,LOC_208
+	GoTo,Object23,"rgo1",1
+	JumpTo,LOC_210
+LOC_208:
+	Createp,Object23,"B_astrma1",5,"rock3"
+	JumpTo,LOC_204
+LOC_210:
+	IsAround,Object22
+	IfEQ,0,LOC_214
+	GoTo,Object22,"rgo2",1
+	JumpTo,LOC_216
+LOC_214:
+	Createp,Object22,"B_astrmb2",5,"rock4"
+	JumpTo,LOC_210
+LOC_216:
+	IsAround,Object21
+	IfEQ,0,LOC_220
+	GoTo,Object21,"rgo3",1
+	JumpTo,LOC_222
+LOC_220:
+	Createp,Object21,"B_astrmb2",5,"rock 5"
+	JumpTo,LOC_216
+LOC_222:
+	IsAround,Object20
+	IfEQ,0,LOC_226
+	GoTo,Object20,"rgo4",1
+	JumpTo,LOC_228
+LOC_226:
+	Createp,Object20,"B_astrmc2",5,"rock 6"
+	JumpTo,LOC_222
+LOC_228:
+	JumpTo,LOC_191
+
+//--------------------------------------------------------------------
+[routine,_Routine4,1,true]
+	Wait,10
+	GetByLabel,Object6,"unnamed_bs_station"
+LOC_232:
+	Wait,1
+	GetByLabel,Object5,"unnamed_isuser"
+	DistObject,Object6,Object5
+	IfGT,320,LOC_237
+	JumpTo,LOC_232
+LOC_237:
+	Remove,Object5
+	JumpTo,LOC_232
+
+//--------------------------------------------------------------------
+[routine,_Routine5,1,true]
+	Wait,10
+LOC_241:
+	Createp,Object4,"B_ivrecy_1",2,"recy"
+	GoTo,Object4,"recycheck",1
+	Createp,Object3,"pspwn_1",2,"recycheck"
+LOC_244:
+	Wait,1
+	DistObject,Object3,Object4
+	IfGT,220,LOC_244
+	Remove,Object4
+	JumpTo,LOC_241
+
+//--------------------------------------------------------------------
+[routine,_Routine6,1,true]
+	ConsoleWord,"Rocks 1"
+LOC_251:
+	GetByLabel,Object2,"unnamed_B_astrmc4"
+	IsAround,Object2
+	IfEQ,0,LOC_259
+	GetPos,Object2,Position1
+	Remove,Object2
+	Create,Object1,"B_astrma4",0,Position1
+	Stop,Object1,0
+	JumpTo,LOC_251
+LOC_259:
+	ConsoleWord,"Rocks 2"
+	GetByLabel,Object2,"unnamed_B_astrma1"
+	IsAround,Object2
+	IfEQ,0,LOC_268
+	GetPos,Object2,Position1
+	Remove,Object2
+	Create,Object1,"B_astrma2",5,Position1
+	Stop,Object1,0
+	JumpTo,LOC_259
+LOC_268:
+	ConsoleWord,"Rocks 3"
+	GetByLabel,Object2,"unnamed_B_astrma5"
+	IsAround,Object2
+	IfEQ,0,LOC_277
+	GetPos,Object2,Position1
+	Remove,Object2
+	Create,Object1,"B_astrmc4",0,Position1
+	Stop,Object1,0
+	JumpTo,LOC_268
+LOC_277:
+	ConsoleWord,"Rocks 4"
+	GetByLabel,Object2,"unnamed_B_astrma6"
+	IsAround,Object2
+	IfEQ,0,LOC_286
+	GetPos,Object2,Position1
+	Remove,Object2
+	Create,Object1,"B_astrmb4",0,Position1
+	Stop,Object1,0
+	JumpTo,LOC_277
+LOC_286:
+	ConsoleWord,"Rocks 5"
+	GetByLabel,Object2,"unnamed_B_astrmc5"
+	IsAround,Object2
+	IfEQ,0,LOC_295
+	GetPos,Object2,Position1
+	Remove,Object2
+	Create,Object1,"B_astrma5",0,Position1
+	Stop,Object1,0
+	JumpTo,LOC_286
+LOC_295:
+	ConsoleWord,"Rocks 6"
+	GetByLabel,Object2,"unnamed_B_astrmb4"
+	IsAround,Object2
+	IfEQ,0,LOC_304
+	GetPos,Object2,Position1
+	Remove,Object2
+	Create,Object1,"B_astrmb5",0,Position1
+	Stop,Object1,0
+	JumpTo,LOC_295
+LOC_304:
+	ConsoleWord,"Rocks 7"
+	GetByLabel,Object2,"unnamed_B_astrmc6"
+	IsAround,Object2
+	IfEQ,0,LOC_313
+	GetPos,Object2,Position1
+	Remove,Object2
+	Create,Object1,"B_astrmb6",0,Position1
+	Stop,Object1,0
+	JumpTo,LOC_304
+LOC_313:
+	ConsoleWord,"Rocks Done"
+

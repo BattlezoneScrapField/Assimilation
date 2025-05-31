@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "b_bomba_c"
+ordName = "b_bomba_A"
+wpnName = "FFF"
+fireSound = "gsand00.wav"
+wpnReticle = "gsting_c"
+wpnCategory = "ROCK"
+aiRange = 850
+isAssault = 0
+
+[CannonClass]
+shotDelay = 30.0
+shotAlternate = 0

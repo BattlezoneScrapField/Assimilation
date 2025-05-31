@@ -1,0 +1,107 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
+shotSound = "torpC.wav"
+
+shotGeometry = NULL
+shotRadius = 1.8
+xplGround = ""
+xplVehicle = "xBtorpcar_a"
+xplBuilding = "xBtorpcar_a"
+xplExpire = "xBtorpcar_a"
+
+renderName = "Btorp_a.render"
+
+ammoCost = 120
+lifeSpan = 60
+shotSpeed = 120.0
+
+damageValue(N) = 950 // none
+damageValue(L) = 850 // light
+damageValue(H) = 650 // heavy
+
+damageValue(S) = 850 // standard
+damageValue(D) = 950 // deflection
+damageValue(A) = 650 // absorbtion
+
+[MissileClass]
+omegaTurn = 1.2
+
+[ThermalMissileClass]
+coneAngle = 1.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 6
+renderName1 = "Btorp_a.Core"
+renderName2 = "Btorp_a.Flare"
+renderName3 = "Btorp_a.Flare2"
+renderName4 = "Btorp_a.Light"
+renderName5 = "Btorp_a.TrailR"
+renderName6 = "b_trails.trailergr"
+
+[Core]
+renderBase = "draw_sprite"
+textureName = "flash.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255" 
+finishColor = "0 255 255 255" 
+startRadius = 3.5
+finishRadius = 3.5
+animateTime = 0.02
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.005
+
+[Flare]
+renderBase = "draw_twirl_trail"
+textureName = "Btorp.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 245" 
+finishColor = "0 255 255 0" 
+startRadius = 2
+finishRadius = 2
+animateTime = 0.04
+emitDelay = 0.006
+emitLife = 0.22
+rotationrate = 20
+
+[Flare2]
+renderBase = "draw_twirl_trail"
+textureName = "Btorp.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 200" 
+finishColor = "0 255 255 0" 
+startRadius = 4//3
+finishRadius = 4//3
+animateTime = 0.7
+emitDelay = 0.006
+emitLife = 0.12
+rotationrate = -20
+
+[Light]
+renderBase = "draw_light"
+startColor = "0 255 255 2000"
+finishColor = "0 255 255 2000"
+startRadius = 26.0
+finishRadius = 26.0
+animateTime = 0.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[TrailR]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255" // "255 63 55 255"
+finishColor = "0 255 255 0" // "255 63 55 255"
+startRadius = 0.4
+finishRadius = 0.001
+rotationRate = 0.6
+animateTime = 0.6
+emitDelay = 0.08
+emitVelocity = "0.1 0.1 0.0"
+emitVariance = "15.0 15.0 0.0"
+emitLife = 10.0

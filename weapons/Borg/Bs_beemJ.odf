@@ -1,0 +1,81 @@
+[WeaponClass]
+classLabel = "machinegun"
+ordName = "Bs_beemJ"
+wpnName = "Nul"
+fireSound = "beem1.wav"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 850
+flashName = "Bs_beemJ.flash"
+
+[CannonClass]
+shotDelay = 0.05
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 0.05
+renderBase = "draw_light"
+startColor = "255 255 0 1000"
+finishColor = "255 255 0 1000"
+startRadius = 25.0
+finishRadius = 25.0
+animateTime = 0.12
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+//--------------------------------------------------------------------
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL
+
+renderName = "Bs_beemJ.render"
+
+ammoCost = 5
+lifeSpan = 935e-6 // 325m
+shotSpeed = 1e6
+
+damageValue(N) = 140 // none //350
+damageValue(L) = 140 // light //250
+damageValue(H) = 140 // heavy //150
+
+damageValue(S) = 140 // standard //250
+damageValue(D) = 140 // deflection //350
+damageValue(A) = 140 // absorbtion //80
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "Bs_beemJ.core"
+renderName2 = "Bs_beemJ.fringe"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "158 95 146 100"
+finishColor = "216 190 210 100"
+startRadius = 0.01
+finishRadius = 8.1
+segmentLength = 9.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "158 95 146 100"
+finishColor = "216 190 210 100"
+startRadius = 0.3
+finishRadius = 5.5
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.02
+textureSpeed = -5.0

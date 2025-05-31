@@ -1,0 +1,47 @@
+[GameObjectClass]
+geometryName = "bb_station.xsi"
+geometryScale = 0.31
+classLabel = "i76building"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 928600
+maxAmmo = 0
+unitName = "Borg Rock Station"
+heatSignature = 5.0
+imageSignature = 5.0
+radarSignature = 5.0
+collisionRadius = 1.0
+explosionName = "Xnuke_B"
+ownsTerrain = 1
+isAssault = 1
+armorClass = H
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "b_fireb.smoke"
+
+effectHard2 = "hp_emit_2"
+effectName2 = "b_fireb.Large"
+
+effectHard3 = "hp_emit_3"
+effectName3 = "b_fireb.Large"
+
+[BuildingClass]
+bldEdge = "tttt"
+tunnelCount = 1
+
+tunnel01X0 = 0
+tunnel01Z0 = 0
+tunnel01DX = 49
+tunnel01DZ = 50
+tunnel01Edge = "tttt"
+
+soundAmbient = "amb_fwd.wav"
+
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 330
+dontShiftLOD = 1

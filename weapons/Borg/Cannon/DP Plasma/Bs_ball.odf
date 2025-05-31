@@ -1,0 +1,37 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = NULL
+ordName = "Bs_ball"
+wpnName = "DP Bolt"
+fireSound = "beem1up.wav"
+wpnCategory = "CANN"
+flashName = "B_ball.flash"
+aiRange = 850
+isAssault = 1
+
+[CannonClass]
+shotDelay = 5.0
+shotAlternate = 0
+
+//--------------------------------------------------------------------
+
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xtechit"
+xplVehicle = "xtechit"
+xplBuilding = "xtechit"
+
+renderName = "B_ball.render"
+
+ammoCost = 1
+lifeSpan = 8.0
+shotSpeed = 100.0
+
+damageValue(N) = 6000
+damageValue(L) = 5000
+damageValue(H) = 4000
+
+damageValue(S) = 4000
+damageValue(D) = 3000
+damageValue(A) = 2200

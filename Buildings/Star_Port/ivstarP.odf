@@ -1,0 +1,31 @@
+[GameObjectClass]
+geometryName = "ivstarP.xsi"
+geometryScale = 8.0
+classLabel = "I76Building"
+collisionRadius = 0.1
+scrapCost = 0
+scrapValue = 10
+maxHealth = 3000
+maxAmmo = 0
+unitName = "ISDF Star Port"
+heatSignature = 0.1
+imageSignature = 0.0
+radarSignature = 0.2
+explosionName = "xnormxpl"
+canDetect = 0
+canInteract = 1
+canSnipe = 0
+ownsTerrain = 1
+canCollide = 0
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"
+lightHard3 = "hp_light_3"
+lightName3 = "spotblue2"
+lightHard4 = "hp_light_4"
+lightName4 = "spotblue2"
+
+[BuildingClass]
+bldEdge = "wwww"

@@ -1,0 +1,46 @@
+[GameObjectClass]
+geometryName = "B_gun1.xsi"
+classLabel = "turret"
+collisionRadius = 20.0
+scrapCost = 0
+scrapValue = 0
+maxHealth = 7000
+maxAmmo = 10000 // 0 is *not* treated as infinite ammo!
+unitName = "Borg Planertery Defence"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+explosionName = "xnormxpl"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+
+armorClass = H
+
+weaponMask = 00011
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "B_plas"
+weaponAssault1 = 0
+weaponHard2 = "hp_cannon_2"
+weaponName2 = "B_plas"
+weaponAssault2 = 0
+
+turretCount = 3
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+turretName3 = "hp_eyepoint_1"
+
+[BuildingClass]
+soundAmbient = "igtow01.wav"
+
+[CraftClass]
+rangeScan = 350
+periodScan = 1.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 1.0
+engageRange = 340
+
+[TurretCraftClass]
+omegaTurret = 2.0
+detectRange = 345

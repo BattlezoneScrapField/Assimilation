@@ -1,0 +1,24 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX = -2048.0
+MinZ = -2048.0
+Width = 4096.0
+Depth = 4096.0
+Height = 100.0
+Tile = 1
+color = 0 0 0 0
+
+[NormalView]
+FogColor = "255 255 255 255"
+FogStart = 490
+FogEnd = 500
+VisibilityRange = 500
+
+[World]
+MusicTrack1 = 1
+MusicTrack2 = 3
+MusicTrack3 = 7
+
+[Texture]
+TileTexture1 = "null"

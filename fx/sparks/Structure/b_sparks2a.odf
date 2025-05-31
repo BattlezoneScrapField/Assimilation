@@ -1,0 +1,27 @@
+[WeaponClass]
+classLabel = "cannon"
+ordName = "b_sparks2b"
+wpnName = "sparks"
+fireSound = "bltm01.wav"
+wpnReticle = "gbolt" 
+wpnCategory = "CANN"
+flashName = "b_sparks2a.flash"
+aiRange = 500
+
+[CannonClass]
+shotDelay = 1.5
+salvoCount = 5
+salvoDelay = 0.3
+shotVariance = 1.7
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "50 30 150 150" 
+finishColor = "50 30 150 0"
+startRadius = 1.0
+finishRadius = 2.5
+animateTime = 0.5

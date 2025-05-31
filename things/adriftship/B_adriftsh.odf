@@ -1,0 +1,45 @@
+[GameObjectClass]
+geometryName = "B_adriftsh.xsi"
+geometryScale = 0.9
+classLabel = "powerlung"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 12100
+maxAmmo = 0
+powerCost = 0
+unitName = "Damaged Explorer Ship"
+heatSignature = 5.0
+imageSignature = 5.0
+radarSignature = 5.0
+explosionName = "Xnuke_B"
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+canCollide = 1
+
+effectHard1 = "hp_emit_1"
+effectName1 = "b_fireb.Large"
+
+effectHard2 = "hp_emit_2"
+effectName2 = "b_fireb.smoke"
+
+effectHard3 = "hp_emit_3"
+effectName3 = "b_fireb.sphere"
+
+effectHard4 = "hp_emit_4"
+effectName4 = "b_fireb.Puff"
+
+effectHard5 = "hp_emit_5"
+effectName5 = "b_fireb.Large"
+
+effectHard6 = "hp_emit_6"
+effectName6 = "b_fireb.smoke"
+
+effectHard7 = "hp_emit_7"
+effectName7 = "b_fireb.sphere"
+
+effectHard8 = "hp_emit_8"
+effectName8 = "b_fireb.Puff"
+
+effectHard9 = "hp_emit_9"
+effectName9 = "b_fireb.Large"

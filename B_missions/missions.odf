@@ -1,0 +1,647 @@
+[MissionInfo]
+countISDF = 18
+countScion = 0
+
+[ISDF 1]
+missionTitle = "A Day Out"
+missionInfo = "b1_text1.intro.obj"
+missionFile = "bmap01.bzn"
+planetName = "Dark Planet"
+planetInfo = "dark.des"
+planetGeom = "dark.xsi"
+
+techCount = 1
+techName1 = "ISDF Scout"
+techInfo1 = "ivscout.inf"
+techGeom1 = "ivscout00.xsi"
+
+mailCount = 2
+mailName1 = "Commander Camoron"
+mailInfo1 = "mes01.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "ISDF Base Commander"
+mailInfo2 = "mes02.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+
+briefInfo = "b1_text2.intro.obj"
+
+launchMessage = "screen.wav"
+launchBackground = "pic1.tga"
+
+[ISDF 2]
+missionTitle = "Power Up StarPort, Poddy meeee...."
+missionInfo = "b2_text1.intro.obj"
+missionFile = "bmap02.bzn"
+planetName = "Dark Planet"
+planetInfo = "dark.des"
+planetGeom = "dark.xsi"
+
+techCount = 2
+techName1 = "ISDF Constructor"
+techInfo1 = "ivcons.inf"
+techGeom1 = "ivcons_skel.xsi"
+techName2 = "Borg Scout"
+techInfo2 = "B_scout.inf"
+techGeom2 = "B_scout.xsi"
+
+mailCount = 3
+mailName1 = "Commander Camoron"
+mailInfo1 = "mes03.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "ISDF Base Commander"
+mailInfo2 = "mes04.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+mailName3 = "Commander Camoron"
+mailInfo3 = "mes05.mgs"
+mailGeom3 = ""
+mailWave3 = ""
+
+briefInfo = "b2_text2.intro.obj"
+
+launchMessage = ""
+launchBackground = "pic1.tga"
+
+[ISDF 3]
+missionTitle = "Testing your skills"
+missionInfo = "b3_text1.intro.obj"
+missionFile = "bmap03.bzn"
+planetName = "Space Sector 2342"
+planetInfo = "space01.des"
+planetGeom = "ivsupport.xsi"
+
+techCount = 2
+techName1 = "ISDF Space Scout"
+techInfo1 = "ivspacesc.inf"
+techGeom1 = "ivspacesc.xsi"
+techName2 = "ISDF Support Ship"
+techInfo2 = "ivsupport.inf"
+techGeom2 = "ivsupport.xsi"
+
+mailCount = 3
+mailName1 = "Trainer Camoron"
+mailInfo1 = "mes06.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "Sky Eye.."
+mailInfo2 = "mes07.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+mailName3 = "Commander Camoron"
+mailInfo3 = "mes08.mgs"
+mailGeom3 = ""
+mailWave3 = ""
+
+briefInfo = "b3_text2.intro.obj"
+
+launchMessage = "screen1.wav"
+launchBackground = "pic2.tga"
+
+[ISDF 4]
+missionTitle = "Ambush At Rock Ford"
+missionInfo = "b4_text1.intro.obj"
+missionFile = "bmap04.bzn"
+planetName = "Space Sector 8560"
+planetInfo = "space02.des"
+planetGeom = "ivsupport.xsi"
+
+techCount = 2
+techName1 = "ISDF Cruiser"
+techInfo1 = "isdfCruiser.inf"
+techGeom1 = "isdfCruiser.odf"
+techName2 = "Unknown Scout"
+techInfo2 = "BS_Scout.inf"
+techGeom2 = "BS_Scout.xsi"
+
+mailCount = 3
+mailName1 = "Commander Camoron"
+mailInfo1 = "mes09.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "General Luxham"
+mailInfo2 = "mes10.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+mailName3 = "Commander Camoron"
+mailInfo3 = "mes11.mgs"
+mailGeom3 = ""
+mailWave3 = ""
+
+briefInfo = "b4_text2.intro.obj"
+
+launchMessage = "screen.wav"
+launchBackground = "pic3.tga"
+
+[ISDF 5]
+missionTitle = "Our Last Chance"
+missionInfo = "b5_text1.intro.obj"
+missionFile = "bmap05.bzn"
+planetName = "Space Sector 0009"
+planetInfo = "space03.des"
+planetGeom = "B_Cube.xsi"
+
+techCount = 3
+techName1 = "Borg Cube"
+techInfo1 = "B_SpaceQube.inf"
+techGeom1 = "B_Cube.xsi"
+techName2 = "ISDF Cruiser"
+techInfo2 = "isdfCruiser.inf"
+techGeom2 = "isdfCruiser.xsi"
+techName3 = "ISDF Space Scout"
+techInfo3 = "ivspacesc.inf"
+techGeom3 = "ivspacesc.xsi"
+
+mailCount = 2
+mailName1 = "From The BORG"
+mailInfo1 = "mes12.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "Fleet Leader"
+mailInfo2 = "mes13.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+
+briefInfo = "b5_text2.intro.obj"
+
+launchMessage = "screen2.wav"
+launchBackground = "pic4.tga"
+
+[ISDF 6]
+missionTitle = "Jump Gates...."
+missionInfo = "b6_text1.intro.obj"
+missionFile = "bmap06.bzn"
+planetName = "Space Sector 4587"
+planetInfo = "space04.des"
+planetGeom = "B_gate.xsi"
+
+techCount = 4
+techName1 = "Borg Transworp Gate"
+techInfo1 = "B_gate.inf"
+techGeom1 = "B_gate.xsi"
+techName2 = "Borg Sphere"
+techInfo2 = "B_sphere.inf"
+techGeom2 = "B_sphere.xsi"
+techName3 = "Borg Cube"
+techInfo3 = "B_Cube.inf"
+techGeom3 = "B_Cube.xsi"
+techName4 = "Borg Tug"
+techInfo4 = "b_tug.inf"
+techGeom4 = "B_tug.xsi"
+
+mailCount = 2
+mailName1 = "General Luxham"
+mailInfo1 = "mes14.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "Commander Camoron"
+mailInfo2 = "mes15.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+
+briefInfo = "b6_text2.intro.obj"
+
+launchMessage = "screen1.wav"
+launchBackground = "pic5.tga"
+
+[ISDF 7]
+missionTitle = "Back to Mire"
+missionInfo = "b7_text1.intro.obj"
+missionFile = "bmap07.bzn"
+planetName = "Mire"
+planetInfo = "mire.des"
+planetGeom = "mire.xsi"
+
+techCount = 4
+techName1 = "POD"
+techInfo1 = "R_podS.inf"
+techGeom1 = "R_pods.xsi"
+techName2 = "Borg Hut"
+techInfo2 = "b_hut.inf"
+techGeom2 = "b_hut.xsi"
+techName3 = "Borg Tower"
+techInfo3 = "b_tower.inf"
+techGeom3 = "b_tower.xsi"
+techName4 = "Borg Turret"
+techInfo4 = "B_turret.inf"
+techGeom4 = "B_turret.xsi"
+
+mailCount = 4
+mailName1 = "Major Camoron"
+mailInfo1 = "mes16.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "General Luxham"
+mailInfo2 = "mes17.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+mailName3 = "Major Camoron"
+mailInfo3 = "mes18.mgs"
+mailGeom3 = ""
+mailWave3 = ""
+mailName4 = "Scientist's Communication"
+mailInfo4 = "mes19.mgs"
+mailGeom4 = ""
+mailWave4 = ""
+
+briefInfo = "b7_text2.intro.obj"
+
+launchMessage = "screen.wav"
+launchBackground = "pic6.tga"
+
+[ISDF 8]
+missionTitle = "APC Escort"
+missionInfo = "b8_text1.intro.obj"
+missionFile = "bmap08.bzn"
+planetName = "Mire"
+planetInfo = "mire.des"
+planetGeom = "mire.xsi"
+
+techCount = 2
+techName1 = "Jak-Killer"
+techInfo1 = "mcjak01.inf"
+techGeom1 = "jak_skel.xsi"
+techName2 = "Scion Scout"
+techInfo2 = "fvscout.inf"
+techGeom2 = "fvscout_skel.xsi"
+
+mailCount = 3
+mailName1 = "Scientist Leader"
+mailInfo1 = "mes20.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "Major Camoron"
+mailInfo2 = "mes21.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+mailName3 = "Intercepted Transmission."
+mailInfo3 = "mes22.mgs"
+mailGeom3 = ""
+mailWave3 = ""
+
+briefInfo = "b8_text2.intro.obj"
+
+launchMessage = "screen1.wav"
+launchBackground = "pic6.tga"
+
+[ISDF 9]
+missionTitle = "Amongst Enemies"
+missionInfo = "b9_text1.intro.obj"
+missionFile = "bmap09.bzn"
+planetName = "Mire"
+planetInfo = "mire.des"
+planetGeom = "mire.xsi"
+
+techCount = 3
+techName1 = "ISDF Refinary"
+techInfo1 = "ibrefin.inf"
+techGeom1 = "ibrefin.xsi"
+techName2 = "Borg Zat"
+techInfo2 = "B_Zat.inf"
+techGeom2 = "ZAT.xsi"
+techName3 = "Borg Armegeddon"
+techInfo3 = "B_arme.inf"
+techGeom3 = "B_arme.xsi"
+
+mailCount = 4
+mailName1 = "Major Camoron"
+mailInfo1 = "mes23.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "General Luxham"
+mailInfo2 = "mes24.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+mailName3 = "Major Camoron"
+mailInfo3 = "mes25.mgs"
+mailGeom3 = ""
+mailWave3 = ""
+mailName4 = "General Luxham"
+mailInfo4 = "mes26.mgs"
+mailGeom4 = ""
+mailWave4 = ""
+
+briefInfo = "b9_text2.intro.obj"
+
+launchMessage = "screen2.wav"
+launchBackground = "pic6.tga"
+
+[ISDF 10]
+missionTitle = "The Run-around"
+missionInfo = "b10_text1.intro.obj"
+missionFile = "bmap10.bzn"
+planetName = "Mire"
+planetInfo = "mire.des"
+planetGeom = "mire.xsi"
+
+techCount = 2
+techName1 = "ISDF Star Port"
+techInfo1 = "ivstarP.inf"
+techGeom1 = "ivstarP.xsi"
+techName2 = "Borg Sphere"
+techInfo2 = "B_sphere.inf"
+techGeom2 = "B_sphere.xsi"
+
+
+mailCount = 2
+mailName1 = "General Luxham"
+mailInfo1 = "mes27.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "Major Camoron"
+mailInfo2 = "mes28.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+
+
+briefInfo = "b10_text2.intro.obj"
+
+launchMessage = "screen1.wav"
+launchBackground = "pic6.tga"
+
+
+[ISDF 11]
+missionTitle = "A Surprise"
+missionInfo = "b11_text1.intro.obj"
+missionFile = "bmap11.bzn"
+planetName = "Urinee Sector"
+planetInfo = "space01_1.des"
+planetGeom = "disRocks.xsi"
+
+techCount = 2
+techName1 = "Primiter Defence"
+techInfo1 = "Bs_gun1.inf"
+techGeom1 = "Bs_gun1.xsi"
+techName2 = "Borg Sphere"
+techInfo2 = "B_sphere.inf"
+techGeom2 = "B_sphere.xsi"
+
+
+mailCount = 2
+mailName1 = "General Luxham"
+mailInfo1 = "mes29.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "Major Camoron"
+mailInfo2 = "mes30.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+
+
+briefInfo = "b11_text2.intro.obj"
+
+launchMessage = "screen2.wav"
+launchBackground = "pic7.tga"
+
+[ISDF 12]
+missionTitle = "Urinee Nebular"
+missionInfo = "b12_text1.intro.obj"
+missionFile = "bmap12.bzn"
+planetName = "Urinee Nebular"
+planetInfo = "space01_2.des"
+planetGeom = "B_ast03.xsi"
+
+techCount = 4
+techName1 = "ISDF Freighter"
+techInfo1 = "ISDF_frei.inf"
+techGeom1 = "ISDF_frei.xsi"
+techName2 = "ISDF Heavy Cruiser"
+techInfo2 = "isdf_hc.inf"
+techGeom2 = "isdf_hc.xsi"
+techName3 = "ISDF Space Scout"
+techInfo3 = "ivspacesc.inf"
+techGeom3 = "ivspacesc.xsi"
+techName4 = "ISDF Space Fighter"
+techInfo4 = "ivspaceta.inf"
+techGeom4 = "ivspaceta.xsi"
+
+mailCount = 3
+mailName1 = "Cameron to Luxham"
+mailInfo1 = "mes31.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "Luxham to Cameron"
+mailInfo2 = "mes32.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+mailName3 = "Intercepted Transmission."
+mailInfo3 = "mes33.mgs"
+mailGeom3 = ""
+mailWave3 = ""
+
+briefInfo = "b12_text2.intro.obj"
+
+launchMessage = "screen.wav"
+launchBackground = "pic8.tga"
+
+[ISDF 13]
+missionTitle = "Escort and Transfer"
+missionInfo = "b13_text1.intro.obj"
+missionFile = "bmap13.bzn"
+planetName = "Urinee Nebular"
+planetInfo = "space01_2.des"
+planetGeom = "B_ast01.xsi"
+
+techCount = 4
+techName1 = "ISDF Space Scout"
+techInfo1 = "ivspacesc.inf"
+techGeom1 = "ivspacesc.xsi"
+techName2 = "ISDF Space Fighter"
+techInfo2 = "ivspaceta.inf"
+techGeom2 = "ivspaceta.xsi"
+techName3 = "Borg Cube"
+techInfo3 = "B_SpaceQube.inf"
+techGeom3 = "B_Cube.msh"
+techName4 = "Borg Attacker"
+techInfo4 = "BS_Scinf.inf"
+techGeom4 = "BS_Scout.odf"
+
+mailCount = 4
+mailName1 = "Cameron to Luxham"
+mailInfo1 = "mes34.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "Luxham to Cameron"
+mailInfo2 = "mes35.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+mailName3 = "Cameron to Luxham"
+mailInfo3 = "mes36.mgs"
+mailGeom3 = ""
+mailWave3 = ""
+mailName4 = "ISDF Personal"
+mailInfo4 = "mes37.mgs"
+mailGeom4 = ""
+mailWave4 = ""
+
+briefInfo = "b13_text2.intro.obj"
+
+launchMessage = "screen1.wav"
+launchBackground = "pic8.tga"
+
+[ISDF 14]
+missionTitle = "Out Space Base!"
+missionInfo = "b14_text1.intro.obj"
+missionFile = "bmap14_t.bzn"
+planetName = "Space Sector 9843"
+planetInfo = "space01_3.des"
+planetGeom = "disRocks.xsi"
+
+techCount = 2
+techName1 = "Recycler"
+techInfo1 = "B_ivrecy_1.inf"
+techGeom1 = "B_ivrecy.msh"
+techName2 = "Space Turret"
+techInfo2 = "ivturr_s.inf"
+techGeom2 = "showturr.xsi"
+
+mailCount = 3
+mailName1 = "Cameron to Luxham"
+mailInfo1 = "mes38.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "Luxham to Cameron"
+mailInfo2 = "mes39.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+mailName3 = "Intercepted Report"
+mailInfo3 = "mes40.mgs"
+mailGeom3 = ""
+mailWave3 = ""
+
+briefInfo = "b14_text2.intro.obj"
+
+launchMessage = "screen2.wav"
+launchBackground = "pic9.tga"
+
+[ISDF 15]
+missionTitle = "Space-Station Bravo Test"
+missionInfo = "b15_text1.intro.obj"
+missionFile = "bmap15.bzn"
+planetName = "Space Sector 9843"
+planetInfo = "space02_1.des"
+planetGeom = "disRocks.xsi"
+
+techCount = 3
+techName1 = "ISDF Space Scout"
+techInfo1 = "ivspacesc.inf"
+techGeom1 = "ivspacesc.xsi"
+techName2 = "ISDF Space Fighter"
+techInfo2 = "ivspaceta.inf"
+techGeom2 = "ivspaceta.xsi"
+techName3 = "ISDF Space Bomber"
+techInfo3 = "ivspacebo1.inf"
+techGeom3 = "ivspacebom.xsi"
+
+mailCount = 1
+mailName1 = "Intercepted Transmission"
+mailInfo1 = "mes41.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+
+briefInfo = "b15_text2.intro.obj"
+
+launchMessage = "screen.wav"
+launchBackground = "pic10.tga"
+
+[ISDF 16]
+missionTitle = "Enif Station"
+missionInfo = "b16_text1.intro.obj"
+missionFile = "bmap16.bzn"
+planetName = "Space Sector 9981"
+planetInfo = "space02_1.des"
+planetGeom = "disRocks.xsi"
+
+techCount = 4
+techName1 = "ISDF Transport"
+techInfo1 = "ivtrans.inf"
+techGeom1 = "ivsupport.xsi"
+techName2 = "ISDF Space Fighter"
+techInfo2 = "ivspaceta.inf"
+techGeom2 = "ivspaceta.xsi"
+techName3 = "ISDF Space Bomber"
+techInfo3 = "ivspacebo1.inf"
+techGeom3 = "ivspacebom.xsi"
+techName4 = "BORG DOMINATOR"
+techInfo4 = "bs_domin.inf"
+techGeom4 = "bs_domin.xsi"
+
+mailCount = 2
+mailName1 = "Maintenance Team: -"
+mailInfo1 = "mes42.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "Bot 564"
+mailInfo2 = "mes43.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+
+briefInfo = "b16_text2.intro.obj"
+
+launchMessage = "screen2.wav"
+launchBackground = "pic11.tga"
+
+[ISDF 17]
+missionTitle = "BORG Planet"
+missionInfo = "b17_text1.intro.obj"
+missionFile = "borg.bzn"
+planetName = "Borg Infested World"
+planetInfo = "borg.des"
+planetGeom = "borgp.xsi"
+
+techCount = 4
+techName1 = "Borg Mining Station"
+techInfo1 = "b_extra.inf"
+techGeom1 = "b_extra.xsi"
+techName2 = "Borg Gate"
+techInfo2 = "B_gate.inf"
+techGeom2 = "B_gate.xsi"
+techName3 = "Planetary Node"
+techInfo3 = "B_node.inf"
+techGeom3 = "B_node.xsi"
+techName4 = "Defence Lazer"
+techInfo4 = "B_laser.inf"
+techGeom4 = "B_laser.xsi"
+
+mailCount = 1
+mailName1 = "MASSIVE INTERFERENCE"
+mailInfo1 = ""
+mailGeom1 = ""
+mailWave1 = ""
+
+briefInfo = "b17_text2.intro.obj"
+
+launchMessage = "screen.wav"
+launchBackground = "pic12.tga"
+
+[ISDF 18]
+missionTitle = "Thanks For Playing"
+missionInfo = "Endbref.obj"
+missionFile = ""
+planetName = "Borg Infested World"
+planetInfo = ""
+planetGeom = "borgp.xsi"
+
+techCount = 0
+
+
+mailCount = 3
+mailName1 = "Camoron"
+mailInfo1 = "mes44.mgs"
+mailGeom1 = ""
+mailWave1 = ""
+mailName2 = "Luxham"
+mailInfo2 = "mes45.mgs"
+mailGeom2 = ""
+mailWave2 = ""
+mailName3 = "Author: - Shane"
+mailInfo3 = "mes46.mgs"
+mailGeom3 = ""
+mailWave3 = ""
+
+briefInfo = "EndMessage.obj"
+
+launchMessage = ""
+launchBackground = ""

@@ -1,0 +1,33 @@
+Well i don't have very many notes writen down so i'm not going to be able to explain it well enough for you right now.
+
+This is where the animation keys begin,there are 3 of them
+ie: Position,rotation and scale (0 2 1)
+The first object,in this case the dummyroot it never saves a animation when exported.
+
+AnimationSet {
+Animation anim-dummyroot {
+{frm-dummyroot}
+}
+(next object)
+This starts the animation key for position key "0" the next line "90;" is the number of animation frames in that key.
+
+Animation anim-idx11bda {
+{frm-idx11bda}
+
+SI_AnimationKey {
+0;
+90;
+This next line is position key frame 0 (zero) it is composed of x,y,z coordinates and the forth is the angle i think.
+
+0; 4; -0.109750, -0.622684, -0.335060, 0.698538;;,
+
+Rotation key:
+There are 3 sets of coordinates x,y and z the first key frame will start at the same coordinate of the 4th line of the Objects Transform matrix.
+
+From that you can edit key frames to change rotation and position add or remove animation keys.
+
+I have even rescaled a walker model's walk animation when 3ds max was too much of a pain to do it.
+
+You can also change unanimated object's Position and scale by editing the TFM (Transform matrix)
+
+I hope that tells you enough to get a idea how we do it.

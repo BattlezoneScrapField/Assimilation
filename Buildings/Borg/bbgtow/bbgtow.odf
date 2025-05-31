@@ -1,0 +1,83 @@
+[GameObjectClass]
+geometryName = "bbgtow.xsi"
+classLabel = "turret"
+geometryScale = 0.5
+collisionRadius = 10.0
+scrapCost = 60
+scrapValue = 30
+maxHealth = 6500
+maxAmmo = 10000 // 0 is *not* treated as infinite ammo!
+unitName = "Borg Plasma Tower"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 2.0
+isAssault = 1
+
+armorClass = H
+buildSupport = "A"
+buildRequire = "F"
+
+requireCount = 2
+requireName1 = "bbpgen"
+requireText1 = "Power Required.."
+requireName2 = "bbcbun"
+requireText2 = "Relay Required.."
+
+provideCount = 1
+provideName1 = "bbgtow"
+
+effectHard1 = "hp_sm_3"
+effectName1 = "b_trails.trailer"
+effectHard2 = "hp_sm_4"
+effectName2 = "b_trails.trailer"
+
+effectHard5 = "hp_globe"
+effectName5 = "b_trails.effecta2set"
+
+effectHard6 = "hp_spk_1"
+effectName6 = "b_trails.effecta3set"
+effectHard7 = "hp_spk_2"
+effectName7 = "b_trails.effecta3set"
+
+
+lightHard1 = "hp_spk_1"
+lightName1 = "omnired"
+lightHard2 = "hp_spk_2"
+lightName2 = "omnired"
+
+
+weaponMask = 00011
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "B_plas1"
+weaponAssault1 = 0
+weaponHard2 = "hp_cannon_2"
+weaponName2 = "B_plas1"
+weaponAssault2 = 0
+
+
+turretCount = 2
+turretName1 = "turret_x"
+turretName2 = "turret_y"
+
+[BuildingClass]
+bldEdge = "wwww"
+soundAmbient = "igtow01.wav"
+
+[CraftClass]
+rangeScan = 360
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 0.6
+engageRange = 300
+attackTask = "TurretAttack"
+
+[TurretCraftClass]
+omegaTurret = 2.0
+detectRange = 400
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 300

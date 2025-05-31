@@ -1,0 +1,83 @@
+[GameObjectClass]
+baseName = "ISDF_Cruiser"
+geometryName = "ISDFCruiser.xsi"
+unitIcon = "icon_isdfCruiser.tga"
+geometryScale = 0.3
+classLabel = "assaulttank"
+collisionRadius = 0.1
+scrapValue = 0
+scrapCost = 0
+customCost = 0
+buildTime = 0
+customTime = 0
+maxHealth = 19000
+addHealth = 50
+maxAmmo = 6000
+addAmmo = 200.0
+unitName = "ISDF Standered Cruiser"
+aiName = "AssaultTankProcess"
+aiName2 = "AssaultTankProcess"
+heatSignature = 5.0
+imageSignature = 3.0
+radarSignature = 2.0
+isAssualt = 1
+armorClass = H
+needPilot = 1
+explosionName = "Xnuke_B"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "ivpdrop2.trail"
+
+//////////////////////////////
+
+weaponMask = 00001
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "B_beemc"
+weaponAssault1 = 0
+
+//////////////////////////////
+
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+
+[CraftClass]
+rangeScan = 400.0
+periodScan = 5.0
+velocJam = 0.0
+weaponPitch = 1.5
+engageRange = 200
+
+selectWaitMsg = "bombgen07.wav"
+selectAttackMsg = "bombgen05.wav"
+selectFollowMsg = ""
+selectGoMsg = ""
+selectOtherMsg = "bombgen07.wav"
+
+goMsg = "bombgen06.wav"
+attackMsg = "bombgen01.wav"
+followMeMsg = "bombgen03.wav"
+followMsg = "bombgen03.wav"
+repairMsg = "bombgen03.wav"
+reloadMsg = "bombgen03.wav"
+rescueMsg = "bombgen03.wav"
+recycleMsg = "bombgen03.wav"
+otherMsg = ""
+
+user1Msg = ""
+killedMsg = "bombgen02.wav"
+
+[TrackedVehicleClass]
+velocForward = 15.0
+velocReverse = 25.0
+accelThrust = 50.0
+omegaSpin = 0.8
+
+engineSound = "bgimp.wav"
+treadSound = "bgimp.wav"
+
+[AssaultTankClass]
+yawRate = 2.0
+pitchMin = -1.5
+pitchMax = 1.5

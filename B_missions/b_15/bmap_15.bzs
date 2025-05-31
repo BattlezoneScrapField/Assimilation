@@ -1,0 +1,524 @@
+
+[objects]
+
+astr1
+astr
+recychn
+drecy
+user
+station
+play2
+play1
+Orion
+enemy
+enemy1
+playerman
+dead3
+playermandead3
+dead2
+dead1
+theplayer
+seta1
+me
+rock6
+rock5
+rock4
+rock3
+rock2
+rock1
+
+
+[positions]
+
+aststor,243,665,442
+
+
+
+[variables]
+asCount,0
+aststor,0
+Countast2,0
+Countast1,0
+soundnoa,0
+soundno,0
+Count1,0
+
+
+[text]
+texta,
+"Get into a ship on the space\nstation deck.."
+
+textb,
+"Follow Major Cameron to the site\nof the disturbance.."
+
+textc,
+"Wait for further orders..."
+
+textd,
+"Investigate the unknown ship of\npossible Borg origin.."
+
+texte,
+"Get back to the space station..."
+
+textf,
+"Defend the cruiser from delta\nwings attack, you will have to locate\nthem and attack, if you fail you can\nrepeat this mission again without\nresetting"
+
+
+[routine,Main,1,true]
+Ally,1,2
+Ally,3,2
+teamcolor,3,0,0,255
+
+wait,2
+createp,me,"ivspaceta",2,"units"
+setskill,me,3
+setname,me,"Major Cameron"
+BeaconOn,me
+startsound,"b15_sound_1.wav"
+wait,10
+BeaconOn,rock4
+startsound,"b15_sound_2.wav"
+wait,5
+
+Make3Ships:
+	createp,seta1,"ivspaceta",2,"units"
+	setskill,seta1,3
+	Patrol,seta1,"patrol2",1
+	setname,seta1,"Zata Team"
+	add,Count1,1,Count1
+	iflt,3,Make3Ships
+	Set,Count1,0
+
+getplayer,theplayer
+
+createp,dead1,"ivspaceta",2,"units"
+Patrol,dead1,"meatenemy",1
+setname,dead1,"Kapa Wing"
+createp,dead2,"ivspaceta",2,"units"
+Patrol,dead2,"meatenemy",1
+setname,dead2,"Kapa Wing"
+createp,dead3,"ivspaceta",2,"units"
+Patrol,dead3,"meatenemy",1
+setname,dead3,"Kapa Wing"
+
+clear
+display,texta,white
+
+loop0:
+getbylabel,playerman,"unnamed_isuser"
+Isaround,playerman
+ifeq,true,loop0
+
+clear
+display,texta,green
+display,textb,white
+startsound,"locked3.wav"
+
+wait,3
+follow,me,rock4,1
+getplayer,theplayer
+Make2Ships:
+	createp,seta1,"ivspaceta",1,"units"
+	setskill,seta1,3
+	Follow,seta1,theplayer,0
+	setname,seta1,"Alfa Team"
+	add,Count1,1,Count1
+	iflt,2,Make2Ships
+	Set,Count1,0
+
+loop1:
+getplayer,theplayer
+distobject,theplayer,rock4
+ifgt,200,loop1
+
+clear
+display,texta,green
+display,textb,green
+display,textc,white
+startsound,"locked3.wav"
+
+startsound,"b15_sound_3.wav"
+wait,9
+startsound,"b15_sound_4.wav"
+wait,3
+
+Remove,dead1
+Remove,dead2
+Remove,dead3
+
+startsound,"b15_sound_5.wav"
+wait,10
+startsound,"b15_sound_6.wav"
+wait,10
+startsound,"b15_sound_7.wav"
+
+createp,enemy1,"bs_domin",0,"enemy"
+setskill,enemy1,3
+
+createp,dead1,"ivspaceta",2,"units"
+setskill,dead1,3
+goto,dead1,"enemy",1
+setname,dead1,"Ioda Wing"
+createp,dead2,"ivspaceta",2,"units"
+setskill,dead2,3
+Patrol,dead2,"enemy",1
+setname,dead2,"Ioda Wing"
+createp,dead3,"ivspaceta",2,"units"
+setskill,dead3,3
+follow,dead3,theplayer,1
+setname,dead3,"Ioda Wing"
+
+loop2:
+getplayer,theplayer
+distobject,theplayer,dead3
+ifgt,300,loop2
+stop,dead1,1
+stop,dead2,1
+
+startsound,"b15_soun_12.wav"
+
+clear
+display,textb,green
+display,textc,green
+display,textd,white
+startsound,"locked3.wav"
+
+BeaconOn,enemy1
+
+loop3:
+getplayer,theplayer
+distobject,theplayer,enemy1
+ifgt,300,loop3
+startsound,"b15_soun_13.wav"
+wait,15
+remove,enemy1
+createp,enemy1,"bs_domin",5,"enemy"
+setskill,enemy1,3
+attack,enemy1,theplayer,1
+wait,2
+
+clear
+display,textd,red
+startsound,"locked3.wav"
+startsound,"b15_soun_14.wav"
+
+loop4:
+Isaround,enemy1
+ifeq,true,loop4
+
+clear
+display,textd,green
+display,texte,white
+
+startsound,"b15_soun_15.wav"
+follow,me,theplayer,1
+
+wait,30
+
+hahahewants:
+clear
+display,textf,white
+createp,Orion,"isdfCru01",1,"units"
+setname,Orion,"Orion"
+startsound,"b15_sound_8.wav"
+wait,11
+startsound,"b15_soun_10.wav"
+wait,8
+startsound,"b15_sound_9.wav"
+
+createp,play1,"ivspacebo1",3,"enemy"
+setskill,play1,3
+attack,play1,Orion,1
+
+createp,play2,"ivspacebo2",3,"enemy"
+setskill,play2,3
+attack,play2,Orion,1
+
+wait,20
+
+mainloop:
+wait,1
+isaround,Orion
+ifeq,false,makechoice
+
+isaround,play1
+ifeq,true,mainloop
+
+isaround,play2
+ifeq,true,mainloop
+
+
+startsound,"b15_soun_16.wav"
+jumpto,madeit
+
+makechoice:
+stopsound,soundno
+wait,6
+stopsound,soundnoa
+startsound,"b15_soun_11.wav"
+wait,8
+
+clear
+display,textf,Green
+IFaceExec,"B_mission15.cfg"
+IfaceSetInt,"mission.ch1",0
+IfaceSetInt,"mission.ch2",0
+ConsoleWord,"cfg executed 1"
+IFaceActivate,"B_opwin_1"
+FreeCamera
+
+looptheloop:
+
+IFaceGetInt,"mission.ch1"
+ifeq,0,FUNKY
+FreeFinish
+
+remove,play1
+remove,play2
+unally,3,1
+getplayer,theplayer
+teamcolor,3,0,0,255
+AddAmmo,theplayer,8000
+Addhealth,theplayer,5000
+
+jumpto,hahahewants
+
+
+FUNKY:
+IFaceGetInt,"mission.ch2"
+ifeq,0,looptheloop
+FreeFinish
+
+Succeed,1,"b15_textw1.obj"
+
+jumpto,end
+
+madeit:
+
+clear
+display,textf,green
+
+Succeed,5,"b15_textw2.obj"
+
+end:
+
+[routine,Orion,1,true]
+loop:
+
+mainloop:
+wait,1
+isaround,Orion
+ifeq,false,mainloop
+
+Zloop:
+wait,1
+getcurhealth,Orion
+ifgt,8000,Zloop
+startsound,"b15_soun_d1.wav",soundno
+
+Aloop:
+wait,1
+getcurhealth,Orion
+ifgt,3000,Aloop
+Ally,3,1
+stopsound,soundno
+startsound,"b15_soun_d2.wav",soundnoa
+remove,Orion
+
+jumpto,loop
+
+[routine,rocks,1,true]
+
+loopend:
+wait,4
+
+x1:
+isaround,rock1
+ifeq,false,passa1
+goto,rock1,"rgo1",1
+jumpto,xa1
+passa1:
+createp,rock1,"B_astrma1",5,"rock1"
+jumpto,x1
+xa1:
+
+x2:
+isaround,rock2
+ifeq,false,passa2
+goto,rock2,"rgo1",1
+jumpto,xa2
+passa2:
+createp,rock2,"B_astrma1",5,"rock2"
+jumpto,x2
+xa2:
+
+x3:
+isaround,rock3
+ifeq,false,passa3
+goto,rock3,"rgo1",1
+jumpto,xa3
+passa3:
+createp,rock3,"B_astrma1",5,"rock3"
+jumpto,x3
+xa3:
+
+x4:
+isaround,rock4
+ifeq,false,passa4
+goto,rock4,"rgo2",1
+jumpto,xa4
+passa4:
+createp,rock4,"B_astrmb2",5,"rock4"
+jumpto,x4
+xa4:
+
+x5:
+isaround,rock5
+ifeq,false,passa5
+goto,rock5,"rgo3",1
+jumpto,xa5
+passa5:
+createp,rock5,"B_astrmb2",5,"rock 5"
+jumpto,x5
+xa5:
+
+x6:
+isaround,rock6
+ifeq,false,passa6
+goto,rock6,"rgo4",1
+jumpto,xa6
+passa6:
+createp,rock6,"B_astrmc2",5,"rock 6"
+jumpto,x6
+xa6:
+
+jumpto,loopend
+
+[routine,killpilota,1,true]
+wait,10
+getbylabel,station,"unnamed_bs_station"
+loop2:
+wait,1
+getbylabel,user,"unnamed_isuser"
+distobject,station,user
+ifgt,320,pass
+jumpto,loop2
+
+pass:
+remove,user
+jumpto,loop2
+
+[routine,drecy,1,true]
+wait,10
+loop:
+createp,drecy,"B_ivrecy_1",2,"recy"
+goto,drecy,"recycheck",1
+createp,recychn,"pspwn_1",2,"recycheck"
+
+loop2:
+wait,1
+distobject,recychn,drecy
+ifgt,220,loop2
+
+remove,drecy
+jumpto,loop
+
+[routine,astgofix,1,true]
+consoleword,"Rocks 1"
+astroloop01:
+	getbylabel,astr,"unnamed_B_astrmc4"
+	
+	isaround,astr
+	ifeq,false,astroloop02
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrma4",0,aststor
+	Stop,astr1,0
+	Jumpto,astroloop01
+
+astroloop02:
+consoleword,"Rocks 2"
+	getbylabel,astr,"unnamed_B_astrma1"
+
+	isaround,astr
+	ifeq,false,astroloop03
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrma2",5,aststor
+	Stop,astr1,0
+	Jumpto,astroloop02
+
+
+astroloop03:
+consoleword,"Rocks 3"
+	getbylabel,astr,"unnamed_B_astrma5"
+
+	isaround,astr
+	ifeq,false,astroloop04
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrmc4",0,aststor
+	Stop,astr1,0
+	Jumpto,astroloop03
+
+
+astroloop04:
+consoleword,"Rocks 4"
+	getbylabel,astr,"unnamed_B_astrma6"
+
+	isaround,astr
+	ifeq,false,astroloop05
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrmb4",0,aststor
+	Stop,astr1,0
+	Jumpto,astroloop04
+
+astroloop05:
+consoleword,"Rocks 5"
+	getbylabel,astr,"unnamed_B_astrmc5"
+
+	isaround,astr
+	ifeq,false,astroloop06
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrma5",0,aststor
+	Stop,astr1,0
+	Jumpto,astroloop05
+
+astroloop06:
+consoleword,"Rocks 6"
+	getbylabel,astr,"unnamed_B_astrmb4"
+
+	isaround,astr
+	ifeq,false,astroloop07
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrmb5",0,aststor
+	Stop,astr1,0
+	Jumpto,astroloop06
+
+astroloop07:
+consoleword,"Rocks 7"
+	getbylabel,astr,"unnamed_B_astrmc6"
+
+	isaround,astr
+	ifeq,false,astroloop08
+
+	getpos,astr,aststor
+	Remove,astr
+	Create,astr1,"B_astrmb6",0,aststor
+	Stop,astr1,0
+	Jumpto,astroloop07
+
+astroloop08:
+
+consoleword,"Rocks Done"
+
+

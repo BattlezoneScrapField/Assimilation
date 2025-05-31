@@ -1,0 +1,100 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "Space_fa_a"
+ordName = "Space_fazer"
+wpnName = "LX54A Lazer"
+fireSound = "B_RAIL.WAV"
+wpnReticle = "grifle"
+wpnCategory = "GUN"
+isAssault = 0
+flashName = "Space_fa_a.flash"
+aiRange = 380
+
+[CannonClass]
+shotDelay = 0.3
+shotAlternate = 1
+
+//--------------------------------------------------------------------
+
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+xplGround = NULL
+xplVehicle = "xblastcar"
+xplBuilding = "xblastbld"
+
+renderName = "Space_fazer.render"
+
+ammoCost = 2.25
+lifeSpan = 0.87 
+shotSpeed = 200.0
+
+damageValue(N) = 21 // none // 400
+damageValue(L) = 18 // light // 300
+damageValue(H) = 10 // heavy // 150
+
+damageValue(S) = 25 // standard // 250
+damageValue(D) = 14 // deflection // 400
+damageValue(A) = 20 // absorbtion // 150
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "Space_fazer.flame"
+renderName2 = "Space_fazer.smoke"
+renderName3 = "Space_fazer.trail"
+renderName4 = "Space_fazer.flare"
+
+[Flame]
+renderBase = "draw_bolt"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "215 214 213 231"
+finishColor = "210 209 208 0"
+startRadius = 0.50
+finishRadius = 0.04
+segmentLength = 1.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.65
+textureRate = 0.01
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "fazbeam.tga"
+textureBlend = "one one modulate"
+startColor = "215 214 213 231"
+finishColor = "210 209 208 0"
+startRadius = 0.20
+finishRadius = 0.02
+animateTime = 1.9
+rotationRate = 10.0
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.9
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "smoke2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.01
+startColor = "1 1 222 227"
+finishColor = "1 1 150 0"
+startRadius = 0.11
+finishRadius = 0.11
+segmentTime = 0.4
+
+
+[Flare]
+renderBase = "draw_twirl_trail"
+textureName = "raindrop.tga"
+textureBlend = "one one modulate"
+startColor = "10 10 255 555" 
+finishColor = "0 0 255 0" 
+startRadius = 0.6
+finishRadius = 0.6
+animateTime = 1.8
+emitDelay = 0.01
+emitLife = 0.9
+rotationrate = 20

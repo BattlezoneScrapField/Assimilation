@@ -1,0 +1,58 @@
+[GameObjectClass]
+geometryName = "b_recy.xsi"
+geometryScale = 20.1
+classLabel = "recycler"
+powerCost = 0
+scrapCost = 0
+scrapValue = 10
+maxHealth = 12000
+AddHealth = 20
+maxAmmo = 0
+unitName = "Borg Recycler"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+explosionName = "Xnuke_B"
+heatSignature = 2.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = 1
+
+collisionRadius = 4.0
+
+armorClass = H
+
+lightHard1 = "hp_light_1"
+lightName1 = "o_white_nf"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[BuildingClass]
+bldEdge = "wwww"
+tunnelCount = 1
+
+tunnel01X0 = 0
+tunnel01Z0 = 1
+tunnel01DX = 8
+tunnel01DZ = 9
+tunnel01Edge = "twtw"
+
+soundAmbient = "ibrecy01.wav"
+
+
+[FactoryClass]
+soundBuild = ""
+soundFinish = ""
+buildItem1 = ""
+buildItem2 = ""
+buildItem3 = ""
+buildItem4 = ""
+buildItem5 = ""
+buildItem6 = ""
+buildItem7 = ""
+
+reloadMsg = ""
+rescueMsg = ""
+
+[RecyclerClass]
+scrapHold = 140

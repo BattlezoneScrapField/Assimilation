@@ -1,0 +1,20 @@
+[GameObjectClass]
+geometryName = "b_apammo.xsi"
+classLabel = "servicepod"
+collisionRadius = 1.0
+scrapCost = 2
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 0
+unitName = "Service Pod"
+aiName = "PowerUpProcess"
+
+lightHard1 = "light2"
+lightName1 = "omniblue"
+
+[PowerUpClass]
+soundPickup = "pickup01.wav"
+soundReject = "reject.wav"
+
+[ServicePowerupClass]
+serviceUp = 1500

@@ -1,0 +1,37 @@
+[WeaponClass]
+classLabel = "machinegun"
+ordName = "B_beemM1"
+wpnName = "Nul"
+fireSound = "beem1.wav"
+wpnReticle = "B_beemM"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 900
+flashName = "B_beemM.flash"
+
+[CannonClass]
+shotDelay = 0.1
+shotVariance = 0.01
+
+//--------------------------------------------------------------------
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL
+
+renderName = "B_beemM.render"
+
+ammoCost = 5
+lifeSpan = 935e-6 // 325m
+shotSpeed = 1e6
+
+damageValue(N) = 20 // none //350
+damageValue(L) = 20 // light //250
+damageValue(H) = 18 // heavy //150
+
+damageValue(S) = 18 // standard //250
+damageValue(D) = 11 // deflection //350
+damageValue(A) = 20 // absorbtion //80

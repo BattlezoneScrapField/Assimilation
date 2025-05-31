@@ -1,0 +1,246 @@
+
+[objects]
+
+Object1
+Object2
+Object3 <3>
+Object6
+Object7
+Object8
+Object9
+Object10
+Object11
+Object12 <2>
+Object14
+Object15
+Object16 <2>
+Object18
+Object19
+
+[positions]
+
+Position1, 0,70,0
+Position2, 0,0,0
+Position3, 0,60,80
+
+[variables]
+
+
+[text]
+
+_Text1,
+"Get to an abandoned ship near\nyour location. Use the radar."
+
+_Text2,
+"Crap that ship was boobytraped\nKnew it was to easy.\nFind a old scion ship by the\nruins."
+
+_Text3,
+"We have sent a recy for you\nBuild a basic base in the \nlocation. But you only have 20 scrap.\nRemember your training."
+
+_Text4,
+"Get the hell out of there\nA Drop ship is waiting for\nYou..."
+
+//--------------------------------------------------------------------
+[routine,_Routine1,1,true]
+	Createp,Object11,"fvscout",0,"bships"
+	GiveWeapon,Object11,"gsonic_c"
+	Createp,Object19,"b_recy",5,"benemy"
+	GetPlayer,Object16
+	SetPTeam,Object16,5
+	Createp,Object7,"R_pod",0,"pod1"
+	Createp,Object6,"R_pods",0,"pod2"
+	Createp,Object8,"R_pods",0,"pod3"
+	Createp,Object18,"ivapc",1,"apcspawn"
+	GoTo,Object18,"apcpath",1
+	CamObject,Object16,Position1,Object18,25
+	GetByLabel,Object14,"unnamed_ivscout"
+	Display,_Text1,white
+	StartSound,"locked3.wav"
+	SetPlan,"b8_plan_1.aip",5
+LOC_15:
+	Wait,1
+	DistObject,Object14,Object16
+	IfGT,50,LOC_15
+	Damage,Object14,5000
+	Clear
+	Display,_Text1,green
+	Display,_Text2,white
+	StartSound,"locked3.wav"
+	KillPilot,Object11
+LOC_24:
+	Wait,1
+	IsPlayer,Object11
+	IfEQ,0,LOC_24
+	Clear
+	Display,_Text1,green
+	Display,_Text2,green
+	StartSound,"locked3.wav"
+	RunSpeed,_Routine2,0,false
+	RunSpeed,_Routine4,1,true
+	Wait,2
+	CamObject,Object9,Position3,Object10,40
+	Clear
+	Display,_Text3,white
+	StartSound,"locked3.wav
+"
+	SetScrap,1,20
+	Wait,30
+LOC_40:
+	Wait,1
+	GetCurHealth,Object12
+	ConsoleResult
+	IfGT,2800,LOC_40
+	Createp,Object10,"ivpdrop",0,"apcspawn"
+	SetAnimation,Object10,"deploy",1
+	StartAnimation,Object10
+	Wait,5
+	Clear
+	Display,_Text4,white
+	StartSound,"locked3.wav
+"
+	BeaconOn,Object10
+LOC_52:
+	Wait,1
+	GetPlayer,Object16
+	DistObject,Object10,Object16
+	IfGT,50,LOC_52
+	Succeed,1,"b8_text01.des"
+
+//--------------------------------------------------------------------
+[routine,_Routine2,1,true]
+	Wait,4
+	StartSound,"isdf0163a.wav"
+	Wait,8
+	StartSound,"isdf1032.wav"
+	Wait,5
+	Damage,Object18,5000
+LOC_64:
+	Createp,Object15,"b_zat01",5,"pod2"
+	Attack,Object15,Object16,1
+LOC_66:
+	Wait,1
+	IsAround,Object15
+	IfEQ,1,LOC_66
+	Wait,20
+	JumpTo,LOC_64
+
+//--------------------------------------------------------------------
+[routine,_Routine3,1,true]
+LOC_72:
+	Wait,1
+	GetByLabel,Object2,"unnamed_ispilo"
+	IsAround,Object2
+	IfEQ,0,LOC_72
+	IsAround,Object1
+	IfEQ,1,LOC_79
+	Createp,Object1,"b_zat01",5,"pod2"
+LOC_79:
+	Attack,Object1,Object2,1
+	Attack,Object2,Object1,1
+	JumpTo,LOC_72
+
+//--------------------------------------------------------------------
+[routine,_Routine4,0,false]
+	Createp,Object9,"pspwn_1",0,"recy"
+	Createp,Object10,"ivdrop_land",1,"recy"
+	SetAnimation,Object10,"land",1
+	StartSound,"droptoff.wav"
+	StartAnimation,Object10
+	Wait,15
+	Remove,Object10
+	Createp,Object10,"ivpdrop",1,"recy"
+	SetAnimation,Object10,"deploy",1
+	StartAnimation,Object10
+	StartSound,"dropdoor.wav"
+	Wait,5
+	GetPos,Object9,Position2
+	Create,Object12,"ivrecy_b",1,Position2
+	GoTo,Object12,"pod3",0
+	RunSpeed,_Routine6,1,true
+	Wait,8
+	SetAnimation,Object10,"takeoff",1
+	StartAnimation,Object10
+	StartSound,"dropdoor.wav"
+	Wait,3
+	StartSound,"dropleav.wav"
+	Wait,8
+	Remove,Object10
+
+//--------------------------------------------------------------------
+[routine,_Routine5,1,true]
+LOC_108:
+	Wait,1
+	GetByLabel,Object3,"unnamed_ibrefin"
+	IsAround,Object3
+	IfEQ,1,LOC_113
+	JumpTo,LOC_108
+LOC_113:
+	Wait,1
+	IsAround,Object8
+	IfEQ,1,LOC_117
+	JumpTo,LOC_126
+LOC_117:
+	DistObject,Object3,Object8
+	IfGT,70,LOC_126
+	Remove,Object8
+	StartSound,"ibfact00.wav"
+	AddScrap,1,30
+	Wait,5
+	AddScrap,1,30
+	Wait,5
+	AddScrap,1,5
+LOC_126:
+	IsAround,Object7
+	IfEQ,1,LOC_129
+	JumpTo,LOC_143
+LOC_129:
+	DistObject,Object3,Object7
+	IfGT,70,LOC_143
+	Remove,Object7
+	BeaconOn,Object7
+	StartSound,"ibfact00.wav"
+	AddScrap,1,30
+	Wait,5
+	AddScrap,1,30
+	Wait,5
+	AddScrap,1,30
+	Wait,5
+	AddScrap,1,30
+	Wait,5
+	AddScrap,1,30
+LOC_143:
+	IsAround,Object6
+	IfEQ,1,LOC_146
+	JumpTo,LOC_108
+LOC_146:
+	DistObject,Object3,Object6
+	IfGT,70,LOC_108
+	Remove,Object6
+	Createp,Object6,"R_podS",1,"pod2"
+	BeaconOn,Object6
+	StartSound,"ibfact00.wav"
+	AddScrap,1,30
+	Wait,5
+	AddScrap,1,30
+	Wait,5
+	AddScrap,1,5
+	JumpTo,LOC_108
+
+//--------------------------------------------------------------------
+[routine,_Routine6,0,false]
+	Wait,20
+LOC_160:
+	Wait,1
+	IsAround,Object12
+	IfEQ,1,LOC_160
+	Succeed,1,"b8_text02.des"
+
+//--------------------------------------------------------------------
+[routine,_Routine7,1,true]
+	Wait,20
+LOC_166:
+	Wait,1
+	IsAround,Object19
+	IfEQ,1,LOC_166
+	Succeed,1,"b8_text03.des"
+

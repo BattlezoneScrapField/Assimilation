@@ -1,0 +1,199 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "B_rail"
+ordName = "B_rail"
+wpnName = "Rail Gun"
+fireSound = "B_RAIL.WAV"
+wpnReticle = "grifle"
+wpnCategory = "GUN"
+isAssault = 1
+
+aiRange = 240
+
+[CannonClass]
+shotDelay = 1.0
+shotVariance = 0.005
+shotAlternate = 1
+
+
+//--------------------------------------------------------------------
+
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+xplGround = "B_rail"
+xplVehicle = "B_rail"
+xplBuilding = "B_rail"
+renderName = "B_rail.render"
+
+ammoCost = 16.15
+lifeSpan = 0.87 
+shotSpeed = 300.0
+
+damageValue(N) = 660
+damageValue(L) = 920
+damageValue(H) = 1090
+
+damageValue(S) = 600
+damageValue(D) = 500
+damageValue(A) = 700
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "B_rail.flame"
+renderName2 = "B_rail.smoke"
+renderName3 = "B_rail.trail"
+renderName4 = "B_rail.flare"
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "255 10 10 227"
+finishColor = "250  0 0"
+startRadius = 0.03
+finishRadius = 0.03
+animateTime = 1.2
+rotationRate = 10.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.5
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "215 214 213 231"
+finishColor = "210 209 208 0"
+startRadius = 0.12
+finishRadius = 0.24
+animateTime = 1.9
+rotationRate = 10.0
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.9
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "smoke2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.01
+startColor = "222 1 1 227"
+finishColor = "150 1 1 0"
+startRadius = 0.021
+finishRadius = 0.021
+segmentTime = 0.4
+
+
+[Flare]
+renderBase = "draw_twirl_trail"
+textureName = "raindrop.tga"
+textureBlend = "one one modulate"
+startColor = "255 10 10 555" 
+finishColor = "255 0 0 0" 
+startRadius = 0.5
+finishRadius = 0.5
+animateTime = 1.8
+emitDelay = 0.01
+emitLife = 0.9
+rotationrate = 20
+
+//--------------------------------------------------------------------
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xsv2.wav"
+damageRadius = 3.0
+damageValue(N) = 3
+damageValue(L) = 2
+damageValue(H) = 1
+damageValue(S) = 1
+damageValue(D) = 1
+damageValue(A) = 1
+
+particleTypes = 5
+
+particleClass1 = "B_rail.puff"
+particleCount1 = 5
+particleVeloc1 = "4.0 4.0 4.0"
+
+particleClass2 = "B_rail.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+particleClass3 = "B_rail.splat"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "B_rail.ring"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "B_rail.char"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 2.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "250 100 0 50"
+finishColor = "250 0 0 0"
+startRadius = 0.2
+finishRadius = 0.8
+animateTime = 2.0
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 0.7
+renderBase = "draw_light"
+startColor = "255 100 100 855"
+finishColor = "250 55 50 0"
+startRadius = 0.2
+finishRadius = 0.1
+animateTime = 0.7
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Splat]
+simulateBase = "sim_null"
+lifeTime = 0.75
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 255"
+finishColor = "255 0 0 0"
+startRadius = 0.01
+finishRadius = 0.3
+animateTime = 0.9
+
+[Ring]
+simulateBase = "sim_null"
+lifeTime = 10.0
+renderBase = "draw_planar"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "250 10 10 555"
+finishColor = "250 10 10 0"
+startRadius = 0.5
+finishRadius = 3.0
+animateTime = 10.0
+
+[Char]
+simulateBase = "sim_null"
+lifeTime = 3.0
+renderBase = "draw_planar"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 555"
+finishColor = "255 0 0 0"
+startRadius = 1.0
+finishRadius = 1.8
+animateTime = 11.0

@@ -1,0 +1,36 @@
+[Size]
+MetersPerGrid = 8.0
+HeightGranularity = 0.1
+MinX=-1024
+MinZ=-1024
+Width=2560
+Depth=2560
+Height=100
+Tile = 1
+color=149 123 87 255
+
+[NormalView]
+
+FogColor="106 63 44 255"
+FogStart=200
+FogEnd=350
+VisibilityRange=375
+
+[World]
+MusicTrack1=9
+MusicTrack2=3
+MusicTrack3=4
+
+
+[Texture]
+TileTexture1 = "B_land1.tga"
+TileTexture2 = "mars2.tga"
+TileTexture3 = "mars3.tga"
+TileTexture4 = "B_land2.tga"
+TileTexture5 = "B_land3.tga"
+TileTexture6 = "B_land4.tga"
+TileTexture7 = "B_land5.tga"
+TileTexture9 = "B_land6.tga"
+TileTexture10 = "B_land7.tga"
+TileTexture11 = "B_land8.tga"
+

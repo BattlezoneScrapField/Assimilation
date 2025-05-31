@@ -1,0 +1,82 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = NULL
+ordName = "B_plas"
+wpnReticle = "B_plas"
+wpnName = "Plasma Cannon"
+fireSound = "B_plas.wav"
+wpnCategory = "ROCK"
+flashName = "B_plas.Flash"
+aiRange = 360
+isAssault = 0
+
+[CannonClass]
+shotDelay = 0.4
+shotAlternate = 0
+
+[Flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 80 127"
+finishColor = "0 255 0 0"
+startRadius = 3.0
+finishRadius = 1.0
+animateTime = 0.1
+latitudeBands = 8
+longitudeSegments = 16
+
+//--------------------------------------------------------------------
+
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xtechit"
+xplVehicle = "xtechit"
+xplBuilding = "xtechit"
+
+renderName = "B_plas.render"
+
+ammoCost = 35
+lifeSpan = 4.0
+shotSpeed = 300.0
+
+damageValue(N) = 490 // none // 650
+damageValue(L) = 300 // light // 550
+damageValue(H) = 210 // heavy // 450
+
+damageValue(S) = 390 // standard // 550
+damageValue(D) = 300 // deflection // 650
+damageValue(A) = 250 // absorbtion // 400
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "B_plas.Light"
+renderName2 = "B_plas.Flame"
+
+[Light]
+renderBase = "draw_light"
+startColor = "80 255 80 500"
+finishColor = "80 255 80 500"
+startRadius = 25.0
+finishRadius = 25.0
+animateTime = 0.5
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "B_plas_b.pic"
+textureBlend = "one one modulate"
+startColor = "255 255 80 255"
+finishColor = "0 255 0 0"
+startRadius = 0.5
+finishRadius = 0.3
+animateTime = 0.1
+rotationRate = 10.0
+emitDelay = 0.002
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.1

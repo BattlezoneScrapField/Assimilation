@@ -1,0 +1,107 @@
+[GameObjectClass]
+baseName = "ISDF_Mother"
+geometryName = "ISDF_Mother.xsi"
+geometryScale = 0.07
+classLabel = "assaulttank"
+BoxCollide = 1
+CanCollide = 1
+scrapValue = 0
+scrapCost = 0
+customCost = 0
+buildTime = 0
+customTime = 0
+canInteract = 1
+needPilot = 1
+maxHealth = 552000
+addHealth = 130
+maxAmmo = 80000
+addAmmo = 200.0
+unitName = "ISDF MotherShip"
+aiName = "AssaultTankProcess"
+aiName2 = "AssaultTankProcess"
+heatSignature = 5.0
+imageSignature = 5.0
+radarSignature = 5.0
+isAssualt = 1
+needPilot = 1
+armorClass = H
+explosionName = "xbldxpl"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "ivpdrop2.trail"
+effectHard2 = "hp_emit_2"
+effectName2 = "ivpdrop2.trail"
+effectHard3 = "hp_emit_3"
+effectName3 = "ivpdrop2.trail"
+effectHard4 = "hp_emit_4"
+effectName4 = "ivpdrop2.trail"
+effectHard5 = "hp_emit_5"
+effectName5 = "ivpdrop2.trail"
+effectHard6 = "hp_emit_6"
+effectName6 = "ivpdrop2.trail"
+effectHard7 = "hp_emit_7"
+effectName7 = "ivpdrop2.trail"
+effectHard8 = "hp_emit_8"
+effectName8 = "ivpdrop2.trail"
+effectHard9 = "hp_emit_9"
+effectName9 = "ivpdrop2.trail"
+effectHard10 = "hp_emit_10"
+effectName10 = "ivpdrop2.trail"
+effectHard11 = "hp_emit_11"
+effectName11 = "ivpdrop2.trail"
+effectHard12 = "hp_emit_12"
+effectName12 = "ivpdrop2.trail"
+
+//////////////////////////////
+
+weaponMask = 00001
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "B_beemM"
+weaponAssault1 = 1
+weaponHard2 = "hp_cannon_2"
+weaponName2 = "B_beemM"
+weaponAssault2 = 1
+weaponHard3 = "HP_SHIELD_1"
+weaponName3 = "gdeflect"
+weaponAssault3 = 0
+
+//////////////////////////////
+
+turretCount = 3
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+turretName3 = "hp_eyepoint"
+
+
+[CraftClass]
+rangeScan = 900
+periodScan = 1.0
+velocJam = 0.0
+weaponPitch = 1.5
+engageRange = 850
+braccelFactor = 0.05
+strafeFactor = 0.0
+steerFactor = 1.0
+omegaFactor = 1.0
+velFactor = 0.2
+weightInTons = 495000
+
+avoidSpeed = 15
+topSpeed = 45
+
+[TrackedVehicleClass]
+omegaSpin = 0.8
+omegaTurn = 1.0
+alphaSteer = 2.0
+velocForward = 45.0
+velocReverse = 15.0
+accelThrust = 12.0
+
+engineSound = "bgimp.wav"
+treadSound = "bgimp.wav"
+
+[AssaultTankClass]
+yawRate = 4.0
+yawAlpha = 10.0
+pitchMin = -1.5
+pitchMax = 1.5

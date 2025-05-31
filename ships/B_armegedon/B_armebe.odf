@@ -1,0 +1,88 @@
+[GameObjectClass]
+baseName = "B_arme"
+geometryName = "B_arme.xsi"
+geometryScale = 7.0
+classLabel = "wingman"
+scrapValue = 0
+scrapCost = 0
+customCost = 0
+buildTime = 0
+customTime = 0
+maxHealth = 10000
+addHealth = 130
+maxAmmo = 80000
+addAmmo = 200.0
+unitName = "Borg Armegeddon Ship"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+heatSignature = 80.1
+imageSignature = 30.0
+radarSignature = 80.1
+
+canSnipe = 0
+isAssualt = 1
+needPilot = 1
+
+armorClass = H
+
+//////////////////////////////
+
+weaponMask = 00111
+weaponHard1 = "hp_gun_1"
+weaponName1 = "B_beemg"
+weaponAssault1 = 0
+weaponHard2 = "hp_gun_2"
+weaponName2 = "B_beemg"
+weaponAssualt2 = 0
+weaponHard3 = "hp_shield_1"
+weaponName3 = "gshield"
+
+//////////////////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"
+lightHard3 = "hp_light_3"
+lightName3 = "spotblue2"
+lightHard4 = "hp_light_4"
+lightName4 = "spotblue2"
+
+
+[CraftClass]
+rangeScan = 500.0f
+periodScan = 1.0f
+velocJam = 5.0f
+engageRange = 425
+
+braccelFactor = 0.2
+strafeFactor = 0.1
+steerFactor = 1.0
+omegaFactor = 0.2
+velFactor = 0.2
+
+avoidSpeed = 10
+topSpeed = 25
+
+[HoverCraftClass]
+setAltitude = 5.0
+accelDragStop = 5.0
+accelDragFull = .5
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.3
+pitchThrust = 0.03
+rollStrafe = 0.0
+rollSteer = 0.0
+
+velocForward = 23.0
+velocReverse = 9.0
+velocStrafe = 5.0
+accelThrust = 15.0
+accelBrake = 10.0
+omegaSpin = 1.5
+omegaTurn = 1.0
+alphaSteer = 2.0
+accelJump = 15.0
+
+soundThrust = "bgimp.wav"

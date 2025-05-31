@@ -1,0 +1,100 @@
+[GameObjectClass]
+baseName = "B_sphere"
+geometryName = "B_sphere.xsi"
+cockpitName = "ivmisl_cockpit.xsi"
+unitIcon = "icon_sphere.tga"
+classLabel = "wingman"
+scrapValue = 10
+scrapCost = 45
+customCost = 55
+buildTime = 5.0
+customTime = 7.0
+maxHealth = 2200
+addHealth = 5
+maxAmmo = 2600
+addAmmo = 5
+unitName = "Sphere"
+aiName = "TurretTankFriend"
+aiName2 = "TurretTankEnemy"
+explosionName = "b_car_ex"
+
+heatSignature = 1.0
+imageSignature = 2.5
+radarSignature = 0.5
+
+isAssualt = 0
+
+armorClass = L
+
+requireCount = 1
+requireName1 = "bbfact"
+requireText1 = "Build Factory"
+
+//////////////////////////////
+
+weaponMask = 00111
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "B_beemg"
+weaponAssault1 = 0
+weaponHard2 = "HP_ROCKET_1"
+weaponName2 = ""
+weaponAssault2 = 1
+weaponHard3 = "HP_SHIELD"
+weaponName3 = "gshield"
+
+//////////////////////////////
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 4.0f
+velocJam = 5.0f
+engageRange = 225
+
+braccelFactor = 0.05
+strafeFactor = 0.1
+steerFactor = 1.0
+omegaFactor = 0.2
+velFactor = 0.2
+
+avoidSpeed = 28
+topSpeed = 35
+
+selectGoMsg = "borg1.wav"
+selectAttackMsg = "borg4.wav"
+selectFollowMsg = "borg1.wav"
+selectOtherMsg = "borg2.wav"
+
+goMsg = "borg1.wav"
+attackMsg = "borg4.wav"
+followMeMsg = "borg1.wav"
+reloadMsg = "borg6.wav"
+repairMsg = "borg6.wav"
+rescueMsg = "borg7.wav"
+recycleMsg = "borg3.wav"
+otherMsg = "borg5.wav"
+
+user1Msg = "bmbr9.wav"
+diedMsg = "borg4.wav"
+
+[HoverCraftClass]
+setAltitude = 1.0
+accelDragStop = 5.0
+accelDragFull = .5
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.5
+pitchThrust = 0.05
+rollStrafe = 0.5
+rollSteer = 0.9
+
+velocForward = 35.0
+velocReverse = 26.0
+velocStrafe = 26.0
+accelThrust = 28.0
+accelBrake = 50.0
+omegaSpin = 1.5
+omegaTurn = 1.0
+alphaSteer = 2.0
+accelJump = 14.0
+
+soundThrust = "bgimp.wav"

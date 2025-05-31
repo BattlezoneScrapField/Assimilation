@@ -1,0 +1,30 @@
+[GameObjectClass]
+mrmFactor = 0
+geometryName = "ibscav_s.xsi"
+animCount = 0
+classLabel = "extractor"
+scrapCost = 20
+scrapValue = 5
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Extractor"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+explosionName = "xnormxpl"
+isAssault = 1
+canInteract=1 // for missile lock
+
+armorClass = H
+
+upgradeName = "ibscup_s"
+
+[BuildingClass]
+soundAmbient = "iext01.wav"
+
+[ExtractorClass]
+initDelay = 6.0
+scrapDelay = 1.0
+scrapHold = 20
+detectRange = 100

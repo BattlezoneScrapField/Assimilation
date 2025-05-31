@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "machinegun"
+altName = "M_Beem_c"
+fireSound = "beem1.wav"
+ordName = "B_beemM"
+wpnName = "Mantron Beem"
+wpnReticle = "gblast"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 780
+flashName = "B_beemM.flash"
+
+[CannonClass]
+shotDelay = 0.05

@@ -1,0 +1,52 @@
+[GameObjectClass]
+mrmFactor = 0
+geometryName = "bbscav01.xsi"
+animCount = 1
+animName1 = "loop"
+animFile1 = "bbscav01.xsi"
+classLabel = "extractor"
+scrapCost = 20
+scrapValue = 10
+maxHealth = 5200
+maxAmmo = 0
+unitName = "Extractor"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+isAssault = 1
+canInteract=1 // for missile lock
+
+armorClass = H
+
+lightHard1 = "hp_light_1"
+lightName1 = "o_white_nf"
+lightHard2 = "hp_light_2"
+lightName2 = "o_white_nf"
+lightHard3 = "hp_light_3"
+lightName3 = "o_white_nf"
+lightHard4 = "hp_light_4"
+lightName4 = "o_white_nf"
+
+effectHard1 = "hp_spark1"
+effectName1 = "b_trails.effecta2set"
+effectHard2 = "hp_spark2"
+effectName2 = "b_trails.effecta2set"
+effectHard3 = "hp_smoke_1"
+effectName3 = "b_fireb.smoke"
+
+
+upgradeName = "bbscav02"
+
+[BuildingClass]
+soundAmbient = "iext01.wav"
+
+[ExtractorClass]
+initDelay = 12.0
+scrapDelay = 1.0
+scrapHold = 20
+detectRange = 100
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 200

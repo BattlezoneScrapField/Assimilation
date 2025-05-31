@@ -1,0 +1,81 @@
+[GameObjectClass]
+baseName = "Bs_tug"
+geometryName = "B_tug.xsi"
+geometryScale = 15.0
+classLabel = "tug"
+collisionRadius = 1.0
+scrapValue = 0
+scrapCost = 0
+customCost = 0
+buildTime = 2.0
+customTime = 2.0
+maxHealth = 2000
+maxAmmo = 0
+unitName = "Unknown Ship"
+aiName = "TugFriend"
+aiName2 = "TugFriend"
+heatSignature = 10.0
+imageSignature = 0.5
+radarSignature = 0.0
+isAssault = 1
+armorClass = N
+needPilot = 0
+
+explosionName = "xplshipssp"
+
+boxCollide = 1
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+
+[CraftClass]
+rangeScan = 400.0f
+periodScan = 5.0f
+velocJam = 5.0f
+
+braccelFactor = 0.05f;
+strafeFactor = 0.1f;
+steerFactor = 1.0f;
+omegaFactor = 0.2f;
+velFactor = 0.2f;
+
+avoidSpeed = 20;
+topSpeed = 30;
+
+[HoverCraftClass]
+setAltitude = 80.0
+accelDragStop = 4.0
+accelDragFull = 1.0
+alphaTrack = 5.0
+alphaDamp = 3.0
+pitchPitch = 0.1
+pitchThrust = 0.2
+rollStrafe = 0.1
+rollSteer = 0.1
+
+velocForward = 15.0
+velocReverse = 2.0
+velocStrafe = 15.0
+accelThrust = 20.0
+accelBrake = 2.0
+omegaSpin = 1.0
+omegaTurn = 1.0
+alphaSteer = 1.0
+accelJump = 15.0
+
+soundThrust = "sdrop01.wav"
+soundSteer = "sdrop01.wav"
+soundDeploy = "iapc04.wav"
+soundUndeploy = "avapc30.wav"
+
+[TugClass]
+dockSpeed = 4.0
+fieldRadius = 200.0
+fieldOffset = 0.5
+accelCenter = 0.0
+accelEdge = -100.0
+accelDrag = 10.0
+alphaDamp = 5.0
+alphaTrack = 15.0
+soundDeploy = "trdeploy.wav"
+soundUndeploy = "trundepl.wav"

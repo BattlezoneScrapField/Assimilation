@@ -1,0 +1,35 @@
+[GameObjectClass]
+geometryName = "ballpool_1.xsi"
+classLabel = "deposit"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 20
+maxAmmo = 0
+unitName = "Biometal GLUB"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+collisionRadius = 1.0
+
+effectHard1 = "hp_light_1"
+effectName1 = "flashwhite1.light1"
+
+effectHard2 = "hp_light_2"
+effectName2 = "flashwhite1.light1"
+
+effectHard3 = "hp_light_3"
+effectName3 = "flashwhite1.light1"
+
+effectHard4 = "hp_light_4"
+effectName4 = "flashwhite1.light1"
+
+[BuildingClass]
+tunnelCount = 1
+
+tunnel01X0 = 1
+tunnel01Z0 = 1
+tunnel01DX = 2
+tunnel01DZ = 2
+tunnel01Edge = "wwtw"
+
+[DepositClass]

@@ -1,0 +1,566 @@
+
+[objects]
+
+motherloop
+user
+borg
+ship5
+ship4
+ship3
+ship2
+ship1
+nav2
+nav1
+enemy1
+wing2
+spot
+gun7
+gun6
+gun5
+gun4
+gun3
+mothership
+gun2
+gun1
+support
+wing1
+theplayer
+cruiser
+turr1
+Null
+point23
+point22
+point21
+point20
+point19
+point18
+point17
+point16
+point15
+point14
+point13
+point12
+point11
+point10
+point9
+point8
+point7
+point6
+point5
+point4
+point3
+point2
+point1
+
+
+[positions]
+enempos,-1961,200,-684
+point23pos,0,0,0
+point22pos,0,0,0
+point21pos,0,0,0
+point20pos,0,0,0
+point19pos,0,0,0
+point18pos,0,0,0
+point17pos,0,0,0
+point16pos,0,0,0
+point15pos,0,0,0
+point14pos,0,0,0
+point13pos,0,0,0
+point12pos,0,0,0
+point11pos,0,0,0
+point10pos,0,0,0
+point9pos,0,0,0
+point8pos,0,0,0
+point7pos,0,0,0
+point6pos,0,0,0
+point5pos,0,0,0
+point4pos,0,0,0
+point3pos,0,0,0
+point2pos,0,0,0
+point1pos,0,0,0
+camoffset,-150,100,-250
+camoffset1,300,-100,300
+
+
+[variables]
+
+Count2,0
+Count1,0
+
+
+[text]
+
+cleara,
+"Remove the Turrets from your\nLocation.."
+
+supportship,
+"The Mothership is going to\nClear the area, Follow it\nbut stay WELL Back.."
+
+supplost,
+"You LOST Your Support ship.."
+
+Invest,
+"Go to the nav and investage\nthose ships.."
+
+sneek,
+"Wait, and Scan the ships\naproching, you may need to\nget up close to scan the\nships.. you have 3 mins"
+
+finish,
+"Attack the strays laying around.\nThe Mothership and your ships have\nleft for the nebuler..."
+
+errorfound,
+"Error Found: - 101,221\nMotherShip Stuck......\nSkipping missions to second\nmission..\nTrying to correct.."
+
+sneekfail,
+"Failed to find info, nevermind\nThe Mothership did the job\nfor you, it's got more powerfull\n scanners.."
+
+[routine,Main,1,true]
+startsound,"b11_sound_1.wav"
+Ally,1,2
+getplayer,theplayer
+giveweapon,theplayer,"gblueg_c"
+getbylabel,mothership,"moth"
+
+createp,spot,"pspwn_1",0,"campatha1"
+lookat,mothership,spot,1
+getbylabel,gun1,"bs1"
+getbylabel,gun2,"bs2"
+getbylabel,gun3,"bs3"
+getbylabel,gun4,"bs4"
+getbylabel,gun5,"bs5"
+getbylabel,gun6,"bs6"
+getbylabel,gun7,"bs7"
+set,Count1,0
+SetSkill,mothership,3
+
+
+make5ships0:
+	createp,wing1,"ivspacesc",2,"wing1"
+	giveweapon,wing1,"gblueg_c"
+	attack,wing1,gun1,0
+	setgroup,wing1,1
+	add,Count1,1,Count1
+	iflt,5,make5ships0
+	set,Count1,0
+
+set,Count1,0
+make5ships1:
+	createp,wing1,"ivspacesc",2,"wing2"
+	giveweapon,wing1,"gblueg_c"
+	attack,wing1,gun1,0
+	setgroup,wing1,2
+	add,Count1,1,Count1
+	iflt,5,make5ships1
+	set,Count1,0
+
+	createp,ship1,"ivspacesc",2,"support"
+	giveweapon,ship1,"gblueg_c"
+	FOLLOW,ship1,theplayer,0
+	setgroup,ship1,3
+
+	createp,ship2,"ivspacesc",2,"support"
+	giveweapon,ship2,"gblueg_c"
+	FOLLOW,ship2,theplayer,0
+	setgroup,ship2,3
+
+	createp,ship3,"ivspacesc",2,"support"
+	giveweapon,ship3,"gblueg_c"
+	FOLLOW,ship3,theplayer,0
+	setgroup,ship3,3
+
+	createp,ship4,"ivspacesc",2,"support"
+	giveweapon,ship4,"gblueg_c"
+	FOLLOW,ship4,theplayer,0
+	setgroup,ship4,3
+
+	createp,ship5,"ivspacesc",2,"support"
+	giveweapon,ship5,"gblueg_c"
+	FOLLOW,ship5,theplayer,0
+	setgroup,ship5,3
+
+
+createp,cruiser,"isdfCruiser",2,"cruiser"
+	follow,cruiser,theplayer,0
+
+createp,support,"ivsupport",1,"support"
+follow,support,theplayer,0
+setgroup,support,9
+BeaconOn,gun1
+BeaconOn,gun2
+startsound,"b11_sound_2.wav"
+
+display,cleara,white
+startsound,"locked3.wav"
+
+Regoa1:
+wait,1
+isaround,gun1
+ifeq,True,Regoa1
+clear
+display,cleara,green
+startsound,"locked3.wav"
+goto,mothership,"mpath",1
+wait,12
+
+startsound,"b11_sound_3.wav"
+camobject,spot,camoffset,mothership,20
+BeaconOn,mothership
+
+motherloop:
+wait,2
+follow,mothership,gun5,1
+distobject,mothership,gun4
+ifgt,550,motherloop
+startsound,"b11_sound_0.wav"
+
+camobject,gun4,camoffset1,mothership,11
+stop,mothership,1
+Attack,mothership,gun4,0
+camobject,gun4,camoffset1,mothership,6
+
+display,supportship,white
+startsound,"locked3.wav"
+attack,mothership,gun5,1
+
+RunSpeed,errorfind,1,True
+createp,nav1,"ibnav",1,"mhold"
+setname,nav1,"Mothership, hold point"
+BeaconOn,nav1
+RunSpeed,attackstring,1,True
+
+Regoa4:
+wait,4
+attack,mothership,gun5,1
+isaround,gun5
+ifeq,True,Regoa4
+startsound,"b11_sound_4.wav"
+
+
+Regoa3:
+wait,5
+attack,mothership,gun6,1
+isaround,gun6
+ifeq,True,Regoa3
+attack,mothership,gun7,1
+clear
+display,supportship,green
+display,Invest,white
+startsound,"locked3.wav"
+goto,mothership,"mhold",1
+RunSpeed,errorfind,0,False
+
+createp,nav2,"ibnav",1,"connav"
+setname,nav2,"Convoy Path...."
+BeaconOn,nav2
+
+stop,ship1,0
+stop,ship2,0
+stop,ship3,0
+stop,ship4,0
+stop,ship5,0
+stop,cruiser,0
+stop,support,0
+
+
+loop1:
+wait,1
+getplayer,theplayer
+distobject,nav2,theplayer
+ifgt,500,loop1
+
+wait,9
+
+createp,ship1,"ISDF_frei",0,"con1spawn"
+goto,ship1,"con1path",0
+wait,5
+createp,ship2,"isdf_hc",0,"con2spawn"
+goto,ship2,"con2path",0
+wait,5
+
+clear
+display,sneek,white
+startsound,"locked3.wav"
+
+set,Count1,0
+make5cons1:
+	createp,ship3,"ivspacesc",0,"con1spawn"
+	FOLLOW,ship3,ship2,0
+	add,Count1,1,Count1
+	iflt,5,make5cons1
+	set,Count1,0
+
+make5cons:
+	createp,ship3,"ivspaceta",0,"con1spawn"
+	FOLLOW,ship3,ship2,0
+	add,Count1,1,Count1
+	iflt,5,make5cons
+	set,Count1,0
+
+wait,2
+startsound,"b11_sound_5.wav"
+BeaconOn,ship1
+BeaconOn,ship2
+goto,ship1,"con1path",0
+goto,ship2,"con1path",0
+set,Count2,0
+
+loop3mins:
+wait,1
+	isinfo,"isdf_hc"
+	ifeq,false,passtocore
+	Jumpto,lastlap
+passtocore:
+	add,Count2,1,Count2
+	iflt,180,loop3mins
+	set,Count2,0
+clear
+display,sneekfail,red
+startsound,"locked3.wav"
+Jumpto,Failjump
+
+lastlap:
+clear
+display,sneek,green
+startsound,"locked3.wav"
+
+Failjump:
+
+runspeed,attackall,0,false
+runspeed,attackstring,0,false
+runspeed,support,0,false
+
+do20times:
+	getbylabel,wing2,"unnamed_ivspacesc"
+	Remove,wing2
+	add,Count1,1,Count1
+	iflt,20,do20times
+	set,Count1,0
+
+Remove,mothership
+Remove,support
+Remove,cruiser
+
+wait,10
+startsound,"b11_sound_6.wav"
+wait,6
+clear
+display,sneek,green
+display,finish,white
+startsound,"locked3.wav"
+make8borg:
+	createp,borg,"bs_cube",5,"enemy2"
+	Patrol,borg,"patrolb1",0
+	BeaconOn,borg
+	add,Count1,1,Count1
+	iflt,8,make8borg
+	set,Count1,0
+
+do9times:
+	getbylabel,wing2,"unnamed_bs_cube"
+passloop:
+wait,1
+AddAmmo,theplayer,10
+isaround,wing2
+ifeq,True,passloop
+	add,Count1,1,Count1
+	iflt,9,do9times
+	set,Count1,0
+
+clear
+display,sneek,green
+display,finish,green
+startsound,"locked3.wav"
+
+succeed,5,"b11_text01.des"
+
+[routine,attackall,1,true]
+Regoa0:
+wait,1
+getbylabel,wing2,"unnamed_ivspacesc"
+
+isaround,wing2
+ifeq,True,pass0
+
+Jumpto,Regoa0
+
+pass0:
+attack,enemy1,wing2,0
+isaround,enemy1
+ifeq,True,Regoa0
+create,enemy1,"bs_sphere",5,enempos
+attack,enemy1,wing2,0
+
+Jumpto,Regoa0
+
+[routine,attackstring,0,false]
+loop:
+make2bships0:
+	createp,wing1,"bs_sphere",5,"enemy2"
+	attack,wing1,mothership,0
+	add,Count1,1,Count1
+	iflt,2,make2bships0
+	set,Count1,0
+
+make2bships1:
+	createp,wing1,"bs_cube",5,"enemy4"
+	attack,wing1,mothership,0
+	add,Count1,1,Count1
+	iflt,2,make2bships1
+	set,Count1,0
+
+wait,60
+jumpto,loop
+
+[routine,Astroids,1,true]
+getbylabel,point1,"p1"
+getbylabel,point2,"p2"
+getbylabel,point3,"p3"
+getbylabel,point4,"p4"
+getbylabel,point5,"p5"
+getbylabel,point6,"p6"
+getbylabel,point7,"p7"
+getbylabel,point8,"p8"
+getbylabel,point9,"p9"
+getbylabel,point10,"p10"
+getbylabel,point11,"p11"
+getbylabel,point12,"p12"
+getbylabel,point13,"p13"
+getbylabel,point14,"p14"
+getbylabel,point15,"p15"
+getbylabel,point16,"p16"
+getbylabel,point17,"p17"
+getbylabel,point18,"p18"
+getbylabel,point19,"p19"
+getbylabel,point20,"p20"
+getbylabel,point21,"p21"
+getbylabel,point22,"p22"
+getbylabel,point23,"p23"
+
+getpos,point1,point1pos
+getpos,point2,point2pos
+getpos,point3,point3pos
+getpos,point4,point4pos
+getpos,point5,point5pos
+getpos,point6,point6pos
+getpos,point7,point7pos
+getpos,point8,point8pos
+getpos,point9,point9pos
+getpos,point10,point10pos
+getpos,point11,point11pos
+getpos,point12,point12pos
+getpos,point13,point13pos
+getpos,point14,point14pos
+getpos,point15,point15pos
+getpos,point16,point16pos
+getpos,point17,point17pos
+getpos,point18,point18pos
+getpos,point19,point19pos
+getpos,point20,point20pos
+getpos,point21,point21pos
+getpos,point22,point22pos
+getpos,point23,point23pos
+
+Loop:
+
+create,Null,"met1",0,point1pos
+wait,1
+create,Null,"met1",0,point23pos
+wait,4
+create,Null,"met1",0,point2pos
+wait,1
+create,Null,"met1",0,point22pos
+wait,1
+create,Null,"met1",0,point3pos
+wait,1
+create,Null,"met2",0,point21pos
+wait,5
+create,Null,"met1",0,point4pos
+wait,1
+create,Null,"met2",0,point20pos
+wait,1
+create,Null,"met1",0,point5pos
+wait,1
+create,Null,"met2",0,point19pos
+wait,6
+create,Null,"met1",0,point6pos
+wait,1
+create,Null,"met1",0,point7pos
+wait,1
+create,Null,"met1",0,point8pos
+wait,4
+create,Null,"met1",0,point9pos
+wait,1
+create,Null,"met1",0,point18pos
+wait,1
+create,Null,"met1",0,point17pos
+wait,1
+create,Null,"met1",0,point10pos
+wait,3
+create,Null,"met1",0,point11pos
+wait,1
+create,Null,"met1",0,point16pos
+wait,1
+create,Null,"met1",0,point12pos
+wait,5
+create,Null,"met1",0,point15pos
+wait,1
+create,Null,"met1",0,point13pos
+wait,1
+create,Null,"met1",0,point14pos
+wait,1
+Jumpto,Loop
+
+[routine,support,1,true]
+wait,56
+loop:
+isaround,support
+ifeq,True,pass0a
+display,supplost,red
+startsound,"locked3.wav"
+runspeed,support,0,false
+jumpto,enda
+
+pass0a:
+wait,1
+getplayer,theplayer
+distobject,support,theplayer
+ifgt,70,passa
+AddAmmo,theplayer,250
+AddHealth,theplayer,250
+
+passa:
+distobject,support,cruiser
+ifgt,70,loop
+AddAmmo,cruiser,800
+AddHealth,cruiser,800
+
+jumpto,loop
+
+enda:
+
+
+[routine,errorfind,0,false]
+ConsoleWord,"Run-Check OnLine ->Holding.."
+wait,300
+Clear
+display,errorfound,red
+wait,2
+
+remove,mothership
+remove,gun1
+remove,gun2
+remove,gun3
+remove,gun4
+remove,gun5
+remove,gun6
+
+RunSpeed,attackstring,0,False
+
+
+[routine,killpilota,1,true]
+
+loop2:
+wait,1
+getbylabel,user,"unnamed_isuser"
+remove,user
+jumpto,loop2

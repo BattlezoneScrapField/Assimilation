@@ -1,0 +1,69 @@
+[GameObjectClass]
+geometryName = "bbfact00.xsi"
+classLabel = "factory"
+scrapCost = 60
+scrapValue = 20
+maxHealth = 7500
+maxAmmo = 0
+unitName = "Borg Factory"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+
+armorClass = H
+
+requireCount = 1
+requireName1 = "bbpgen"
+requireText1 = "Power Required"
+
+provideCount = 1
+provideName1 = "bbfact"
+
+collisionRadius = 4.0
+
+
+lightHard1 = "hp_light_1"
+lightName1 = "o_white_nf"
+
+
+lightHard2 = "hp_light_2"
+lightName2 = "o_white_nf"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[BuildingClass]
+tunnelCount = 1
+
+tunnel01X0 = 3
+tunnel01Z0 = 3
+tunnel01DX = 2
+tunnel01DZ = 4
+tunnel01Edge = "wwtw"
+
+soundAmbient = "amb_fwd.wav"
+
+// play ambient sound
+
+[FactoryClass]
+soundBuild = "ibrecy02.wav"
+soundFinish = "iapc04.wav"
+reloadMsg = "ivrecy12.wav"
+rescueMsg = "ivrecy13.wav"
+
+buildItem1 = "ivmbike"
+buildItem2 = "bvsphere"
+buildItem3 = "bvcube"
+buildItem4 = "bvcruis"
+buildItem5 = "bvatank"
+buildItem6 = "ivwalk"
+buildItem7 = "ivapc"
+buildItem8 = "ivbomb"
+
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 200

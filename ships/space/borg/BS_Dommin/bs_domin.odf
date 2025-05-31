@@ -1,0 +1,92 @@
+[GameObjectClass]
+baseName = "ivspaceta"
+geometryScale = 0.5
+geometryName = "bs_domin.xsi"
+classLabel = "wingman"
+scrapValue = 0
+scrapCost = 50
+customCost = 60
+buildTime = 15.0
+customTime = 15.0
+maxHealth = 11000
+maxAmmo = 4000
+addAmmo = 20
+addHealth = 20
+unitName = "BORG DOMINATOR"
+aiName = "RocketTankFriend"
+aiName2 = "RocketTankEnemy"
+
+heatSignature = 0.2
+imageSignature = 0.1
+radarSignature = 0.0
+
+isAssault = 0
+
+armorClass = h
+
+explosionName = "xplshipssp"
+
+//////////////////////////////
+
+weaponMask =00011
+
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "GBtorp_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_CANNON_2"
+weaponName2 = "GBtorp_a"
+weaponAssault2 = 1
+weaponHard5 = "HP_SHIELD"
+weaponName5 = ""
+weaponAssault5 = 0
+
+//////////////////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotgreen"
+lightHard2 = "hp_light_2"
+lightName2 = "spotgreen"
+lightHard3 = "hp_light_3"
+lightName3 = "omnigreen"
+lightHard4 = "hp_light_4"
+lightName4 = "omnigreen"
+	
+[CraftClass]
+rangeScan = 400.0f
+periodScan = 2.0f
+velocJam = 5.0f
+engageRange = 390
+
+braccelFactor = 0.05
+velFactor = 0.2
+steerFactor = 1.0
+omegaFactor = 0.5
+strafeFactor = 0.2
+
+avoidSpeed = 60
+topSpeed = 60
+
+[HoverCraftClass]
+velocForward = 60.0
+velocReverse = 45.0
+velocStrafe = 60.0
+accelThrust = 50.0
+accelDragStop = 0.0
+accelJump = 0.0
+aiAccelDrag = 0.0
+
+setAltitude = 75.0
+
+alphaTrack = 2.0
+alphaDamp = 8.0
+
+pitchPitch = 2.5 //nose up and down by mouse..
+pitchThrust = 0.2 //nose down when thrustors are on..
+
+rollStrafe = 2.6 //rolls while strafing []
+omegaSpin = 4.3 //spinning in place speed []
+omegaTurn = 5.6 //turning while moving speed []
+alphaSteer = 6.0 //how fast it responds to steering []
+rollSteer = 2.6 //rolls while steering []
+
+soundThrust = "Bengin.wav"

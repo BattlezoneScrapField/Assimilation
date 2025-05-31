@@ -1,0 +1,157 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = NULL
+ordName = "B_ball"
+wpnReticle = "B_ball"
+wpnName = "DP Bolt"
+fireSound = "B_Cannon.wav"
+wpnCategory = "CANN"
+flashName = "B_ball.flash"
+aiRange = 460
+isAssault = 0
+
+[CannonClass]
+shotDelay = 6.8
+shotAlternate = 0
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 9.3
+renderBase = "draw_light"
+startColor = "0 255 255 1000"
+finishColor = "0 0 255 1000"
+startRadius = 30.0
+finishRadius = 30.0
+animateTime = 9.3
+attenuateConstant = 2.0
+attenuateLinear = 3.0
+attenuateQuadratic = 2.5
+
+//--------------------------------------------------------------------
+
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xtechit"
+xplVehicle = "xtechit"
+xplBuilding = "xtechit"
+
+renderName = "B_ball.render"
+
+ammoCost = 1
+lifeSpan = 3.0
+shotSpeed = 100.0
+
+damageValue(N) = 6000
+damageValue(L) = 5000
+damageValue(H) = 4000
+
+damageValue(S) = 4000
+damageValue(D) = 3000
+damageValue(A) = 2200
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "B_ball.flare1"
+renderName2 = "B_ball.flare2"
+renderName3 = "B_ball.trailr"
+renderName4 = "B_ball.trailb"
+
+[Flare1]
+renderBase = "draw_sprite"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 8.0
+finishRadius = 8.0
+animateTime = 9.0
+
+[Flare2]
+renderBase = "draw_sprite"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 5.5
+finishRadius = 5.5
+animateTime = 9.0
+
+[TrailR]
+renderBase = "draw_emit"
+emitName = "B_ball.sparkr"
+emitDelay = 0.5
+emitVelocity = "0.0 0.0 30.0"
+emitVariance = "10.0 10.0 10.0"
+
+[TrailB]
+renderBase = "draw_emit"
+emitName = "B_ball.sparkb"
+emitDelay = 0.5
+emitVelocity = "0.0 0.0 30.0"
+emitVariance = "10.0 10.0 10.0"
+
+[SparkR]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "B_ball.sparkflare2"
+renderName2 = "B_ball.sparkflarer"
+renderName3 = "B_ball.sparktrailr"
+
+[SparkB]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "B_ball.sparkflare2"
+renderName2 = "B_ball.sparkflareb"
+renderName3 = "B_ball.sparktrailb"
+
+[SparkFlare]
+renderBase = "draw_sprite"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startRadius = 2.0
+finishRadius = 0.4
+animateTime = 1.0
+
+[SparkFlare2]
+renderBase = "draw_sprite"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.6
+finishRadius = 0.12
+animateTime = 1.0
+
+[SparkFlareR]
+renderBase = "B_ball.sparkflare"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+
+[SparkFlareB]
+renderBase = "B_ball.sparkflare"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+
+[SparkTrail]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startRadius = 0.1
+finishRadius = 0.0
+segmentTime = 0.03
+trailTime = 0.2
+
+[SparkTrailR]
+renderBase = "B_ball.sparktrail"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+
+[SparkTrailB]
+renderBase = "B_ball.sparktrail"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"

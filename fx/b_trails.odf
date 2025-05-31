@@ -1,0 +1,77 @@
+[trailer]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.05
+startColor = "100 200 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.4
+finishRadius = 0.8
+segmentTime = 7.0
+animateTime = 0.3
+//Small Blue Trail....
+
+[trailergr]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.05
+startColor = "100 190 0 255"
+finishColor = "0 225 0 0"
+startRadius = 0.4
+finishRadius = 2.5
+segmentTime = 2.0
+animateTime = 2.0
+//Medum Green Trail....
+
+
+[effecta2set]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_emit"
+emitName = "b_trails.effecta2"
+emitDelay = 0.8
+emitVelocity = "1.0 -20.0 1.0"//.4 0 0
+emitVariance = "50.0 -50.0 50.0"// .5 .5 .5
+
+[effecta2]
+simulateBase = "sim_ember"
+lifeTime = 3.0
+renderBase = "draw_twirl"
+textureName = "spark.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 100 100 0"
+startRadius = 1.5
+finishRadius = 1.5
+animateTime = 3.0
+rotationRate = 40.0
+//White Fragments
+
+
+
+[effecta3set]
+simulateBase = "sim_smoke"
+lifeTime = 0.03
+renderBase = "draw_emit"
+emitName = "b_trails.effecta3"
+emitDelay = 0.2
+emitVelocity = "1.0 -20.0 1.0"
+emitVariance = "90.0 -80.0 60.0"
+
+[effecta3]
+simulateBase = "sim_ember"
+lifeTime = 0.08
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "200 50 0 255"
+finishColor = "0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.05
+segmentLength = 0.8
+segmentVariance = "2.0 2.0 1.0"
+animateTime = 0.2
+textureRate = 0.05
+
+//Static Globe

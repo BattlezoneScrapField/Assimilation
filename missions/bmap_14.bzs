@@ -1,0 +1,935 @@
+
+[objects]
+
+Object1
+Object2
+Object3
+Object4
+Object5
+Object6
+Object7
+Object8
+Object9
+Object10
+Object11
+Object12
+Object13
+Object14
+Object15
+Object16
+Object17
+Object18
+Object19
+Object20
+Object21
+Object22
+
+[positions]
+
+Position1, 0,0,0
+Position2, 0,0,0
+
+[variables]
+
+Variable1, 0
+Variable2, 0
+Variable3, 0
+Variable4, 0
+Variable5, 0
+
+[text]
+
+_Text1,
+"Skill Setting at %i Good Luck..."
+
+_Text2,
+"Build a defence force around\nyour recy.. Collect the scrap\nblobs also only 2.."
+
+_Text3,
+"Make sure the transport gets to\nthe E-A Pagusus Safly..\n it will take 3 mins to\nevauate everyone from the ship.."
+
+_Text4,
+"Make sure the transport gets\nto your recy safly"
+
+_Text5,
+"You must excort your recy to\nthe exitpoint for it to jump\ninto hyperspace..\nA Nav is marked"
+
+_Text6,
+"Get the powerup to help you"
+
+//--------------------------------------------------------------------
+[routine,_Routine1,1,true]
+	Ally,1,2
+	GetByLabel,Object13,"dship"
+	Createp,Object22,"B_ivrecy_1",1,"recy"
+	AddScrap,1,40
+	RunSpeed,_Routine16,1,true
+	FreeCamera
+	Wait,5
+	IFaceExec,"b_Skill.cfg"
+LOC_8:
+	IFaceSetInt,"mission.var2",0
+	ConsoleWord,"cfg executed 1"
+	IFaceActivate,"Option_window"
+LOC_11:
+	IFaceGetInt,"mission.var2"
+	IfEQ,0,LOC_11
+	IFaceGetInt,"mission.var1",Variable5
+	IfEQ,4,LOC_19
+	IfEQ,3,LOC_37
+	IfEQ,2,LOC_43
+	IfEQ,1,LOC_49
+	JumpTo,LOC_55
+LOC_19:
+	IFaceSetInt,"mission.wa1",0
+	IFaceSetInt,"mission.wa2",0
+	ConsoleWord,"cfg executed 2"
+	ConsoleWord,"runn"
+	IFaceActivate,"Thewarning"
+LOC_24:
+	IFaceGetInt,"mission.wa1"
+	IfEQ,0,LOC_28
+	FreeFinish
+	JumpTo,LOC_31
+LOC_28:
+	IFaceGetInt,"mission.wa2"
+	IfEQ,0,LOC_24
+	JumpTo,LOC_8
+LOC_31:
+	ConsoleWord,"Setup on insane skill %i",Variable5
+	Clear
+	Display,_Text1,blue,Variable5
+	StartSound,"locked3.wav"
+	RunSpeed,_Routine11,1,true
+	JumpTo,LOC_55
+LOC_37:
+	ConsoleWord,"Setup on skill %i",Variable5
+	Clear
+	Display,_Text1,blue,Variable5
+	StartSound,"locked3.wav"
+	RunSpeed,_Routine8,1,true
+	JumpTo,LOC_55
+LOC_43:
+	ConsoleWord,"Setup on skill %i",Variable5
+	Clear
+	Display,_Text1,blue,Variable5
+	StartSound,"locked3.wav"
+	RunSpeed,_Routine2,1,true
+	JumpTo,LOC_55
+LOC_49:
+	ConsoleWord,"Setup on skill %i",Variable5
+	Clear
+	Display,_Text1,blue,Variable5
+	StartSound,"locked3.wav"
+	RunSpeed,_Routine5,1,true
+	JumpTo,LOC_55
+LOC_55:
+	FreeFinish
+
+//--------------------------------------------------------------------
+[routine,_Routine2,0,false]
+	Createp,Object21,"ivspacesc",1,"support"
+	Createp,Object20,"b_apbolts",1,"cannon"
+	BeaconOn,Object20
+	StartSound,"b14_sound_1.wav"
+	Wait,21
+	Clear
+	Display,_Text2,white
+	StartSound,"locked3.wav"
+	Createp,Object19,"ibnav",1,"pool1"
+	SetName,Object19,"Scrap Blob 1"
+	BeaconOn,Object19
+	Wait,20
+	GoTo,Object21,"scoutpath",1
+	Wait,10
+	RunSpeed,_Routine3,1,true
+	Wait,10
+	StartSound,"b14_sound_2.wav"
+	Wait,60
+	StartSound,"b14_sound_3.wav"
+	Createp,Object17,"ibnav",1,"pool2"
+	SetName,Object17,"Scrap Blob 2"
+	BeaconOn,Object17
+	Wait,19
+	Remove,Object21
+	Wait,520
+	RunSpeed,_Routine3,0,false
+	RunSpeed,_Routine4,1,true
+	Wait,200
+	StartSound,"b14_sound_5.wav"
+	Wait,90
+	StartSound,"b14_sound_4.wav"
+	Set,Variable3,100
+	Createp,Object15,"ibnav",1,"shipdamaged"
+	SetName,Object15,"Damaged Transport ship %i% Health",Variable3
+	BeaconOn,Object15
+	RunSpeed,_Routine15,1,true
+LOC_93:
+	Wait,6
+	Add,Variable3,-1,Variable3
+	SetName,Object15,"Damaged Transport ship %i, Percent",Variable3
+	Add,Variable2,1,Variable2
+	IfLT,100,LOC_93
+	Set,Variable2,0
+	Createp,Object12,"ivspacesc",2,"dummy"
+	GetPos,Object13,Position2
+	Create,Object11,"pspwn_1",0,Position2
+	RunSpeed,_Routine14,1,true
+	CamPath,"cam1",5000,2000,Object11
+	Remove,Object11
+	Remove,Object12
+	Remove,Object15
+LOC_107:
+	IsAround,Object14
+	IfEQ,1,LOC_107
+	Wait,5
+	RunSpeed,_Routine3,0,false
+	RunSpeed,_Routine4,0,false
+	Createp,Object6,"ibnav",1,"enemy5"
+	SetName,Object6,"Exit Point"
+	BeaconOn,Object6
+	RunSpeed,_Routine16,0,false
+	Remove,Object22
+	Clear
+	Display,_Text5,white
+	Createp,Object22,"B_ivrecy_1",1,"recy"
+	GetPlayer,Object1
+	Follow,Object22,Object1,0
+	RunSpeed,_Routine16,1,true
+LOC_123:
+	Wait,1
+LOC_124:
+	IsAround,Object5
+	IfEQ,0,LOC_128
+	Attack,Object5,Object22,1
+	JumpTo,LOC_131
+LOC_128:
+	Createp,Object5,"bs_sphere",5,"enemy2"
+	SetSkill,Object5,3
+	JumpTo,LOC_124
+LOC_131:
+	DistObject,Object22,Object6
+	IfGT,150,LOC_123
+	Succeed,1,"b14_textw1.obj"
+
+//--------------------------------------------------------------------
+[routine,_Routine3,0,false]
+LOC_135:
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,80
+	Createp,Object18,"bs_sphere",5,"enemy2"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy3"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,80
+	Createp,Object18,"bs_sphere",5,"enemy4"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy4"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,80
+	Createp,Object18,"bs_sphere",5,"enemy5"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy6"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,80
+	GetByLabel,Object16,"unnamed_ivscav_s1"
+	IsAround,Object16
+	IfEQ,0,LOC_173
+LOC_166:
+	IsAround,Object18
+	IfEQ,0,LOC_170
+	Attack,Object18,Object16,1
+	JumpTo,LOC_173
+LOC_170:
+	Createp,Object18,"bs_sphere",5,"enemy4"
+	SetSkill,Object18,3
+	JumpTo,LOC_166
+LOC_173:
+	JumpTo,LOC_135
+
+//--------------------------------------------------------------------
+[routine,_Routine4,0,false]
+LOC_175:
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,20
+	Createp,Object18,"bs_sphere",5,"enemy2"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_cube",5,"enemy3"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,30
+	Createp,Object18,"bs_sphere",5,"enemy4"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_scout",5,"enemy4"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,20
+	Createp,Object18,"bs_sphere",5,"enemy5"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy6"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,30
+	GetByLabel,Object16,"unnamed_ivscav_s1"
+	IsAround,Object16
+	IfEQ,0,LOC_213
+LOC_206:
+	IsAround,Object7
+	IfEQ,0,LOC_210
+	Attack,Object7,Object16,1
+	JumpTo,LOC_213
+LOC_210:
+	Createp,Object7,"bs_sphere",5,"enemy4"
+	SetSkill,Object7,3
+	JumpTo,LOC_206
+LOC_213:
+	JumpTo,LOC_175
+
+//--------------------------------------------------------------------
+[routine,_Routine5,0,false]
+	Createp,Object21,"ivspacesc",1,"support"
+	Createp,Object20,"b_apbolts",1,"cannon"
+	BeaconOn,Object20
+	StartSound,"b14_sound_1.wav"
+	Wait,21
+	Clear
+	Display,_Text2,white
+	Display,_Text6,blue
+	StartSound,"locked3.wav"
+	Createp,Object19,"ibnav",1,"pool1"
+	SetName,Object19,"Scrap Blob 1"
+	BeaconOn,Object19
+	Wait,20
+	GoTo,Object21,"scoutpath",1
+	Wait,10
+	RunSpeed,_Routine6,1,true
+	Wait,10
+	StartSound,"b14_sound_2.wav"
+	Wait,60
+	StartSound,"b14_sound_3.wav"
+	Createp,Object17,"ibnav",1,"pool2"
+	SetName,Object17,"Scrap Blob 2"
+	BeaconOn,Object17
+	Wait,19
+	Remove,Object21
+	Wait,520
+	RunSpeed,_Routine6,0,false
+	RunSpeed,_Routine7,1,true
+	Wait,200
+	StartSound,"b14_sound_5.wav"
+	Wait,90
+	StartSound,"b14_sound_4.wav"
+	Set,Variable3,100
+	Createp,Object15,"ibnav",1,"shipdamaged"
+	SetName,Object15,"Damaged Transport ship %i% Health",Variable3
+	BeaconOn,Object15
+	RunSpeed,_Routine15,1,true
+LOC_252:
+	Wait,6
+	Add,Variable3,-1,Variable3
+	SetName,Object15,"Damaged Transport ship %i, Percent",Variable3
+	Add,Variable2,1,Variable2
+	IfLT,100,LOC_252
+	Set,Variable2,0
+	Createp,Object12,"ivspacesc",2,"dummy"
+	GetPos,Object13,Position2
+	Create,Object11,"pspwn_1",0,Position2
+	RunSpeed,_Routine14,1,true
+	CamPath,"cam1",5000,2000,Object11
+	Remove,Object11
+	Remove,Object12
+	Remove,Object15
+LOC_266:
+	IsAround,Object14
+	IfEQ,1,LOC_266
+	Wait,5
+	RunSpeed,_Routine6,0,false
+	RunSpeed,_Routine7,0,false
+	Createp,Object6,"ibnav",1,"enemy5"
+	SetName,Object6,"Exit Point"
+	BeaconOn,Object6
+	RunSpeed,_Routine16,0,false
+	Remove,Object22
+	Clear
+	Display,_Text5,white
+	Createp,Object22,"B_ivrecy_1",1,"recy"
+	GetPlayer,Object1
+	Follow,Object22,Object1,0
+	RunSpeed,_Routine16,1,true
+LOC_282:
+	Wait,20
+LOC_283:
+	IsAround,Object5
+	IfEQ,0,LOC_287
+	Attack,Object5,Object22,1
+	JumpTo,LOC_290
+LOC_287:
+	Createp,Object5,"bs_sphere",5,"enemy2"
+	SetSkill,Object5,3
+	JumpTo,LOC_283
+LOC_290:
+	DistObject,Object22,Object6
+	IfGT,150,LOC_282
+	Succeed,1,"b14_textw1.obj"
+
+//--------------------------------------------------------------------
+[routine,_Routine6,0,false]
+LOC_294:
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	Attack,Object18,Object22,1
+	Wait,80
+	Createp,Object18,"bs_sphere",5,"enemy2"
+	Attack,Object18,Object22,1
+	Wait,80
+	Createp,Object18,"bs_sphere",5,"enemy4"
+	Attack,Object18,Object22,1
+	Wait,80
+	Createp,Object18,"bs_sphere",5,"enemy5"
+	Attack,Object18,Object22,1
+	Wait,80
+	JumpTo,LOC_294
+
+//--------------------------------------------------------------------
+[routine,_Routine7,0,false]
+LOC_308:
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	Attack,Object18,Object22,1
+	Wait,20
+	Createp,Object18,"bs_cube",5,"enemy3"
+	Attack,Object18,Object22,1
+	Wait,50
+	Createp,Object18,"bs_sphere",5,"enemy5"
+	Attack,Object18,Object22,1
+	Wait,30
+	JumpTo,LOC_308
+
+//--------------------------------------------------------------------
+[routine,_Routine8,0,false]
+	Createp,Object21,"ivspacesc",1,"support"
+	Createp,Object20,"b_apbolts",1,"cannon"
+	BeaconOn,Object20
+	StartSound,"b14_sound_1.wav"
+	Wait,21
+	Clear
+	Display,_Text2,white
+	StartSound,"locked3.wav"
+	Createp,Object19,"ibnav",1,"pool1"
+	SetName,Object19,"Scrap Blob 1"
+	BeaconOn,Object19
+	Wait,20
+	GoTo,Object21,"scoutpath",1
+	Wait,10
+	RunSpeed,_Routine3,1,true
+	Wait,10
+	StartSound,"b14_sound_2.wav"
+	Wait,60
+	StartSound,"b14_sound_3.wav"
+	Createp,Object17,"ibnav",1,"pool2"
+	SetName,Object17,"Scrap Blob 2"
+	BeaconOn,Object17
+	Wait,19
+	Remove,Object21
+	Wait,520
+	RunSpeed,_Routine9,0,false
+	RunSpeed,_Routine10,1,true
+	Wait,200
+	StartSound,"b14_sound_5.wav"
+	Wait,90
+	StartSound,"b14_sound_4.wav"
+	Set,Variable3,100
+	Createp,Object15,"ibnav",1,"shipdamaged"
+	SetName,Object15,"Damaged Transport ship %i% Health",Variable3
+	BeaconOn,Object15
+	RunSpeed,_Routine15,1,true
+LOC_355:
+	Wait,6
+	Add,Variable3,-1,Variable3
+	SetName,Object15,"Damaged Transport ship %i, Percent",Variable3
+	Add,Variable2,1,Variable2
+	IfLT,100,LOC_355
+	Set,Variable2,0
+	Createp,Object12,"ivspacesc",2,"dummy"
+	GetPos,Object13,Position2
+	Create,Object11,"pspwn_1",0,Position2
+	RunSpeed,_Routine14,1,true
+	CamPath,"cam1",5000,2000,Object11
+	Remove,Object11
+	Remove,Object12
+	Remove,Object15
+LOC_369:
+	IsAround,Object14
+	IfEQ,1,LOC_369
+	Wait,5
+	RunSpeed,_Routine9,0,false
+	RunSpeed,_Routine10,0,false
+	Createp,Object6,"ibnav",1,"enemy5"
+	SetName,Object6,"Exit Point"
+	RunSpeed,_Routine16,0,false
+	Remove,Object22
+	Clear
+	Display,_Text5,white
+	Createp,Object22,"B_ivrecy_1",1,"recy"
+	GetPlayer,Object1
+	Follow,Object22,Object1,0
+	RunSpeed,_Routine16,1,true
+LOC_384:
+	Wait,20
+LOC_385:
+	IsAround,Object5
+	IfEQ,0,LOC_389
+	Attack,Object5,Object22,1
+	JumpTo,LOC_393
+LOC_389:
+	Createp,Object5,"bs_scout",5,"enemy2"
+	SetSkill,Object5,3
+	Wait,9
+	JumpTo,LOC_385
+LOC_393:
+	DistObject,Object22,Object6
+	IfGT,150,LOC_384
+	Succeed,1,"b14_textw1.obj"
+
+//--------------------------------------------------------------------
+[routine,_Routine9,0,false]
+LOC_397:
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,80
+	Createp,Object18,"bs_sphere",5,"enemy2"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,80
+	Createp,Object18,"bs_sphere",5,"enemy4"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy3"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy4"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,80
+	Createp,Object18,"bs_sphere",5,"enemy5"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy6"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy6"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,80
+	JumpTo,LOC_397
+
+//--------------------------------------------------------------------
+[routine,_Routine10,0,false]
+LOC_433:
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_scout",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,20
+	Createp,Object18,"bs_cube",5,"enemy3"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_cube",5,"enemy3"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,20
+	Createp,Object18,"bs_sphere",5,"enemy5"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy5"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_scout",5,"enemy5"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,20
+	Createp,Object18,"bs_sphere",5,"enemy2"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_cube",5,"enemy6"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_scout",5,"enemy4"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,30
+	JumpTo,LOC_433
+
+//--------------------------------------------------------------------
+[routine,_Routine11,0,false]
+	Createp,Object21,"ivspacesc",1,"support"
+	Createp,Object20,"b_apbolts",1,"cannon"
+	BeaconOn,Object20
+	StartSound,"b14_sound_1.wav"
+	Wait,21
+	Clear
+	Display,_Text2,white
+	StartSound,"locked3.wav"
+	Createp,Object19,"ibnav",1,"pool1"
+	SetName,Object19,"Scrap Blob 1"
+	BeaconOn,Object19
+	Wait,20
+	GoTo,Object21,"scoutpath",1
+	Wait,10
+	RunSpeed,_Routine12,1,true
+	Wait,10
+	StartSound,"b14_sound_2.wav"
+	Wait,60
+	StartSound,"b14_sound_3.wav"
+	Createp,Object17,"ibnav",1,"pool2"
+	SetName,Object17,"Scrap Blob 2"
+	BeaconOn,Object17
+	Wait,19
+	Remove,Object21
+	Wait,520
+	RunSpeed,_Routine12,0,false
+	RunSpeed,_Routine13,1,true
+	Wait,200
+	StartSound,"b14_sound_5.wav"
+	Wait,90
+	StartSound,"b14_sound_4.wav"
+	Set,Variable3,100
+	Createp,Object15,"ibnav",1,"shipdamaged"
+	SetName,Object15,"Damaged Transport ship %i% Health",Variable3
+	BeaconOn,Object15
+	RunSpeed,_Routine15,1,true
+LOC_508:
+	Wait,6
+	Add,Variable3,-1,Variable3
+	SetName,Object15,"Damaged Transport ship %i, Percent",Variable3
+	Add,Variable2,1,Variable2
+	IfLT,100,LOC_508
+	Set,Variable2,0
+	Createp,Object12,"ivspacesc",2,"dummy"
+	GetPos,Object13,Position2
+	Create,Object11,"pspwn_1",0,Position2
+	RunSpeed,_Routine14,1,true
+	CamPath,"cam1",5000,2000,Object11
+	Remove,Object11
+	Remove,Object12
+	Remove,Object15
+LOC_522:
+	IsAround,Object14
+	IfEQ,1,LOC_522
+	Wait,5
+	RunSpeed,_Routine12,0,false
+	RunSpeed,_Routine13,0,false
+	Createp,Object6,"ibnav",1,"enemy5"
+	SetName,Object6,"Exit Point"
+	RunSpeed,_Routine16,0,false
+	Remove,Object22
+	Clear
+	Display,_Text5,white
+	Createp,Object22,"B_ivrecy_1",1,"recy"
+	GetPlayer,Object1
+	Follow,Object22,Object1,0
+	RunSpeed,_Routine16,1,true
+LOC_537:
+	Wait,20
+LOC_538:
+	IsAround,Object5
+	IfEQ,0,LOC_542
+	Attack,Object5,Object22,1
+	JumpTo,LOC_546
+LOC_542:
+	Createp,Object5,"bs_cube",5,"enemy2"
+	SetSkill,Object5,3
+	Wait,4
+	JumpTo,LOC_538
+LOC_546:
+	DistObject,Object22,Object6
+	IfGT,150,LOC_537
+	Succeed,1,"b14_textw1.obj"
+
+//--------------------------------------------------------------------
+[routine,_Routine12,0,false]
+LOC_550:
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,80
+	Createp,Object18,"bs_cube",5,"enemy2"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,80
+	Createp,Object18,"bs_cube",5,"enemy4"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy3"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_scout",5,"enemy4"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,80
+	Createp,Object18,"bs_sphere",5,"enemy5"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_cube",5,"enemy6"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_sphere",5,"enemy6"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,80
+	JumpTo,LOC_550
+
+//--------------------------------------------------------------------
+[routine,_Routine13,0,false]
+LOC_586:
+	Createp,Object18,"bs_cube",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_cube",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_scout",5,"enemy1"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,20
+	Createp,Object18,"bs_cube",5,"enemy3"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_cube",5,"enemy3"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,20
+	Createp,Object18,"bs_cube",5,"enemy5"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_scout",5,"enemy5"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_scout",5,"enemy5"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,20
+	Createp,Object18,"bs_cube",5,"enemy2"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_cube",5,"enemy6"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_scout",5,"enemy4"
+	SetSkill,Object18,3
+	Attack,Object18,Object22,1
+	Wait,30
+	JumpTo,LOC_586
+
+//--------------------------------------------------------------------
+[routine,_Routine14,0,false]
+	GetByLabel,Object9,"unnamed_b_spark2a"
+	Remove,Object9
+	GetByLabel,Object9,"unnamed_b_sparks1"
+	Remove,Object9
+	GetByLabel,Object9,"unnamed_b_sparks1"
+	Remove,Object9
+	GetByLabel,Object9,"unnamed_b_sparks1"
+	Remove,Object9
+	ConsoleWord,"damage seqrunning"
+	RunSpeed,_Routine18,0,false
+	Wait,3
+	HideTimer
+	Damage,Object13,20000
+LOC_638:
+	GetByLabel,Object10,"spark"
+	Remove,Object10
+	Add,Variable1,1,Variable1
+	IfLT,32,LOC_638
+	Set,Variable1,0
+
+//--------------------------------------------------------------------
+[routine,_Routine15,0,false]
+	Createp,Object14,"ISDF_frNW",2,"trans"
+	BeaconOn,Object14
+	Clear
+	Display,_Text3,white
+	StartSound,"locked3.wav"
+	RunSpeed,_Routine17,1,true
+	Retreat,Object14,"shipdamaged",0
+LOC_651:
+	Wait,1
+	DistObject,Object15,Object14
+	IfGT,280,LOC_651
+	Stop,Object14,0
+	Wait,5
+	Stop,Object14,0
+	Wait,5
+	Stop,Object14,0
+	StartSound,"apc2.wav"
+	StartTimer,200
+	Wait,200
+	Retreat,Object14,"cannon",0
+	StartSound,"apc3.wav"
+	Clear
+	Display,_Text3,green
+	Display,_Text4,white
+	StartSound,"locked3.wav"
+	Wait,10
+	Createp,Object8,"bs_sphere",5,"enemy1"
+	SetSkill,Object8,3
+	Attack,Object8,Object14,0
+	Wait,5
+	StartSound,"apc1.wav"
+LOC_674:
+	Wait,3
+	Follow,Object14,Object22,0
+	DistObject,Object22,Object14
+	IfGT,300,LOC_674
+	Clear
+	Display,_Text3,green
+	Display,_Text4,green
+	StartSound,"locked3.wav"
+	RunSpeed,_Routine17,0,false
+	Remove,Object14
+
+//--------------------------------------------------------------------
+[routine,_Routine16,0,false]
+LOC_685:
+	IsAround,Object22
+	IfEQ,1,LOC_685
+	Fail,1,"b14_textf1.obj"
+
+//--------------------------------------------------------------------
+[routine,_Routine17,0,false]
+LOC_689:
+	IsAround,Object14
+	IfEQ,1,LOC_689
+	Fail,1,"b14_textf2.obj"
+
+//--------------------------------------------------------------------
+[routine,_Routine18,1,true]
+	Wait,10
+LOC_694:
+	IsAround,Object13
+	IfEQ,1,LOC_694
+	Fail,1,"b14_textf3.obj"
+
+//--------------------------------------------------------------------
+[routine,_Routine19,1,true]
+	Wait,10
+LOC_699:
+	Wait,1
+	GetByLabel,Object4,"unnamed_isuser"
+	DistObject,Object22,Object4
+	IfGT,80,LOC_704
+	JumpTo,LOC_699
+LOC_704:
+	Remove,Object4
+	JumpTo,LOC_699
+
+//--------------------------------------------------------------------
+[routine,_Routine20,1,true]
+	ConsoleWord,"Rocks 1"
+LOC_708:
+	GetByLabel,Object3,"unnamed_B_astrmc4"
+	IsAround,Object3
+	IfEQ,0,LOC_716
+	GetPos,Object3,Position1
+	Remove,Object3
+	Create,Object2,"B_astrma4",0,Position1
+	Stop,Object2,0
+	JumpTo,LOC_708
+LOC_716:
+	ConsoleWord,"Rocks 2"
+	GetByLabel,Object3,"unnamed_B_astrma1"
+	IsAround,Object3
+	IfEQ,0,LOC_725
+	GetPos,Object3,Position1
+	Remove,Object3
+	Create,Object2,"B_astrma2",5,Position1
+	Stop,Object2,0
+	JumpTo,LOC_716
+LOC_725:
+	ConsoleWord,"Rocks 3"
+	GetByLabel,Object3,"unnamed_B_astrma5"
+	IsAround,Object3
+	IfEQ,0,LOC_734
+	GetPos,Object3,Position1
+	Remove,Object3
+	Create,Object2,"B_astrmc4",0,Position1
+	Stop,Object2,0
+	JumpTo,LOC_725
+LOC_734:
+	ConsoleWord,"Rocks 4"
+	GetByLabel,Object3,"unnamed_B_astrma6"
+	IsAround,Object3
+	IfEQ,0,LOC_743
+	GetPos,Object3,Position1
+	Remove,Object3
+	Create,Object2,"B_astrmb4",0,Position1
+	Stop,Object2,0
+	JumpTo,LOC_734
+LOC_743:
+	ConsoleWord,"Rocks 5"
+	GetByLabel,Object3,"unnamed_B_astrmc5"
+	IsAround,Object3
+	IfEQ,0,LOC_752
+	GetPos,Object3,Position1
+	Remove,Object3
+	Create,Object2,"B_astrma5",0,Position1
+	Stop,Object2,0
+	JumpTo,LOC_743
+LOC_752:
+	ConsoleWord,"Rocks 6"
+	GetByLabel,Object3,"unnamed_B_astrmb4"
+	IsAround,Object3
+	IfEQ,0,LOC_761
+	GetPos,Object3,Position1
+	Remove,Object3
+	Create,Object2,"B_astrmb5",0,Position1
+	Stop,Object2,0
+	JumpTo,LOC_752
+LOC_761:
+	ConsoleWord,"Rocks 7"
+	GetByLabel,Object3,"unnamed_B_astrmc6"
+	IsAround,Object3
+	IfEQ,0,LOC_770
+	GetPos,Object3,Position1
+	Remove,Object3
+	Create,Object2,"B_astrmb6",0,Position1
+	Stop,Object2,0
+	JumpTo,LOC_761
+LOC_770:
+	ConsoleWord,"Rocks Done"
+

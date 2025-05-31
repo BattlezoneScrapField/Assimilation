@@ -1,0 +1,65 @@
+[GameObjectClass]
+baseName = "ivrecy"
+geometryName = "B_ivrecy.xsi"
+classLabel = "recyclervehicle"
+unitIcon = "icon_Ivrecy_s.tga"
+scrapCost = 0
+scrapValue = 100
+maxHealth = 9000
+maxAmmo = 0
+unitName = "Recycler"
+aiName = "DeployBuildingFriend"
+aiName2 = "DeployBuildingEnemy"
+heatSignature = 2.0
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1
+explosionName = "Xnuke_B"
+
+armorClass = H
+
+effectHard1 = "hp_engine_2"
+effectName1 = "ivpdrop2.trail"
+effectHard2 = "hp_engine_1"
+effectName2 = "ivpdrop2.trail"
+
+[CraftClass]
+rangeScan = 400.0f
+periodScan = 5.0f
+velocJam = 0.0f
+TeamTransferrable = false
+
+selectUser1Msg = "ivrecy02.wav"  // building
+selectUser2Msg = "ivrecy10.wav"  // can't do
+selectWaitMsg = "ivrecy04.wav"  // yes sir
+selectGoMsg = "ivrecy01.wav"  // in transit
+selectOtherMsg = "ivrecy04.wav"  // yes sir
+holdMsg = "ivrecy09.wav"
+attackMsg = "ivrecy05.wav"
+goMsg = "ivrecy05.wav"
+goObjectMsg = "ivrecy04.wav"
+user1Msg = "ivrecy02.wav"
+user2Msg = "ivrecy13.wav"
+followMsg = "ivrecy03.wav"
+otherMsg = "ivrecy04.wav"
+
+
+[TrackedVehicleClass]
+velocForward = 20.0
+velocReverse = 20.0
+accelThrust = 50.0
+omegaSpin = 2.0
+
+engineSound = "bgimp.wav"
+treadSound = "bgimp.wav"
+
+[TrackedDeployableClass]
+timeDeploy = 10.0
+timeUndeploy = 10.0
+soundDeploy = "irecy03.wav"
+
+[DeployBuildingClass]
+deployName = "B_ibrecy_1"
+
+[RecyclerVehicleClass]
+scrapHold = 40

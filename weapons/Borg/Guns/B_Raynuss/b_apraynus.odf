@@ -1,0 +1,23 @@
+[GameObjectClass]
+geometryName = "apgun00.xsi"
+classLabel = "wpnpower"
+scrapCost = 20
+scrapValue = 5
+maxHealth = 200
+maxAmmo = 0
+unitName = "Raynuss Gun"
+aiName = "PowerUpProcess"
+
+requireCount = 1
+requireName1 = "bbtrans"
+requireText1 = "Build Transceiver"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omnicyan"
+
+[PowerUpClass]
+soundPickup = "pickup01.wav"
+soundReject = "reject.wav"
+
+[WeaponPowerupClass]
+weaponName = "b_graynus_c"

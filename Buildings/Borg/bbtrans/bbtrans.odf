@@ -1,0 +1,43 @@
+[GameObjectClass]
+geometryName = "bbtrans00.xsi"
+classLabel = "jammer"
+geometryScale = 0.5
+collisionRadius = 5.0
+scrapCost = 85
+scrapValue = 40
+maxHealth = 1300
+maxAmmo = 0
+unitName = "Transceiver Array"
+heatSignature = 3.0
+imageSignature = 0.0
+radarSignature = 0.0
+ownsTerrain = 1
+canCollide = 1
+isAssault = 1
+
+armorClass = H
+
+buildSupport = "A"
+buildRequire = "F"
+
+requireCount = 1
+requireName1 = "bbtrain"
+requireText1 = "Traning Required"
+
+provideCount = 1
+provideName1 = "bbtrans"
+
+effectHard1 = "hp_spark_1"
+effectName1 = "b_trails.effecta3set"
+effectHard2 = "hp_spark_1"
+effectName2 = "flashred.light1"
+
+[PoweredBuildingClass]
+powerCost = 1
+detectRange = 600
+
+[BuildingClass]
+soundAmbient = "sjam01.wav"
+
+[JammerTowerClass]
+jammerRange = 400.0

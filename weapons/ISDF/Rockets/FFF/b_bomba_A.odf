@@ -1,0 +1,34 @@
+[OrdnanceClass]
+classLabel = "thermalmissile"
+
+shotGeometry = "b_bomb.xsi"
+shotSound = "crckt02.wav"
+
+renderName = "b_bomba_A.render"
+
+xplGround = "Xnuke_B"
+xplVehicle = "Xnuke_B"
+xplBuilding = "Xnuke_B"
+
+ammoCost = 1300
+lifeSpan = 15.0 // 200m
+shotSpeed = 40.0
+
+damageValue(N) = 8920 // none // 390
+damageValue(L) = 8000 // light // 210
+damageValue(H) = 7521 // heavy // 45
+
+damageValue(S) = 9999 // standard // 210
+damageValue(D) = 1345 // deflection // 180
+damageValue(A) = 21562 // absorbtion // 255
+
+[MissileClass]
+omegaTurn = 1.0
+
+[ThermalMissileClass]
+coneAngle = 0.25
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "b_trails.trailer"

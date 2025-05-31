@@ -1,0 +1,136 @@
+[Start]
+scrapCount = 65
+consClass = "bvcons"
+scavClass = "bvscav"
+
+[Cheat]
+moneyAmount = 20
+moneyDelay = 5
+
+[Plan1]
+planType = "BuildMinimums"
+planPriority = 150
+buildType1 = "bvscout"
+buildCount1 = 2
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan2]
+planType = "Hold"
+planPriority = 140
+holdType1 = "bvscav"
+holdCount1 = 1
+holdPoint = "base"
+buildIfNoIdle = 1
+
+[Plan3]
+planType = "BuildMinimums"
+planPriority = 130
+buildType1 = "bvcons"
+buildCount1 = 1
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan4]
+planType = "BaseBuildMinimums"
+planPriority = 120
+buildType1 = "bbpgen"
+buildCount1 = 2
+doNextOnFail = 1
+
+[Plan5]
+planType = "BaseBuildMinimums"
+planPriority = 110
+buildType1 = "bbcbun"
+buildCount1 = 1
+doNextOnFail = 1
+
+[Plan6]
+planType = "BaseBuildMinimums"
+planPriority = 100
+buildType1 = "bbgtow"
+buildCount1 = 1
+doNextOnFail = 1
+
+[Plan7]
+planType = "DefendArea"
+planPriority = 90
+targetType = "bbgtow"
+doNextOnFail = 1
+
+[Plan8]
+planType = "Attacker"
+planPriority = 80
+targetType = "b_isdf_cons"
+attackType1 = "b_sphere"
+maxAttacks = 180
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan9]
+planType = "Attacker"
+planPriority = 70
+targetType = "ivtug_b"
+attackType1 = "B_Zat"
+attackType2 = "B_Zat"
+attackType3 = "bvscout00"
+maxAttacks = 3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan10]
+planType = "Attacker"
+planPriority = 60
+targetType = "ibgtow"
+attackType1 = "B_arme"
+maxAttacks = 2
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan11]
+planType = "Attacker"
+planPriority = 50
+targetType = "ibgtow"
+attackType1 = "B_armebe"
+maxAttacks = 80
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan12]
+planType = "Attacker"
+planPriority = 40
+targetType = "ivtug_b"
+attackType1 = "B_Zat"
+maxAttacks = 180
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan13]
+planType = "Attacker"
+planPriority = 30
+targetType = "ivrckt"
+attackType1 = "B_Cube"
+attackType2 = "B_Cube"
+attackType3 = "bvscout01"
+maxAttacks = 20
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan14]
+planType = "Attacker"
+planPriority = 20
+targetType = "ibarmot_b"
+attackType1 = "B_Cube"
+attackType2 = "B_Cube"
+attackType3 = "B_scout"
+attackType4 = "bvscout01"
+attackType5 = "B_armebe"
+maxAttacks = 80
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan15]
+planType = "ClearArea"
+planPriority = 10
+targetType = "ibpgen"
+

@@ -1,0 +1,58 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+shotSound = "igtow04.wav"
+
+renderName = "BorgBM2.render"
+
+xplGround = "BM2grn"
+xplVehicle = "BM2car"
+xplBuilding = "BM2car"
+
+ammoCost = 10
+lifeSpan = 1.64 // 201m
+
+shotSpeed = 200.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 140 // light
+damageValue(H) = 130 // heavy
+
+damageValue(S) = 140 // standard
+damageValue(D) = 150 // deflection
+damageValue(A) = 100 // absorbtion
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "BorgBM2.flare"
+renderName2 = "BorgBM2.halo"
+renderName3 = "BorgBM2.trail"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 127"
+finishColor = "255 255 255 127"
+startRadius = 1.0
+finishRadius = 1.0
+
+[Halo]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "127 225 0 63"
+finishColor = "0 225 0 0"
+startRadius = 1.0
+finishRadius = 1.0
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "127 225 0 125"
+finishColor = "0 225 0 63"
+startRadius = 0.5
+finishRadius = 0.0
+segmentTime = 0.5

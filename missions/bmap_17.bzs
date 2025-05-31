@@ -1,0 +1,1160 @@
+
+[objects]
+
+Object1 <9>
+Object10
+Object11
+Object12
+Object13
+Object14
+Object15
+Object16
+Object17
+Object18
+Object19
+Object20
+Object21
+Object22
+Object23
+Object24
+Object25
+Object26 <2>
+Object28 <2>
+Object30 <2>
+Object32
+Object33
+Object34
+Object35
+Object36
+Object37
+Object38
+Object39
+Object40
+Object41
+Object42
+Object43
+Object44
+Object45
+Object46
+Object47
+Object48
+Object49
+Object50
+Object51
+Object52
+Object53
+Object54
+Object55
+Object56
+Object57
+Object58
+
+[positions]
+
+Position1, 0,0,0
+Position2, 0,0,0
+Position3, 0,0,0
+Position4, 0,0,0
+Position5, 0,0,0
+Position6, 0,0,0
+Position7, 0,0,0
+Position8, 0,0,0
+Position9, 0,0,0
+
+[variables]
+
+Variable1, 0
+Variable2, 0
+Variable3, 0
+Variable4, 0
+Variable5, 0
+
+[text]
+
+_Text1,
+"The reciciler will make\nit's way to the base\npoint.\n You are to protect it."
+
+_Text2,
+"A lazer gun has been\nDetected, Destroy the power\nNodes to shut the lazers down."
+
+_Text3,
+"Direct recyciler around\nthe adge of the Area."
+
+_Text4,
+"You have %i recy left,\nDo not loose them."
+
+_Text5,
+"Destroy all the pipes to\nallow your reciciler to pass."
+
+_Text6,
+"Reciciler has found guntowers\nin the base location.\nFind the Power Genarator and\nDestroy it."
+
+_Text7,
+"Build a tug and refinary and\nsteal any resource pods from\nthe other base.\nPods are marked. Then Destroy the\nbase."
+
+_Text8,
+"Do not Destroy the Mining\nstations."
+
+_Text9,
+"Help your recikiler get to\nthe holding areas. 1 then 2"
+
+_Text10,
+"Build a fource and destroy\nthe Pumping station."
+
+_Text11,
+"You Have A MINING STATION!!"
+
+_Text12,
+"Destroy the remaining/nEnemy base"
+
+//--------------------------------------------------------------------
+[routine,_Routine1,1,true]
+	Ally,5,3
+	Ally,4,5
+	Ally,3,4
+	Ally,6,4
+	Ally,6,5
+	Ally,6,3
+	Ally,6,9
+	GetPlayer,Object58
+	GetByLabel,Object20,"gatem1"
+	GetPos,Object20,Position7
+	GetByLabel,Object19,"gatem2"
+	GetPos,Object19,Position6
+	GetByLabel,Object18,"gatem3"
+	GetPos,Object18,Position5
+	GetByLabel,Object17,"gatem4"
+	GetPos,Object17,Position4
+	GetByLabel,Object16,"gatem5"
+	GetPos,Object16,Position3
+	GetByLabel,Object15,"gatem6"
+	GetPos,Object15,Position2
+	GetByLabel,Object14,"gatem7"
+	GetPos,Object14,Position1
+	Createp,Object57,"ivrecy_bb",1,"recy"
+	Createp,Object56,"ibnav",1,"base"
+	SetName,Object56,"Base Point"
+	BeaconOn,Object56
+	Createp,Object55,"ivtank",1,"team"
+	Follow,Object55,Object58,0
+	Createp,Object55,"ivtank",1,"team"
+	Follow,Object55,Object58,0
+	Createp,Object55,"ivtank",1,"team"
+	Follow,Object55,Object58,0
+	Createp,Object55,"ivbscout",1,"team"
+	Follow,Object55,Object58,0
+	Createp,Object55,"ivbscout",1,"team"
+	Follow,Object55,Object58,0
+	StartSound,"b16_sound_11.wav"
+	Wait,5
+	RunSpeed,_Routine3,1,true
+	GoTo,Object57,"recy01",1
+	Createp,Object54,"spawn",0,"recynv"
+	Clear
+	Display,_Text1,yellow
+	StartSound,"locked3.wav"
+	Wait,45
+	Clear
+	Display,_Text1,yellow
+	Display,_Text2,white
+	StartSound,"locked3.wav"
+LOC_49:
+	GetByLabel,Object53,"node1"
+	IsAround,Object53
+	IfEQ,1,LOC_49
+LOC_52:
+	GetByLabel,Object53,"node1"
+	IsAround,Object53
+	IfEQ,1,LOC_52
+LOC_55:
+	GetByLabel,Object53,"node1"
+	IsAround,Object53
+	IfEQ,1,LOC_55
+	Clear
+	Display,_Text1,yellow
+	Display,_Text2,green
+	StartSound,"locked3.wav"
+	GoTo,Object57,"recy02",1
+LOC_63:
+	IsAround,Object54
+	IfEQ,1,LOC_66
+	Createp,Object54,"spawn",0,"recynv"
+LOC_66:
+	DistObject,Object57,Object54
+	IfGT,70,LOC_66
+	Stop,Object57,0
+	Clear
+	Display,_Text1,yellow
+	Display,_Text3,white
+	StartSound,"locked3.wav"
+	Wait,5
+	IsAround,Object57
+	IfEQ,1,LOC_77
+	JumpTo,LOC_63
+LOC_77:
+	DistObject,Object57,Object54
+	IfGT,75,LOC_80
+	JumpTo,LOC_77
+LOC_80:
+	IsAround,Object57
+	IfEQ,1,LOC_83
+	JumpTo,LOC_63
+LOC_83:
+	Remove,Object54
+	Clear
+	Display,_Text1,yellow
+	Display,_Text3,green
+	StartSound,"locked3.wav"
+	AddHealth,Object57,2000
+	GoTo,Object57,"recy03",1
+	Createp,Object52,"spawn",0,"pip"
+LOC_91:
+	DistObject,Object57,Object52
+	IfGT,130,LOC_91
+	IsAround,Object57
+	IfEQ,1,LOC_96
+	JumpTo,LOC_63
+LOC_96:
+	Remove,Object52
+	Clear
+	Display,_Text1,yellow
+	Display,_Text5,white
+	StartSound,"locked3.wav"
+LOC_101:
+	GetByLabel,Object53,"mpipe"
+	IsAround,Object53
+	IfEQ,1,LOC_101
+LOC_104:
+	GetByLabel,Object53,"mpipe"
+	IsAround,Object53
+	IfEQ,1,LOC_104
+	GoTo,Object57,"recy04",1
+	Clear
+	Display,_Text1,yellow
+	Display,_Text5,green
+	StartSound,"locked3.wav"
+	Createp,Object51,"spawn",0,"gundes"
+LOC_113:
+	Wait,5
+	IsAround,Object57
+	IfEQ,1,LOC_118
+	Remove,Object51
+	JumpTo,LOC_63
+LOC_118:
+	DistObject,Object57,Object51
+	IfGT,120,LOC_113
+	Clear
+	Display,_Text1,yellow
+	Display,_Text6,white
+	StartSound,"locked3.wav"
+LOC_124:
+	GetByLabel,Object53,"basegen"
+	IsAround,Object53
+	IfEQ,1,LOC_124
+	Clear
+	Display,_Text1,green
+	Display,_Text6,green
+	StartSound,"locked3.wav"
+	GoTo,Object57,"recy05",1
+	Wait,60
+	SetScrap,1,30
+	GetPlayer,Object58
+	Clear
+	Display,_Text7,white
+	Display,_Text8,red
+	StartSound,"locked3.wav"
+	Follow,Object57,Object58,0
+LOC_140:
+	GetByLabel,Object50,"unnamed_ibrefin"
+	IsAround,Object50
+	IfEQ,0,LOC_140
+	RunSpeed,_Routine3,1,true
+LOC_144:
+	IsAround,Object49
+	IfEQ,1,LOC_144
+	Clear
+	Display,_Text7,green
+	StartSound,"locked3.wav"
+	Wait,120
+	GetByLabel,Object48,"watst"
+	StartSound,"b17_sound_01.wav"
+	CamPath,"watercam",700,6500,Object48
+	Clear
+	Display,_Text10,white
+	StartSound,"locked3.wav"
+LOC_156:
+	IsAround,Object48
+	IfEQ,1,LOC_156
+	Clear
+	Display,_Text10,green
+	Display,_Text12,white
+	StartSound,"locked3.wav"
+LOC_162:
+	SetPlan,"b17_pln_2_0.aip",5
+	Wait,600
+	SetPlan,"b17_pln_3_0.aip",5
+	Wait,400
+	SetPlan,"b17_pln_1_0.aip",5
+	Wait,700
+	SetPlan,"b17_pln_Final.aip",5
+	Wait,1900
+	SetPlan,"b17_pln_2_0.aip",5
+	Wait,300
+	SetPlan,"b17_pln_1_0.aip",5
+	JumpTo,LOC_162
+
+//--------------------------------------------------------------------
+[routine,_Routine2,1,true]
+LOC_175:
+	IsAround,Object50
+	IfEQ,0,LOC_182
+	DistObject,Object50,Object39
+	IfGT,150,LOC_182
+	Damage,Object50,16959
+	Damage,Object39,16959
+	JumpTo,LOC_175
+LOC_182:
+	IsAround,Object50
+	IfEQ,0,LOC_189
+	DistObject,Object50,Object38
+	IfGT,150,LOC_189
+	Damage,Object50,16959
+	Damage,Object38,16959
+	JumpTo,LOC_175
+LOC_189:
+	IsAround,Object50
+	IfEQ,0,LOC_175
+	DistObject,Object50,Object37
+	IfGT,150,LOC_175
+	Damage,Object50,16959
+	Damage,Object37,16959
+	JumpTo,LOC_175
+
+//--------------------------------------------------------------------
+[routine,_Routine3,0,false]
+LOC_197:
+	GetByLabel,Object50,"unnamed_ibrefin"
+	IsAround,Object50
+	IfEQ,0,LOC_197
+	IsAround,Object46
+	IfEQ,0,LOC_205
+	DistObject,Object46,Object50
+	IfGT,75,LOC_205
+	JumpTo,LOC_225
+LOC_205:
+	IsAround,Object45
+	IfEQ,0,LOC_210
+	DistObject,Object45,Object50
+	IfGT,75,LOC_210
+	JumpTo,LOC_240
+LOC_210:
+	IsAround,Object44
+	IfEQ,0,LOC_215
+	DistObject,Object44,Object50
+	IfGT,75,LOC_215
+	JumpTo,LOC_255
+LOC_215:
+	IsAround,Object43
+	IfEQ,0,LOC_220
+	DistObject,Object43,Object50
+	IfGT,75,LOC_220
+	JumpTo,LOC_270
+LOC_220:
+	IsAround,Object42
+	IfEQ,0,LOC_197
+	DistObject,Object42,Object50
+	IfGT,75,LOC_197
+	JumpTo,LOC_285
+LOC_225:
+	IsODF,Object46,"R_podS"
+	IfEQ,1,LOC_228
+	JumpTo,LOC_230
+LOC_228:
+	Remove,Object46
+	JumpTo,LOC_300
+LOC_230:
+	IsODF,Object46,"R_pod"
+	IfEQ,1,LOC_233
+	JumpTo,LOC_235
+LOC_233:
+	Remove,Object46
+	JumpTo,LOC_310
+LOC_235:
+	IsODF,Object46,"R_pod2"
+	IfEQ,1,LOC_238
+	JumpTo,LOC_197
+LOC_238:
+	Remove,Object46
+	JumpTo,LOC_320
+LOC_240:
+	IsODF,Object45,"R_podS"
+	IfEQ,1,LOC_243
+	JumpTo,LOC_245
+LOC_243:
+	Remove,Object45
+	JumpTo,LOC_300
+LOC_245:
+	IsODF,Object45,"R_pod"
+	IfEQ,1,LOC_248
+	JumpTo,LOC_250
+LOC_248:
+	Remove,Object45
+	JumpTo,LOC_310
+LOC_250:
+	IsODF,Object45,"R_pod2"
+	IfEQ,1,LOC_253
+	JumpTo,LOC_197
+LOC_253:
+	Remove,Object45
+	JumpTo,LOC_320
+LOC_255:
+	IsODF,Object44,"R_podS"
+	IfEQ,1,LOC_258
+	JumpTo,LOC_260
+LOC_258:
+	Remove,Object44
+	JumpTo,LOC_300
+LOC_260:
+	IsODF,Object44,"R_pod"
+	IfEQ,1,LOC_263
+	JumpTo,LOC_265
+LOC_263:
+	Remove,Object44
+	JumpTo,LOC_310
+LOC_265:
+	IsODF,Object44,"R_pod2"
+	IfEQ,1,LOC_268
+	JumpTo,LOC_197
+LOC_268:
+	Remove,Object44
+	JumpTo,LOC_320
+LOC_270:
+	IsODF,Object43,"R_podS"
+	IfEQ,1,LOC_273
+	JumpTo,LOC_275
+LOC_273:
+	Remove,Object43
+	JumpTo,LOC_300
+LOC_275:
+	IsODF,Object43,"R_pod"
+	IfEQ,1,LOC_278
+	JumpTo,LOC_280
+LOC_278:
+	Remove,Object43
+	JumpTo,LOC_310
+LOC_280:
+	IsODF,Object43,"R_pod2"
+	IfEQ,1,LOC_283
+	JumpTo,LOC_197
+LOC_283:
+	Remove,Object43
+	JumpTo,LOC_320
+LOC_285:
+	IsODF,Object42,"R_podS"
+	IfEQ,1,LOC_288
+	JumpTo,LOC_290
+LOC_288:
+	Remove,Object42
+	JumpTo,LOC_300
+LOC_290:
+	IsODF,Object42,"R_pod"
+	IfEQ,1,LOC_293
+	JumpTo,LOC_295
+LOC_293:
+	Remove,Object42
+	JumpTo,LOC_310
+LOC_295:
+	IsODF,Object42,"R_pod2"
+	IfEQ,1,LOC_298
+	JumpTo,LOC_197
+LOC_298:
+	Remove,Object42
+	JumpTo,LOC_320
+LOC_300:
+	IsAround,Object50
+	IfEQ,1,LOC_303
+	JumpTo,LOC_197
+LOC_303:
+	StartSound,"ibfact00.wav"
+	AddScrap,1,30
+	Wait,5
+	AddScrap,1,30
+	Wait,5
+	AddScrap,1,5
+	JumpTo,LOC_197
+LOC_310:
+	IsAround,Object50
+	IfEQ,1,LOC_313
+	JumpTo,LOC_197
+LOC_313:
+	StartSound,"ibfact00.wav"
+	AddScrap,1,50
+	Wait,5
+	AddScrap,1,50
+	Wait,5
+	AddScrap,1,50
+	JumpTo,LOC_197
+LOC_320:
+	IsAround,Object50
+	IfEQ,1,LOC_323
+	JumpTo,LOC_197
+LOC_323:
+	StartSound,"ibfact00.wav"
+	AddScrap,1,66
+	Wait,5
+	AddScrap,1,66
+	Wait,5
+	AddScrap,1,68
+	JumpTo,LOC_197
+
+//--------------------------------------------------------------------
+[routine,_Routine4,1,true]
+	Createp,Object24,"bbrecy",5,"enyrec"
+	Createp,Object23,"spawn",0,"enyrec"
+	SetPlan,"b17_pln_0_1.aip",5
+LOC_334:
+	IsAround,Object24
+	IfEQ,1,LOC_339
+	RunSpeed,_Routine15,1,true
+	RunSpeed,_Routine14,0,false
+	RunSpeed,_Routine4,0,false
+LOC_339:
+	IsAround,Object22
+	IfEQ,0,LOC_342
+	JumpTo,LOC_344
+LOC_342:
+	Wait,30
+	Createp,Object22,"bvtug",5,"enyrec"
+LOC_344:
+	IsAround,Object45
+	IfEQ,0,LOC_356
+	Pickup,Object22,Object45,1
+	IsAround,Object22
+	IfEQ,1,LOC_350
+	JumpTo,LOC_356
+LOC_350:
+	HasCargo,Object22
+	IfEQ,0,LOC_356
+	GoTo,Object22,"enyrec",1
+	DistObject,Object22,Object23
+	IfGT,50,LOC_356
+	Remove,Object45
+LOC_356:
+	IsAround,Object21
+	IfEQ,0,LOC_359
+	JumpTo,LOC_361
+LOC_359:
+	Wait,20
+	Createp,Object21,"bvtug",5,"enyrec"
+LOC_361:
+	IsAround,Object44
+	IfEQ,0,LOC_334
+	Pickup,Object21,Object44,1
+	IsAround,Object21
+	IfEQ,1,LOC_367
+	JumpTo,LOC_334
+LOC_367:
+	HasCargo,Object21
+	IfEQ,0,LOC_334
+	GoTo,Object21,"enyrec",1
+	DistObject,Object21,Object23
+	IfGT,50,LOC_334
+	Remove,Object44
+	JumpTo,LOC_334
+
+//--------------------------------------------------------------------
+[routine,_Routine5,1,true]
+	Createp,Object49,"bvrecy",6,"enyrecp"
+	Createp,Object41,"spawn",0,"enyrecp"
+	SetPlan,"b17_pln_0_0.aip",6
+LOC_378:
+	IsDeployed,Object49
+	IfEQ,0,LOC_378
+LOC_380:
+	IsAround,Object49
+	IfEQ,1,LOC_383
+	RunSpeed,_Routine5,0,false
+LOC_383:
+	IsAround,Object40
+	IfEQ,0,LOC_386
+	JumpTo,LOC_388
+LOC_386:
+	Wait,20
+	Createp,Object40,"bvtug",6,"enyrecp"
+LOC_388:
+	IsAround,Object46
+	IfEQ,0,LOC_380
+	Pickup,Object40,Object46,1
+	BeaconOn,Object46
+LOC_392:
+	IsAround,Object40
+	IfEQ,1,LOC_395
+	JumpTo,LOC_380
+LOC_395:
+	HasCargo,Object40
+	IfEQ,0,LOC_388
+	GoTo,Object40,"enyrecp",1
+	DistObject,Object40,Object41
+	IfGT,50,LOC_392
+	Remove,Object46
+	JumpTo,LOC_380
+
+//--------------------------------------------------------------------
+[routine,_Routine6,1,true]
+LOC_403:
+	GetByLabel,Object26,"unnamed_bvturr"
+	GetPos,Object26,Position8
+	Remove,Object26
+	Create,Object25,"bvturr1",5,Position8
+	AddPilot,Object25
+	Add,Variable3,1,Variable3
+	IfLT,17,LOC_403
+	Set,Variable3,0
+LOC_411:
+	GetByLabel,Object26,"unnamed_bvturr"
+	Remove,Object26
+	Add,Variable2,1,Variable2
+	IfLT,110,LOC_411
+	Set,Variable2,0
+LOC_416:
+	GetByLabel,Object1,"unnamed_b_sparks1"
+	Remove,Object1
+	Add,Variable1,1,Variable1
+	IfLT,10,LOC_416
+	Set,Variable1,0
+LOC_421:
+	GetByLabel,Object47,"pip"
+	Remove,Object47
+	Add,Variable5,1,Variable5
+	IfLT,140,LOC_421
+	Set,Variable5,0
+	GetByLabel,Object39,"mining01"
+	GetByLabel,Object38,"mining02"
+	GetByLabel,Object37,"mining03"
+LOC_429:
+	RandJump,LOC_430,LOC_460,LOC_490,LOC_520
+LOC_430:
+	Wait,5
+	IsAround,Object39
+	IfEQ,1,LOC_434
+	JumpTo,LOC_438
+LOC_434:
+	IsAround,Object46
+	IfEQ,0,LOC_437
+	JumpTo,LOC_438
+LOC_437:
+	Createp,Object46,"R_podS",0,"pod1"
+LOC_438:
+	Wait,30
+	IsAround,Object38
+	IfEQ,1,LOC_442
+	JumpTo,LOC_446
+LOC_442:
+	IsAround,Object45
+	IfEQ,0,LOC_445
+	JumpTo,LOC_446
+LOC_445:
+	Createp,Object45,"R_pod",0,"pod2"
+LOC_446:
+	Wait,10
+	IsAround,Object37
+	IfEQ,1,LOC_450
+	JumpTo,LOC_459
+LOC_450:
+	IsAround,Object44
+	IfEQ,0,LOC_453
+	JumpTo,LOC_454
+LOC_453:
+	Createp,Object44,"R_podS",0,"pod3"
+LOC_454:
+	Wait,5
+	IsAround,Object43
+	IfEQ,0,LOC_458
+	JumpTo,LOC_459
+LOC_458:
+	Createp,Object43,"R_pod",0,"pod4"
+LOC_459:
+	JumpTo,LOC_429
+LOC_460:
+	Wait,5
+	IsAround,Object39
+	IfEQ,1,LOC_464
+	JumpTo,LOC_468
+LOC_464:
+	IsAround,Object46
+	IfEQ,0,LOC_467
+	JumpTo,LOC_468
+LOC_467:
+	Createp,Object46,"R_podS",0,"pod1"
+LOC_468:
+	Wait,50
+	IsAround,Object38
+	IfEQ,1,LOC_472
+	JumpTo,LOC_476
+LOC_472:
+	IsAround,Object45
+	IfEQ,0,LOC_475
+	JumpTo,LOC_476
+LOC_475:
+	Createp,Object45,"R_podS",0,"pod2"
+LOC_476:
+	Wait,5
+	IsAround,Object37
+	IfEQ,1,LOC_480
+	JumpTo,LOC_489
+LOC_480:
+	IsAround,Object44
+	IfEQ,0,LOC_483
+	JumpTo,LOC_484
+LOC_483:
+	Createp,Object44,"R_pod",0,"pod3"
+LOC_484:
+	Wait,60
+	IsAround,Object43
+	IfEQ,0,LOC_488
+	JumpTo,LOC_489
+LOC_488:
+	Createp,Object43,"R_pod2",0,"pod4"
+LOC_489:
+	JumpTo,LOC_429
+LOC_490:
+	Wait,5
+	IsAround,Object39
+	IfEQ,1,LOC_494
+	JumpTo,LOC_498
+LOC_494:
+	IsAround,Object46
+	IfEQ,0,LOC_497
+	JumpTo,LOC_498
+LOC_497:
+	Createp,Object46,"R_pod2",0,"pod1"
+LOC_498:
+	Wait,50
+	IsAround,Object38
+	IfEQ,1,LOC_502
+	JumpTo,LOC_506
+LOC_502:
+	IsAround,Object45
+	IfEQ,0,LOC_505
+	JumpTo,LOC_506
+LOC_505:
+	Createp,Object45,"R_pod2",0,"pod2"
+LOC_506:
+	Wait,5
+	IsAround,Object37
+	IfEQ,1,LOC_510
+	JumpTo,LOC_498
+LOC_510:
+	IsAround,Object44
+	IfEQ,0,LOC_513
+	JumpTo,LOC_519
+LOC_513:
+	Createp,Object44,"R_podS",0,"pod3"
+	Wait,60
+	IsAround,Object43
+	IfEQ,0,LOC_518
+	JumpTo,LOC_519
+LOC_518:
+	Createp,Object43,"R_pod",0,"pod4"
+LOC_519:
+	JumpTo,LOC_429
+LOC_520:
+	Wait,5
+	IsAround,Object39
+	IfEQ,1,LOC_524
+	JumpTo,LOC_528
+LOC_524:
+	IsAround,Object46
+	IfEQ,0,LOC_527
+	JumpTo,LOC_528
+LOC_527:
+	Createp,Object46,"R_podS",0,"pod1"
+LOC_528:
+	Wait,20
+	IsAround,Object38
+	IfEQ,1,LOC_532
+	JumpTo,LOC_536
+LOC_532:
+	IsAround,Object45
+	IfEQ,0,LOC_535
+	JumpTo,LOC_536
+LOC_535:
+	Createp,Object45,"R_podS",0,"pod2"
+LOC_536:
+	Wait,25
+	IsAround,Object37
+	IfEQ,1,LOC_540
+	JumpTo,LOC_429
+LOC_540:
+	IsAround,Object44
+	IfEQ,0,LOC_543
+	JumpTo,LOC_544
+LOC_543:
+	Createp,Object44,"R_podS",0,"pod3"
+LOC_544:
+	Wait,1
+	IsAround,Object43
+	IfEQ,0,LOC_548
+	JumpTo,LOC_429
+LOC_548:
+	Createp,Object43,"R_podS",0,"pod4"
+	JumpTo,LOC_429
+
+//--------------------------------------------------------------------
+[routine,_Routine7,1,true]
+	Wait,10
+	AddHealth,Object57,20000
+	Wait,5
+	AddHealth,Object57,20000
+	Wait,5
+	AddHealth,Object57,20000
+	Wait,5
+	AddHealth,Object57,20000
+	Set,Variable4,5
+LOC_560:
+	IsAround,Object57
+	IfEQ,1,LOC_560
+	Createp,Object56,"ibnav",1,"pip"
+	SetName,Object56,"HOLDING POINT 1"
+	BeaconOn,Object56
+	Createp,Object56,"ibnav",1,"gundes"
+	SetName,Object56,"HOLDING POINT 2"
+	BeaconOn,Object56
+	Clear
+	Display,_Text1,yellow
+	Display,_Text9,white
+	Display,_Text4,red,Variable4
+	StartSound,"locked3.wav"
+	Createp,Object57,"ivrecy_bb",1,"recy"
+	BeaconOn,Object57
+	GoTo,Object57,"recy01",0
+	Wait,45
+	GoTo,Object57,"recy02",0
+	SetScrap,1,30
+LOC_579:
+	IsAround,Object57
+	IfEQ,1,LOC_579
+	Set,Variable4,4
+	Clear
+	Display,_Text1,yellow
+	Display,_Text9,white
+	Display,_Text4,red,Variable4
+	StartSound,"locked3.wav"
+	Createp,Object57,"ivrecy_bb",1,"recy"
+	BeaconOn,Object57
+	GoTo,Object57,"recy01",0
+	Wait,45
+	GoTo,Object57,"recy02",0
+LOC_592:
+	IsAround,Object57
+	IfEQ,1,LOC_592
+	Set,Variable4,3
+	Clear
+	Display,_Text1,yellow
+	Display,_Text9,white
+	Display,_Text4,red,Variable4
+	StartSound,"locked3.wav"
+	Createp,Object57,"ivrecy_bb",1,"recy"
+	BeaconOn,Object57
+	GoTo,Object57,"recy01",0
+	Wait,45
+	GoTo,Object57,"recy02",0
+	SetScrap,1,30
+LOC_606:
+	IsAround,Object57
+	IfEQ,1,LOC_606
+	Set,Variable4,2
+	Clear
+	Display,_Text1,yellow
+	Display,_Text9,white
+	Display,_Text4,red,Variable4
+	StartSound,"locked3.wav"
+	Createp,Object57,"ivrecy_bb",1,"recy"
+	BeaconOn,Object57
+	GoTo,Object57,"recy01",0
+	Wait,45
+	GoTo,Object57,"recy02",0
+	SetScrap,1,30
+LOC_620:
+	IsAround,Object57
+	IfEQ,1,LOC_620
+	Set,Variable4,1
+	Clear
+	Display,_Text1,yellow
+	Display,_Text9,white
+	Display,_Text4,red,Variable4
+	StartSound,"locked3.wav"
+	Createp,Object57,"ivrecy_bb",1,"recy"
+	BeaconOn,Object57
+	GoTo,Object57,"recy01",0
+	Wait,45
+	GoTo,Object57,"recy02",0
+	SetScrap,1,30
+LOC_634:
+	IsAround,Object57
+	IfEQ,1,LOC_634
+	Fail,1,"b17_textf1.obj"
+
+//--------------------------------------------------------------------
+[routine,_Routine8,1,true]
+LOC_638:
+	Remove,Object36
+	Remove,Object35
+	Remove,Object34
+	JumpTo,LOC_638
+
+//--------------------------------------------------------------------
+[routine,_Routine9,1,true]
+LOC_643:
+	GetByLabel,Object36,"unnamed_npscr1"
+	GetByLabel,Object35,"unnamed_npscr2"
+	GetByLabel,Object34,"unnamed_npscr3"
+	JumpTo,LOC_643
+
+//--------------------------------------------------------------------
+[routine,_Routine10,1,true]
+LOC_648:
+	IsAround,Object33
+	IfEQ,1,LOC_660
+	GetByLabel,Object32,"unnamed_ivautotug1"
+	IsAround,Object32
+	IfEQ,1,LOC_654
+	JumpTo,LOC_648
+LOC_654:
+	GetPos,Object32,Position9
+	Remove,Object32
+	Create,Object33,"ivtug_b",1,Position9
+	SetName,Object33,"AutoTug 1"
+	RunSpeed,_Routine11,1,true
+	JumpTo,LOC_648
+LOC_660:
+	IsAround,Object33
+	IfEQ,1,LOC_663
+	JumpTo,LOC_648
+LOC_663:
+	IsAround,Object30
+	IfEQ,1,LOC_675
+	GetByLabel,Object32,"unnamed_ivautotug1"
+	IsAround,Object32
+	IfEQ,1,LOC_669
+	JumpTo,LOC_660
+LOC_669:
+	GetPos,Object32,Position9
+	Remove,Object32
+	Create,Object30,"ivtug_b",1,Position9
+	SetName,Object30,"AutoTug 2"
+	RunSpeed,_Routine12,1,true
+	JumpTo,LOC_660
+LOC_675:
+	IsAround,Object33
+	IfEQ,1,LOC_678
+	JumpTo,LOC_648
+LOC_678:
+	IsAround,Object30
+	IfEQ,1,LOC_681
+	JumpTo,LOC_648
+LOC_681:
+	IsAround,Object28
+	IfEQ,1,LOC_648
+	GetByLabel,Object32,"unnamed_ivautotug1"
+	IsAround,Object32
+	IfEQ,1,LOC_687
+	JumpTo,LOC_675
+LOC_687:
+	GetPos,Object32,Position9
+	Remove,Object32
+	Create,Object28,"ivtug_b",1,Position9
+	SetName,Object28,"AutoTug 3"
+	RunSpeed,_Routine13,1,true
+	JumpTo,LOC_648
+
+//--------------------------------------------------------------------
+[routine,_Routine11,0,false]
+LOC_694:
+	IsAround,Object33
+	IfEQ,1,LOC_697
+	JumpTo,LOC_694
+LOC_697:
+	DistObject,Object33,Object39
+	IfGT,100,LOC_708
+	IsAround,Object39
+	IfEQ,1,LOC_703
+	RunSpeed,_Routine11,0,false
+	JumpTo,LOC_694
+LOC_703:
+	GetTeam,Object39
+	IfEQ,1,LOC_708
+	SetTeam,Object39,1
+	Display,_Text11,yellow
+	StartSound,"locked3.wav"
+LOC_708:
+	HasCargo,Object33
+	IfEQ,0,LOC_713
+	GoToo,Object33,Object50,1
+	Wait,10
+	JumpTo,LOC_694
+LOC_713:
+	IsAround,Object46
+	IfEQ,0,LOC_694
+	Pickup,Object33,Object46,1
+LOC_716:
+	IsAround,Object33
+	IfEQ,1,LOC_719
+	JumpTo,LOC_694
+LOC_719:
+	HasCargo,Object33
+	IfEQ,0,LOC_697
+	IsAround,Object50
+	IfEQ,0,LOC_716
+	JumpTo,LOC_694
+
+//--------------------------------------------------------------------
+[routine,_Routine12,0,false]
+LOC_725:
+	IsAround,Object30
+	IfEQ,1,LOC_728
+	JumpTo,LOC_725
+LOC_728:
+	DistObject,Object30,Object38
+	IfGT,100,LOC_739
+	IsAround,Object38
+	IfEQ,1,LOC_734
+	RunSpeed,_Routine12,0,false
+	JumpTo,LOC_725
+LOC_734:
+	GetTeam,Object38
+	IfEQ,1,LOC_739
+	SetTeam,Object38,1
+	Display,_Text11,yellow
+	StartSound,"locked3.wav"
+LOC_739:
+	HasCargo,Object30
+	IfEQ,0,LOC_744
+	GoToo,Object30,Object50,1
+	Wait,10
+	JumpTo,LOC_725
+LOC_744:
+	IsAround,Object45
+	IfEQ,0,LOC_725
+	Pickup,Object30,Object45,1
+LOC_747:
+	IsAround,Object30
+	IfEQ,1,LOC_750
+	JumpTo,LOC_725
+LOC_750:
+	HasCargo,Object30
+	IfEQ,0,LOC_728
+	IsAround,Object50
+	IfEQ,0,LOC_747
+	JumpTo,LOC_725
+
+//--------------------------------------------------------------------
+[routine,_Routine13,0,false]
+LOC_756:
+	IsAround,Object28
+	IfEQ,1,LOC_759
+	JumpTo,LOC_756
+LOC_759:
+	DistObject,Object28,Object37
+	IfGT,100,LOC_770
+	IsAround,Object37
+	IfEQ,1,LOC_765
+	RunSpeed,_Routine13,0,false
+	JumpTo,LOC_756
+LOC_765:
+	GetTeam,Object37
+	IfEQ,1,LOC_770
+	SetTeam,Object37,1
+	Display,_Text11,yellow
+	StartSound,"locked3.wav"
+LOC_770:
+	HasCargo,Object28
+	IfEQ,0,LOC_775
+	GoToo,Object28,Object50,1
+	Wait,10
+	JumpTo,LOC_756
+LOC_775:
+	IsAround,Object44
+	IfEQ,0,LOC_756
+	Pickup,Object28,Object44,1
+LOC_778:
+	IsAround,Object28
+	IfEQ,1,LOC_781
+	JumpTo,LOC_756
+LOC_781:
+	HasCargo,Object28
+	IfEQ,0,LOC_759
+	IsAround,Object50
+	IfEQ,0,LOC_778
+	JumpTo,LOC_756
+
+//--------------------------------------------------------------------
+[routine,_Routine14,1,true]
+	Wait,12
+LOC_788:
+	IsAround,Object20
+	IfEQ,1,LOC_792
+	RunSpeed,_Routine15,1,true
+	RunSpeed,_Routine14,0,false
+LOC_792:
+	IsAround,Object19
+	IfEQ,1,LOC_796
+	RunSpeed,_Routine15,1,true
+	RunSpeed,_Routine14,0,false
+LOC_796:
+	IsAround,Object18
+	IfEQ,1,LOC_800
+	RunSpeed,_Routine15,1,true
+	RunSpeed,_Routine14,0,false
+LOC_800:
+	IsAround,Object17
+	IfEQ,1,LOC_804
+	RunSpeed,_Routine15,1,true
+	RunSpeed,_Routine14,0,false
+LOC_804:
+	IsAround,Object16
+	IfEQ,1,LOC_808
+	RunSpeed,_Routine15,1,true
+	RunSpeed,_Routine14,0,false
+LOC_808:
+	IsAround,Object15
+	IfEQ,1,LOC_812
+	RunSpeed,_Routine15,1,true
+	RunSpeed,_Routine14,0,false
+LOC_812:
+	IsAround,Object14
+	IfEQ,1,LOC_816
+	RunSpeed,_Routine15,1,true
+	RunSpeed,_Routine14,0,false
+LOC_816:
+	JumpTo,LOC_788
+
+//--------------------------------------------------------------------
+[routine,_Routine15,0,false]
+	RunSpeed,_Routine16,1,true
+LOC_819:
+	Create,Object13,"bvscout",5,Position7
+	Attack,Object13,Object57,1
+	Create,Object12,"bvcube",5,Position6
+	Attack,Object12,Object57,1
+	Create,Object11,"bvzat",5,Position5
+	Attack,Object11,Object57,1
+	Create,Object10,"bvcube",5,Position4
+	Attack,Object10,Object57,1
+	JumpTo,LOC_819
+
+//--------------------------------------------------------------------
+[routine,_Routine16,0,false]
+	StartSound,"b16_sound_11.wav"
+	CamOf,Object20,-60,2
+	CamOf,Object19,-60,2
+	CamOf,Object17,-50,2
+	CamOf,Object20,-80,13
+	IsAround,Object24
+	IfEQ,1,LOC_837
+	JumpTo,LOC_838
+LOC_837:
+	Fail,0,"b17_textf2.obj"
+LOC_838:
+	Succeed,0,"b17_textw1.obj"
+

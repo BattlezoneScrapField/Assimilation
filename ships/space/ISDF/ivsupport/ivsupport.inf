@@ -1,0 +1,8 @@
+Suppport Ship
+Gives Ammo and health to any
+frendly ship within 70m in
+its Range.
+
+Only Supplies health and ammo
+to ships assigned to it's group
+list.

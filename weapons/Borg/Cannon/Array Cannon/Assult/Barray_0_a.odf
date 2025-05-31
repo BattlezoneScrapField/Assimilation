@@ -1,0 +1,16 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "Barray_0_c"
+ordName = "Barray_1_a"
+wpnName = "Array Cannon"
+fireSound = "ArrayAV.wav"
+wpnReticle = "gblast"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 450
+
+[CannonClass]
+shotDelay = 2.9
+salvoCount = 10
+salvoDelay = 0.1
+shotVariance = 0.10

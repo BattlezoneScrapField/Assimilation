@@ -1,0 +1,14 @@
+[WeaponClass]
+classLabel = "cannon"
+ordName = "btorp_c"
+altName = "gBtorp_a"
+wpnName = "Borg Quan Torp"
+fireSound = "torpB.wav"
+wpnReticle = "gsalvo"
+wpnCategory = "ROCK"
+aiRange = 800
+isAssault = 1
+
+[CannonClass]
+shotDelay = 2.0
+shotAlternate = 1

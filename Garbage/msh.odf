@@ -1,0 +1,18 @@
+[GameObjectClass]
+geometryName = "borgp.xsi"
+geometryScale = 0.05
+classLabel = "artifact"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 2000
+maxAmmo = 0
+unitName = "Dummy MSH Maker"
+aiName = "PowerUpProcess"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+
+canCollide = 1
+
+lightHard1 = "hp_light_1"
+lightName1 = "omnired"

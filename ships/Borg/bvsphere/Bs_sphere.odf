@@ -1,0 +1,84 @@
+[GameObjectClass]
+baseName = "B_sphere"
+geometryName = "B_sphere.xsi"
+classLabel = "wingman"
+scrapValue = 0
+scrapCost = 0
+customCost = 0
+buildTime = 0
+customTime = 0
+maxHealth = 3500
+addHealth = 20
+maxAmmo = 2000
+addAmmo = 25.1
+unitName = "Borg Sphere"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+heatSignature = 0.5
+imageSignature = 2.5
+radarSignature = 0.1
+explosionName = "xplshipssp"
+
+canSnipe = 0
+isAssualt = 0
+requireCount = 0
+needPilot = 0
+
+armorClass = L
+
+//////////////////////////////
+
+weaponMask = 00111
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "B_beemg"
+weaponAssault1 = 0
+weaponHard2 = "HP_CANNON_1"
+weaponName2 = ""
+weaponAssualt2 = 1
+weaponHard3 = "HP_ROCKET_1"
+weaponName3 = ""
+weaponAssault3 = 1
+weaponHard4 = "HP_SHIELD"
+weaponName4 = "gshield"
+
+//////////////////////////////
+
+[CraftClass]
+rangeScan = 500.0f
+periodScan = 1.0f
+velocJam = 5.0f
+engageRange = 225
+
+braccelFactor = 0.05
+strafeFactor = 0.1
+steerFactor = 1.0
+omegaFactor = 0.2
+velFactor = 0.2
+
+avoidSpeed = 28
+topSpeed = 35
+
+[HoverCraftClass]
+setAltitude = 75.0
+accelDragStop = 0.0
+accelDragFull = 0.0
+velocForward = 35.0
+velocReverse = 26.0
+velocStrafe = 26.0
+accelThrust = 28.0
+accelBrake = 50.0
+accelJump = 0.0
+
+alphaTrack = 8.0
+alphaDamp = 8.0
+
+pitchPitch = 0.5
+pitchThrust = 0.05
+
+rollStrafe = 1.0 //rolls while strafing []
+omegaSpin = 3.0 //spinning in place speed []
+omegaTurn = 5.3 //turning while moving speed []
+alphaSteer = 4.0 //how fast it responds to steering []
+rollSteer = 2.2 //rolls while steering []
+
+soundThrust = "bgimp.wav"

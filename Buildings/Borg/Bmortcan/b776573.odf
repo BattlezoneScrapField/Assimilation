@@ -1,0 +1,13 @@
+[WeaponClass]
+classLabel = "mortar"
+ordName = "hailshot"
+wpnName = "Something Cool."
+fireSound = "ghart00.wav"
+wpnReticle = "gmortar"
+wpnLadder = "gmortar.L0"
+wpnCategory = "MORT"
+isAssault = 1
+aiRange = 400
+
+[CannonClass]
+shotDelay = 0.9

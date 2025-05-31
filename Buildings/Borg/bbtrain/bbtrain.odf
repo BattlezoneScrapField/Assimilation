@@ -1,0 +1,47 @@
+[GameObjectClass]
+geometryName = "bbtrain.xsi"
+classLabel = "barracks"
+scrapCost = 75
+scrapValue = 38
+maxHealth = 7000
+maxAmmo = 0
+unitName = "Training Facility"
+heatSignature = 4.0
+imageSignature = 3.0
+radarSignature = 4.0
+collisionRadius = 1.0
+isAssault = 1
+
+armorClass = H
+
+requireCount = 3
+requireName1 = "bbcbun"
+requireText1 = "Relay Bunk Required"
+requireName2 = "bbarmo"
+requireText2 = "Armory Required"
+requireName3 = "bbfact"
+requireText3 = "Factory Required"
+
+provideCount = 1
+provideName1 = "bbtrain"
+
+lightHard1 = "hp_light_1"
+lightName1 = "o_blue_nf"
+
+effectHard1 = "hp_spark_1"
+effectName1 = "b_trails.effecta3set"
+effectHard2 = "hp_spark_2"
+effectName2 = "b_trails.effecta3set"
+
+[BuildingClass]
+soundAmbient = "abbarre0.wav"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[BarracksClass]
+pilotHold = 30
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 300

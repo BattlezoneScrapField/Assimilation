@@ -1,0 +1,22 @@
+[GameObjectClass]
+geometryName = "b_apcann.xsi"
+classLabel = "wpnpower"
+collisionRadius = 1.0
+scrapCost = 25
+scrapValue = 2
+maxHealth = 100
+maxAmmo = 0
+unitName = "ACC Bolts"
+aiName = "PowerUpProcess"
+
+lightHard1 = "hp_light_1"
+lightName1 = "omnipurple"
+
+requireCount = 0
+
+[PowerUpClass]
+soundPickup = "pickup01.wav"
+soundReject = "reject.wav"
+
+[WeaponPowerupClass]
+weaponName = "AccBolt_c"

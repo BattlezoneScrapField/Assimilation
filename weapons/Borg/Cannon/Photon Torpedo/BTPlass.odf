@@ -1,0 +1,173 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "BTPlass"
+ordName = "BTPlass"
+wpnName = "Plasma"
+fireSound = "BTPlass_1.wav"
+wpnReticle = "BTPlass"
+wpnCategory = "CANN"
+isAssault = 0
+flashName = "BTPlass.flash"
+aiRange = 780
+
+[CannonClass]
+shotDelay = 0.5
+shotAlternate = 0
+
+[Flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 1000"
+finishColor = "0 0 255 1000"
+startRadius = 3.0
+finishRadius = 0.5
+animateTime = 0.1
+latitudeBands = 8
+longitudeSegments = 16
+
+//--------------------------------------------------------------------
+
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotSound = "BTPlass_2.wav"
+xplGround = ""
+xplVehicle = "BTPlass"
+xplBuilding = "BTPlass"
+
+renderName = "BTPlass.render"
+
+ammoCost = 50
+lifeSpan = 8.0 // 800 meters
+shotSpeed = 220.0
+
+damageValue(N) = 350 // none // 300 + 100
+damageValue(L) = 220 // light // 240 + 70
+damageValue(H) = 200 // heavy // 200 + 50
+
+damageValue(S) = 280 // standard // 240 + 50
+damageValue(D) = 250 // deflection // 300 + 100
+damageValue(A) = 200 // absorbtion // 200 + 50
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 1
+renderName1 = "BTPlass.light"
+
+[Light]
+renderBase = "draw_light"
+startColor = "0 255 255 1000"
+finishColor = "0 0 255 1000"
+startRadius = 50.0
+finishRadius = 50.0
+animateTime = 20.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+
+//--------------------------------------------------------------------
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "BTPlass_3.wav"
+damageRadius = 30.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 70 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 70 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 50 // absorbtion
+
+kickRadius = 15.0
+kickOmega = 15.0
+kickVeloc = 10.0
+
+particleTypes = 5
+particleClass1 = "BTPlass.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+
+particleClass2 = "BTPlass.puff"
+particleCount2 = 4
+particleVeloc2 = "7.0 7.0 7.0"
+
+particleClass3 = "BTPlass.lighta"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+
+particleClass4 = "BTPlass.shock"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+
+particleClass5 = "BTPlass.splat"
+particleCount5 = 1
+particleVeloc5 = "0.0 0.0 0.0"
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 1000"
+finishColor = "0 0 255 1000"
+startRadius = 1.0
+finishRadius = 0.1
+animateTime = 1.0
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 0.7
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "50 255 50 200" 
+finishColor = "255 255 0 0" 
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 0.7
+rotationRate = 0.3
+
+[Lighta]
+simulateBase = "sim_null"
+lifeTime = 0.7
+renderBase = "draw_light"
+startColor = "0 255 255 1000"
+finishColor = "0 0 255 1000"
+startRadius = 0.2
+finishRadius = 0.1
+animateTime = 0.7
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 1000"
+finishColor = "0 0 255 1000"
+startRadius = 0.5
+finishRadius = 6.0
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16
+
+[Splat]
+simulateBase = "sim_null"
+lifeTime = 0.4
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 1000"
+finishColor = "0 0 255 1000"
+startRadius = 0.1
+finishRadius = 1.0
+animateTime = 0.4

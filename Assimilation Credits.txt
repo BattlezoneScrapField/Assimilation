@@ -1,0 +1,19 @@
+Help and Advice: - Battlezone Community.
+Mire Missions: - Original Battlezone 2
+Bane Mission: - Original Battlezone 2
+Space Ships: - FreeSpace 2
+Cube, Sphere: - Adapted from Resistance made by Sonic
+Other Borg Units: - Shane Ward ((kggf@hotmail.com))
+Borg Dominator: - Gus Man B ((botes@cfl.rr.com))
+BORG World: - Shane Ward
+Borg Base: - Shane Ward
+Weapons: - Shane Ward Some adapted from StarFleet Mod
+Explosions: - Part from FE, New Explosions made by Shane Ward
+Shell & Graphics: - Partly BattleZone, Partly FreeSpace 2, Partly Resistance Mod and By Shane Ward
+Dll Scripting: - Shane Ward
+Voice Talent: - Shane Ward and FreeSpace 2 Actors
+AIP, ODF, CFG, Structure: - Shane Ward
+
+The maker of the Booster or Thruster in the mod: -
+Name: - {MSL}Black Hunter E-mail: - bz2_black_hunter1@hotmail.com
+Also modified a little by be to suet the mod :)

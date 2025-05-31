@@ -1,0 +1,66 @@
+[GameObjectClass]
+geometryName = "bbrecy00.xsi"
+classLabel = "recycler"
+powerCost = 0
+scrapCost = 0
+scrapValue = 10
+maxHealth = 12000
+maxAmmo = 0
+unitName = "Recycler"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 0.1
+imageSignature = 4.0
+radarSignature = 1.0
+
+armorClass = H
+collisionRadius = 5.0
+
+lightHard1 = "hp_light_1"
+lightName1 = "o_white_nf"
+lightHard2 = "hp_baylight"
+lightName2 = "o_white_nf"
+
+lightHard3 = "hp_light_2"
+lightName3 = "omnired"
+lightHard4 = "hp_light_3"
+lightName4 = "omnired"
+lightHard5 = "hp_light_4"
+lightName5 = "omnired"
+lightHard6 = "hp_light_5"
+lightName6 = "omnired"
+
+[PoweredBuildingClass]
+detectRange = 100
+
+[BuildingClass]
+tunnelCount = 1
+
+tunnel01X0 = 3
+tunnel01Z0 = 3
+tunnel01DX = 2
+tunnel01DZ = 4
+tunnel01Edge = "wwtw"
+soundAmbient = "ibrecy01.wav"
+
+
+[FactoryClass]
+soundBuild = "ibrecy02.wav"
+soundFinish = "iapc04.wav"
+buildItem1 = "bvscav"
+buildItem2 = "bvscout"
+buildItem3 = "bvturr"
+buildItem4 = "bvcons"
+buildItem5 = "bvserv"
+buildItem6 = "bvzat"
+buildItem7 = "apserv"
+
+reloadMsg = "ivrecy12.wav"
+rescueMsg = "ivrecy13.wav"
+
+[RecyclerClass]
+scrapHold = 150
+
+[Lod1]
+geometryName = "Polycont.xsi" ;geometry for lod1
+distance = 250

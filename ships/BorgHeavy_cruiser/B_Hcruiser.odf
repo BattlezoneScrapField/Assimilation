@@ -1,0 +1,84 @@
+[GameObjectClass]
+baseName = "ivtank"
+geometryName = "B_Hcruiser.xsi"
+geometryScale = 6.0
+classLabel = "wingman"
+scrapValue = 0
+scrapCost = 0
+customCost = 0
+buildTime = 0
+customTime = 0
+maxHealth = 6000
+maxAmmo = 8000
+addAmmo = 300
+addHealth = 80
+unitName = "Borg Cruiser"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+
+heatSignature = 2.0
+imageSignature = 2.5
+radarSignature = 0.5
+
+isAssault = 1
+needPilot = 0
+
+armorClass = H
+
+/////// weapons ///////////////////
+
+weaponMask = 00011
+
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "B_plas"
+weaponAssault1 = 0
+weaponHard2 = "hp_cannon_2"
+weaponName2 = "B_plas"
+weaponAssault2 = 0
+
+////////////////////////////////////
+
+lightHard1 = "hp_light_1"
+lightName1 = "spotblue2"
+lightHard2 = "hp_light_2"
+lightName2 = "spotblue2"
+
+[CraftClass]
+rangeScan = 400.0f
+periodScan = 5.0f
+velocJam = 5.0f
+engageRange = 350
+
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 2.5
+omegaFactor = 0.2
+strafeFactor = 4.2
+
+avoidSpeed = 60;
+topSpeed = 70;
+
+[HoverCraftClass]
+velocForward = 55.5 // []
+velocReverse = 40.0 // []
+velocStrafe = 50.0 // []
+accelThrust = 35.0 //acceleration []
+accelDragStop = 10.0 //how fast it stops once hands are off controls []
+accelJump = 15.0 // []
+w
+setAltitude = 4.5 // how high off the ground
+
+alphaTrack = 21.0 //springs speed it rights itself []
+alphaDamp = 8.0 //shocks []
+
+pitchPitch = 0.25 //nose up []
+pitchThrust = 0.1 //nose down []
+
+rollStrafe = 0.08 //rolls while strafing []
+omegaSpin = 6.0 //spinning in place speed []
+omegaTurn = 6.3 //turning while moving speed []
+alphaSteer = 7.0 //how fast it responds to steering []
+rollSteer = 0.08 //rolls while steering []
+
+soundThrust = "itank01e.wav"
+soundTurbo = "avtanke3.wav"

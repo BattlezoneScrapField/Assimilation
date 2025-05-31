@@ -1,0 +1,82 @@
+[WeaponClass]
+classLabel = "machinegun"
+ordName = "B_beemM"
+wpnName = "Nul"
+fireSound = "Isdf_beem.wav"
+wpnReticle = "B_beemM"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 900
+flashName = "B_beemM.flash"
+
+[CannonClass]
+shotDelay = 0.05
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 0.05
+renderBase = "draw_light"
+startColor = "255 255 0 1000"
+finishColor = "255 255 0 1000"
+startRadius = 25.0
+finishRadius = 25.0
+animateTime = 0.12
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+//--------------------------------------------------------------------
+[OrdnanceClass]
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL
+
+renderName = "B_beemM.render"
+
+ammoCost = 5
+lifeSpan = 835e-6 // 325m
+shotSpeed = 1e6
+
+damageValue(N) = 80 // none //350
+damageValue(L) = 80 // light //250
+damageValue(H) = 80 // heavy //150
+
+damageValue(S) = 80 // standard //250
+damageValue(D) = 80 // deflection //350
+damageValue(A) = 80 // absorbtion //80
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "B_beemM.core"
+renderName2 = "B_beemM.fringe"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 1000"
+finishColor = "255 255 0 1000"
+startRadius = 0.45
+finishRadius = 0.2
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 1000"
+finishColor = "255 255 0 1000"
+startRadius = 0.3
+finishRadius = 5.5
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.02
+textureSpeed = -5.0

@@ -1,0 +1,138 @@
+[Start]
+scrapCount = 120
+consClass = "bvcons"
+scavClass = "bvscav"
+
+[Cheat]
+moneyAmount = 5
+moneyDelay = 1
+
+[Match]
+targetType1 = "ivtank"
+attackType1_1 = "B_Cube"
+attackType1_2 = "B_Cube"
+targetType2 = "ivscout"
+attackType2_1 = "b_scout"
+attackType2_2 = "b_sphere"
+targetType3 = "ivrckt"
+attackType3_1 = "b_sphere"
+attackType3_2 = "b_sphere"
+attackType3_3 = "B_Cube"
+attackType3_4 = "B_Cube"
+targetType4 = "b_isdf_turr"
+attackType4_1 = "b_scout"
+attackType4_2 = "b_scout"
+
+[Plan1]
+planType = "Attacker"
+planPriority = 100
+targetType = "ivrecy_b"
+attackType1 = "b_scout"
+maxAttacks = 3
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan2]
+planType = "Attacker"
+planPriority = 90
+targetType = "ivtank"
+attackType1 = "b_sphere"
+maxAttacks = 90
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan3]
+planType = "BuildMinimums"
+planPriority = 80
+buildType1 = "b_sphere"
+buildCount1 = 8
+buildType2 = "B_Cube"
+buildCount2 = 3
+buildType3 = "b_scout"
+buildCount3 = 5
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan4]
+planType = "Attacker"
+planPriority = 70
+targetType = "ibrecy_b"
+attackType1 = "b_sphere"
+attackType2 = "b_sphere"
+maxAttacks = 80
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan5]
+planType = "Attacker"
+planPriority = 60
+targetType = "ibgtow"
+attackType1 = "B_Cube"
+attackType2 = "b_scout"
+maxAttacks = 90
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan6]
+planType = "Attacker"
+planPriority = 50
+targetType = "b_isdf_cons"
+attackType1 = "b_scout"
+maxAttacks = 90
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan7]
+planType = "Attacker"
+planPriority = 40
+targetType = "ibrefin"
+attackType1 = "b_scout"
+attackType2 = "b_scout"
+attackType3 = "b_sphere"
+attackType4 = "b_cube"
+maxAttacks = 90
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan8]
+planType = "Attacker"
+planPriority = 30
+targetType = "b_isdf_turr"
+attackType1 = "b_scout"
+attackType2 = "b_scout"
+attackType3 = "b_scout"
+maxAttacks = 80
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan9]
+planType = "Attacker"
+planPriority = 20
+targetType = "ibfact_b"
+attackType1 = "b_sphere"
+attackType2 = "b_sphere"
+attackType3 = "b_sphere"
+attackType4 = "B_Cube"
+attackType5 = "B_Cube"
+maxAttacks = 90
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan10]
+planType = "Attacker"
+planPriority = 10
+targetType = "ivtug_b"
+attackType1 = "b_sphere"
+attackType2 = "B_Cube"
+maxAttacks = 180
+buildIfNoIdle = 1
+doNextOnFail = 1
+
+[Plan11]
+planType = "BuildMinimums"
+planPriority = 1
+buildType1 = "b_turret"
+buildCount1 = 2
+buildIfNoIdle = 1
+doNextOnFail = 1
+

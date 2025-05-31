@@ -1,0 +1,75 @@
+[GameObjectClass]
+baseName = "b_jugger"
+geometryName = "b_jugger.xsi"
+geometryScale = 0.20
+classLabel = "assaulttank"
+BoxCollide = 1
+CanCollide = 1
+scrapValue = 0
+scrapCost = 0
+customCost = 0
+buildTime = 0
+customTime = 0
+maxHealth = 801000
+addHealth = 260
+maxAmmo = 80000
+addAmmo = 250.0
+unitName = "Borg Juggernaut"
+aiName = "AssaultTankProcess"
+aiName2 = "AssaultTankProcess"
+heatSignature = 5.0
+imageSignature = 5.0
+radarSignature = 5.0
+isAssualt = 1
+armorClass = H
+explosionName = "Xnuke_B"
+needPilot = 1
+
+//////////////////////////////
+
+weaponMask = 00001
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "Bs_beemJ"
+weaponAssault1 = 1
+weaponHard2 = "hp_cannon_2"
+weaponName2 = "Bs_ball"
+weaponAssault2 = 1
+
+//////////////////////////////
+
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+[CraftClass]
+rangeScan = 900
+periodScan = 1.0
+velocJam = 0.0
+weaponPitch = 1.5
+engageRange = 850
+braccelFactor = 0.05
+strafeFactor = 0.0
+steerFactor = 1.0
+omegaFactor = 1.0
+velFactor = 0.2
+weightInTons = 495000
+
+avoidSpeed = 15
+topSpeed = 45
+
+[TrackedVehicleClass]
+omegaSpin = 0.8
+omegaTurn = 1.0
+alphaSteer = 2.0
+velocForward = 45.0
+velocReverse = 15.0
+accelThrust = 12.0
+
+engineSound = "bgimp.wav"
+treadSound = "bgimp.wav"
+
+[AssaultTankClass]
+yawRate = 4.0
+yawAlpha = 10.0
+pitchMin = -1.5
+pitchMax = 1.5

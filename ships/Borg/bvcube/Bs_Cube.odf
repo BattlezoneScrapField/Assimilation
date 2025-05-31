@@ -1,0 +1,79 @@
+[GameObjectClass]
+geometryName = "B_Cube.xsi"
+glowTexture = "bocube.bmp"
+geometryScale = 3.0
+classLabel = "wingman"
+scrapValue = 0
+scrapCost = 0
+customCost = 0
+buildTime = 0.0
+customTime = 0.0
+maxHealth = 5000
+addHealth = 5.5
+maxAmmo = 6000
+addAmmo = 5.5
+unitName = "Borg Cube"
+aiName = "TankFriend"
+aiName2 = "TankEnemy"
+heatSignature = 0.5
+imageSignature = 2.5
+radarSignature = 0.1
+isAssault = 1
+armorClass = H
+needPilot = 0
+explosionName = "xplshipssp"
+
+//////////////////////////////
+
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "B_plas"
+weaponAssault1 = 0
+weaponHard2 = "HP_ROCKET_2"
+weaponName2 = ""
+weaponAssault2 = 0
+weaponHard3 = "HP_SHIELD"
+weaponName3 = "gshield"
+
+//////////////////////////////
+
+[CraftClass]
+rangeScan = 300.0f
+periodScan = 2.0f
+velocJam = 5.0f
+engageRange = 150
+
+braccelFactor = 0.05
+strafeFactor = 0.1
+steerFactor = 1.0
+omegaFactor = 0.2
+velFactor = 0.2
+
+avoidSpeed = 28
+topSpeed = 28
+
+[HoverCraftClass]
+setAltitude = 75.0
+accelDragStop = 0.1
+accelDragFull = 0.1
+
+velocForward = 28.0
+velocReverse = 26.0
+velocStrafe = 26.0
+accelThrust = 28.0
+accelBrake = 50.0
+
+accelJump = 0.0
+
+alphaTrack = 10.0
+alphaDamp = 8.0
+
+pitchPitch = 1.5 //nose up and down by mouse..
+pitchThrust = 0.15 //nose down when thrustors are on..
+
+rollStrafe = 0.8 //rolls while strafing []
+omegaSpin = 2.0 //spinning in place speed []
+omegaTurn = 5.3 //turning while moving speed []
+alphaSteer = 4.0 //how fast it responds to steering []
+rollSteer = 1.5 //rolls while steering []
+
+soundThrust = "bgimp.wav"

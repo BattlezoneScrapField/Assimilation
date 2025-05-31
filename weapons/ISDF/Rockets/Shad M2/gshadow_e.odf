@@ -1,0 +1,93 @@
+[WeaponClass]
+classLabel = "imagelauncher"
+altName = "gshadow_e"
+ordName = "gshadow_e"
+wpnName = "Shad M3"
+fireSound = "gsand00.wav"
+wpnReticle = "gshadow.0"
+wpnCategory = "ROCK"
+isAssault = 0
+aiRange = 350
+
+[LauncherClass]
+lockRange = 340.0  // was 170 GEC
+shotDelay = 1.0
+lockDelay = 1.5
+coneAngle = 0.05
+lockingReticle = "gshadow.A"
+lockingSound = "lock01.wav"
+lockedReticle = "gshadow.B"
+lockedSound = "lock02.wav"
+targetCount = 3
+targetReticle = "gshadow.1"
+
+////////////////////////////////////////////////////////////////////////
+
+[OrdnanceClass]
+classLabel = "imagemissile"
+shotGeometry = "iorckt00.xsi"
+shotSound = "smort03.wav"
+
+xplGround = NULL
+xplVehicle = "xshdwcar"
+xplBuilding = "xshdwbld"
+renderName = "gshadow_e.render"
+
+ammoCost = 25
+lifeSpan = 8.0 // 800m
+shotSpeed = 100.0
+
+damageValue(N) = 500 // none
+damageValue(L) = 380 // light
+damageValue(H) = 240 // heavy
+
+damageValue(S) = 280 // standard
+damageValue(D) = 203 // deflection
+damageValue(A) = 101 // absorbtion
+
+[MissileClass]
+omegaTurn = 1.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "gshadow_e.flare"
+renderName2 = "gshadow_e.smoke"
+renderName3 = "gshadow_e.flame"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 10 10 227"
+finishColor = "0 255 30"
+startRadius = 2.0
+finishRadius = 2.0
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 10 10 227"
+finishColor = "120 100 10"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 1.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 1.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 10 10 227"
+finishColor = "190 60 30"
+startRadius = 0.2
+finishRadius = 0.05
+animateTime = 0.1
+emitDelay = 0.002
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 0.1

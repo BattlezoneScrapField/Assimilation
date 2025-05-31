@@ -1,0 +1,19 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+renderName = "b_raynus_c.render"
+
+ammoCost = 1.90
+lifeSpan = 0.60 // 150m
+shotSpeed = 380.0
+
+damageValue(N) = 2 // none // 300
+damageValue(L) = 1 // light // 240
+damageValue(H) = 60 // heavy // 160
+
+damageValue(S) = 2 // stardard // 240
+damageValue(D) = 1 // deflection // 160
+damageValue(A) = 3 // absorbtion // 300

@@ -1,0 +1,70 @@
+
+[objects]
+
+Object1
+Object2
+Object3
+Object4
+
+[positions]
+
+
+[variables]
+
+
+[text]
+
+_Text1,
+"Attack the Aproching borg ship\nthey must not get into earth solar\nsystem"
+
+//--------------------------------------------------------------------
+[routine,_Routine1,1,true]
+	Ally,1,2
+	Createp,Object4,"B_SpaceQube",5,"bspawn"
+	SetSkill,Object4,3
+	Createp,Object2,"ibnav",1,"earths"
+	SetName,Object2,"Earth's Solar System"
+	BeaconOn,Object2
+	Wait,1
+	StartSound,"b5_sound_1.wav"
+	CamPath,"path_5",6000,3500,Object4
+	Display,_Text1,red
+	StartSound,"locked3.wav"
+	Wait,2
+	StartSound,"b5_sound_2.wav"
+	GiveWeapon,Object4,"B_plas"
+
+//--------------------------------------------------------------------
+[routine,_Routine2,1,true]
+	Wait,5
+	GoTo,Object4,"bpath",1
+
+//--------------------------------------------------------------------
+[routine,_Routine3,1,true]
+LOC_18:
+	GetByLabel,Object3,"unnamed_ispilo"
+	Remove,Object3
+	JumpTo,LOC_18
+
+//--------------------------------------------------------------------
+[routine,_Routine4,1,true]
+LOC_22:
+	Wait,1
+	GetByLabel,Object1,"unnamed_isuser"
+	Remove,Object1
+	JumpTo,LOC_22
+
+//--------------------------------------------------------------------
+[routine,_Routine5,1,true]
+	Wait,20
+LOC_28:
+	DistObject,Object2,Object4
+	IfGT,550,LOC_28
+	IsAround,Object4
+	IfEQ,1,LOC_34
+	Succeed,1,"b5_text01.des"
+	JumpTo,LOC_35
+LOC_34:
+	Fail,1,"b5_text02.des"
+LOC_35:
+

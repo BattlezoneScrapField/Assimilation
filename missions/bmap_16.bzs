@@ -1,0 +1,1189 @@
+
+[objects]
+
+Object1
+Object2
+Object3
+Object4
+Object5
+Object6 <3>
+Object9
+Object10
+Object11
+Object12
+Object13
+Object14
+Object15
+Object16
+Object17
+Object18
+Object19
+Object20
+Object21
+Object22
+Object23
+Object24
+Object25
+Object26
+Object27
+Object28
+Object29
+Object30
+Object31
+Object32
+Object33
+Object34
+Object35
+Object36
+Object37
+Object38
+Object39
+Object40
+Object41
+Object42
+Object43
+Object44 <2>
+Object46
+Object47
+Object48
+Object49
+Object50
+Object51
+Object52
+Object53
+Object54
+Object55
+Object56
+Object57
+Object58
+Object59
+Object60
+Object61
+Object62
+Object63
+Object64
+Object65 <2>
+Object67
+
+[positions]
+
+Position1, 1061,100,1128
+Position2, 0,0,0
+Position3, 0,0,0
+Position4, 0,0,0
+Position5, 0,0,0
+Position6, 0,0,0
+Position7, -1035,110,1326
+Position8, 0,120,150
+Position9, 0,0,0
+Position10, 1051,100,891
+
+[variables]
+
+Variable1, 0
+Variable2, 0
+Variable3, 0
+Variable4, 0
+Variable5, 0
+Variable6, 0
+Variable7, 0
+Variable8, 0
+Variable9, 0
+Variable10, 0
+Variable11, 0
+Variable12, 0
+Variable13, 0
+Variable14, 0
+Variable15, 3000
+Variable16, 0
+Variable17, 0
+Variable18, 0
+Variable19, 0
+Variable20, 0
+
+[text]
+
+_Text1,
+"Get into a ship on the space\nstation deck.."
+
+_Text2,
+"Follow Zata 1"
+
+_Text3,
+"Assist Zata 1 in the patrol."
+
+_Text4,
+"Get your ass in a ship\nnow!!!\n You have 20 seconds!!"
+
+_Text5,
+"Intercept the ship and\ndestroy it"
+
+_Text6,
+"You Lost your Support Ship"
+
+_Text7,
+"A large Borg fleet are\nmoving Defend that station!!"
+
+_Text8,
+"Power Back Online!!"
+
+_Text9,
+"Power Being Fixed 1 Min"
+
+_Text10,
+"Make a defense force\naround the station.. you\nhave 10 Mins"
+
+_Text11,
+"Escort the Transports\nto the exit point safely"
+
+_Text12,
+"Investigate a Stage Jump\nSignature."
+
+_Text13,
+"The ISDF Mothership is on her\nway to the location\nHold of that ship until she\narrives."
+
+_Text14,
+"A wing of fighters are\nbeing launched\nDestroy them all, provide support\nfor the ISDF Mothership."
+
+_Text15,
+"Protect Transport Ships."
+
+_Text16,
+"Use the Spy Ship to\nInvestagate the Dissaperence\nof the Transport Ships."
+
+_Text17,
+"The Mothership will\nProvide cover for you and\nYour Team.\nTake out the Power Genarators\nand then Destroy the station."
+
+//--------------------------------------------------------------------
+[routine,_Routine1,1,true]
+	Ally,1,2
+	Wait,2
+	Createp,Object57,"bs_domin",5,"enemy4"
+	Createp,Object51,"ivsupport",1,"spawn"
+	GetByLabel,Object67,"unnamed_bs_station"
+	Attack,Object57,Object67,0
+	StartSound,"b16_sound_1.wav"
+	CamPath,"cam_1",400,6500,Object67
+	StartSound,"b16_sound_2.wav"
+	Wait,3
+LOC_10:
+	Createp,Object65,"ivspaceta",2,"spawn"
+	SetSkill,Object65,3
+	Patrol,Object65,"patrol01",1
+	SetName,Object65,"Zata Team"
+	Add,Variable20,1,Variable20
+	IfLT,3,LOC_10
+	Set,Variable20,0
+	GetPlayer,Object64
+	Createp,Object63,"ivspacebo1",2,"spawn"
+	SetSkill,Object63,3
+	Patrol,Object63,"patrol01",1
+	BeaconOn,Object63
+	SetName,Object63,"Zata 1 (Follow me!!)"
+	Createp,Object62,"ivspacebo1",2,"spawn"
+	Patrol,Object62,"patrol01",1
+	SetName,Object61,"Kapa Wing"
+	Createp,Object61,"ivspacebo2",2,"spawn"
+	Patrol,Object60,"patrol01",1
+	SetName,Object60,"patrol01"
+	Createp,Object59,"ivspacebo1",2,"spawn"
+	Patrol,Object59,"patrol01",1
+	Clear
+	Display,_Text1,white
+LOC_33:
+	Wait,1
+	GetByLabel,Object58,"unnamed_psuser"
+	IsAround,Object58
+	IfEQ,0,LOC_51
+	Add,Variable20,1,Variable20
+	IfLT,20,LOC_33
+	Set,Variable20,0
+	StartSound,"locked3.wav"
+	Clear
+	Display,_Text4,red
+LOC_43:
+	Wait,1
+	GetByLabel,Object58,"unnamed_psuser"
+	IsAround,Object58
+	IfEQ,0,LOC_51
+	Add,Variable20,1,Variable20
+	IfLT,20,LOC_43
+	Set,Variable20,0
+	Fail,1,"b16_textf1.obj"
+LOC_51:
+	Clear
+	Display,_Text1,green
+	Display,_Text2,white
+	StartSound,"locked3.wav"
+LOC_55:
+	GetPlayer,Object64
+	DistObject,Object64,Object63
+	IfGT,300,LOC_55
+	SetName,Object63,"Zata 1 (Follow)"
+	Clear
+	Display,_Text1,green
+	Display,_Text2,green
+	Display,_Text3,white
+	Wait,120
+	Createp,Object57,"bs_domin",5,"enemy0"
+LOC_65:
+	GetPlayer,Object64
+	DistObject,Object64,Object57
+	IfGT,1020,LOC_65
+	Follow,Object61,Object64,0
+	Follow,Object60,Object64,0
+	Follow,Object59,Object64,0
+	StartSound,"b16_sound_3.wav"
+	Wait,4
+	StartSound,"b16_sound_4.wav"
+	Wait,7
+	BeaconOn,Object57
+	StartSound,"b16_sound_5.wav"
+	Wait,3
+	Stop,Object63,0
+	Clear
+	Display,_Text5,white
+	StartSound,"locked3.wav"
+LOC_82:
+	GetPlayer,Object64
+	DistObject,Object64,Object57
+	IfGT,870,LOC_82
+	Createp,Object56,"bs_domin",5,"enemy0"
+	Createp,Object55,"BS_Scout",5,"enemy0"
+	Wait,2
+	StartSound,"b16_sound_6.wav"
+	Wait,3
+	Attack,Object63,Object57,1
+LOC_91:
+	GetPlayer,Object64
+	DistObject,Object64,Object57
+	IfGT,770,LOC_91
+	StartSound,"b16_sound_7.wav"
+	Wait,3
+	Set,Variable20,0
+LOC_97:
+	GetPlayer,Object64
+	Createp,Object54,"BS_Scout",5,"enemy0"
+	SetSkill,Object54,3
+	Attack,Object54,Object64,1
+	Add,Variable20,1,Variable20
+	IfLT,8,LOC_97
+	Set,Variable20,0
+	StartSound,"b16_sound_8.wav"
+	Wait,6
+	Create,Object53,"isdf_hc1",1,Position1
+	SetName,Object53,"ISDF DASIA"
+	Create,Object52,"isdf_hc1",1,Position10
+	SetName,Object52,"ISDF CATALAGE"
+LOC_110:
+	GetByLabel,Object50,"unnamed_bs_domin"
+	IsAround,Object50
+	IfEQ,0,LOC_114
+	JumpTo,LOC_110
+LOC_114:
+	GetByLabel,Object50,"unnamed_BS_Scout"
+	IsAround,Object50
+	IfEQ,0,LOC_118
+	JumpTo,LOC_114
+LOC_118:
+	Wait,30
+	Clear
+	Display,_Text5,green
+	StartSound,"locked3.wav"
+	Wait,1
+	StartSound,"b16_sound_9.wav"
+	Wait,2
+	GetPos,Object53,Position9
+	Set,Variable20,0
+LOC_127:
+	Create,Object49,"ivspaceta",1,Position9
+	SetSkill,Object49,3
+	SetGroup,Object49,4
+	Follow,Object49,Object64,0
+	SetName,Object65,"Delta Wing"
+	Add,Variable20,1,Variable20
+	IfLT,6,LOC_127
+	Set,Variable20,0
+LOC_135:
+	Create,Object49,"ivspacebo1",1,Position9
+	SetSkill,Object49,3
+	SetGroup,Object49,5
+	Follow,Object49,Object64,0
+	SetName,Object65,"Delta Wing"
+	Add,Variable20,1,Variable20
+	IfLT,5,LOC_135
+	Set,Variable20,0
+	Follow,Object53,Object64,0
+	Follow,Object52,Object64,0
+	Set,Variable20,0
+	RunSpeed,_Routine14,1,true
+LOC_147:
+	Createp,Object48,"BS_sphere",5,"enemy1"
+	SetSkill,Object48,3
+	Attack,Object48,Object67,1
+	Add,Variable20,1,Variable20
+	IfLT,49,LOC_147
+	Set,Variable20,0
+LOC_153:
+	Createp,Object47,"BS_cube",5,"enemy1"
+	SetSkill,Object47,3
+	Attack,Object47,Object67,1
+	Add,Variable20,1,Variable20
+	IfLT,35,LOC_153
+	Set,Variable20,0
+LOC_159:
+	Createp,Object46,"bs_domin",5,"enemy1"
+	SetSkill,Object46,3
+	Attack,Object46,Object67,1
+	Add,Variable20,1,Variable20
+	IfLT,8,LOC_159
+	Set,Variable20,0
+	Wait,10
+	Createp,Object39,"bs_scout",5,"enemy1"
+	SetSkill,Object39,3
+	Attack,Object39,Object67,1
+	StartSound,"b16_sound_11.wav"
+	CamObject,Object48,Position8,Object47,20
+	Clear
+	Display,_Text7,red
+	StartSound,"locked3.wav"
+LOC_174:
+	Wait,1
+	IsAround,Object39
+	IfEQ,1,LOC_174
+	Wait,150
+LOC_178:
+	Createp,Object46,"bs_domin",5,"enemy1"
+	SetSkill,Object46,3
+	Attack,Object46,Object67,1
+	Add,Variable20,1,Variable20
+	IfLT,13,LOC_178
+	Set,Variable20,0
+	Wait,4
+	Createp,Object38,"bs_domin",5,"enemy1"
+	SetSkill,Object38,3
+	Attack,Object38,Object67,1
+	StartSound,"b16_sound_11.wav"
+	CamObject,Object38,Position8,Object46,20
+LOC_190:
+	Wait,1
+	IsAround,Object38
+	IfEQ,1,LOC_190
+	RunSpeed,_Routine12,1,true
+	Clear
+	Display,_Text7,green
+	StartSound,"locked3.wav"
+	Wait,5
+	Createp,Object34,"isdf_hc1",1,"spawn"
+	SetName,Object34,"WAR SPITE"
+	BeaconOn,Object34
+	SetSkill,Object34,3
+	SetGroup,Object34,2
+	StartSound,"b16_sound_12.wav"
+	Createp,Object33,"isdf_hc1",1,"spawn"
+	SetSkill,Object33,3
+	SetGroup,Object33,2
+	Createp,Object32,"isdf_hc",1,"spawn"
+	SetSkill,Object32,3
+	SetGroup,Object32,2
+	Createp,Object31,"isdfCruiser",1,"spawn"
+	SetSkill,Object31,3
+	SetGroup,Object31,3
+	Createp,Object30,"isdfCruiser",1,"spawn"
+	SetSkill,Object30,3
+	SetGroup,Object30,3
+	Createp,Object29,"isdfCruiser",1,"spawn"
+	SetSkill,Object29,3
+	SetGroup,Object29,3
+	GetPlayer,Object64
+	Set,Variable20,0
+LOC_221:
+	Create,Object49,"ivspaceta",1,Position7
+	SetSkill,Object49,3
+	SetGroup,Object49,9
+	Follow,Object49,Object64,0
+	SetName,Object65,"Lema Wing"
+	Add,Variable20,1,Variable20
+	IfLT,8,LOC_221
+	Set,Variable20,0
+LOC_229:
+	Create,Object49,"ivspacebo1",1,Position7
+	SetSkill,Object49,3
+	SetGroup,Object49,8
+	Follow,Object49,Object64,0
+	SetName,Object65,"Brovo Wing"
+	Add,Variable20,1,Variable20
+	IfLT,8,LOC_229
+	Set,Variable20,0
+	Wait,20
+	Clear
+	Display,_Text7,green
+	Display,_Text10,green
+	StartSound,"locked3.wav"
+	StartTimer,600
+	Wait,600
+	HideTimer
+	RunSpeed,_Routine11,1,true
+	StartSound,"b16_sound_14.wav"
+	Clear
+	Display,_Text11,white
+	StartSound,"locked3.wav"
+	Createp,Object20,"ibnav",1,"exit"
+	SetName,Object20,"Transport Exit Node!!!"
+	BeaconOn,Object20
+	Wait,4
+	Create,Object27,"ivsupport",2,Position7
+	SetName,Object27,"Transport ship"
+	GoTo,Object27,"exit",1
+	Wait,1
+	Create,Object26,"ivsupport",2,Position7
+	SetName,Object26,"Transport ship"
+	GoTo,Object26,"exit",1
+	Wait,1
+	Create,Object25,"ivsupport",2,Position7
+	SetName,Object25,"Transport ship"
+	GoTo,Object25,"exit",1
+	Wait,1
+	Create,Object24,"ivsupport",2,Position7
+	SetName,Object24,"Transport ship"
+	GoTo,Object24,"exit",1
+	Wait,1
+	Create,Object23,"ivsupport",2,Position7
+	SetName,Object23,"Transport ship"
+	GoTo,Object23,"exit",1
+	Wait,1
+	Create,Object22,"ivsupport",2,Position7
+	SetName,Object22,"Transport ship"
+	GoTo,Object22,"exit",1
+	Wait,1
+	Create,Object21,"ivsupport",2,Position7
+	SetName,Object21,"Transport ship"
+	GoTo,Object21,"exit",1
+	Wait,10
+	Createp,Object57,"bs_domin",5,"enemy1"
+	Attack,Object57,Object27,1
+	Createp,Object57,"bs_domin",5,"enemy1"
+	Attack,Object57,Object27,1
+	Createp,Object56,"bs_domin",5,"enemy1"
+	Attack,Object56,Object26,1
+	Createp,Object56,"bs_domin",5,"enemy1"
+	Attack,Object56,Object26,1
+	Createp,Object55,"bs_domin",5,"enemy1"
+	Attack,Object55,Object25,1
+	Createp,Object55,"bs_domin",5,"enemy1"
+	Attack,Object55,Object25,1
+	Createp,Object54,"bs_domin",5,"enemy1"
+	Attack,Object54,Object24,1
+	Createp,Object54,"bs_domin",5,"enemy1"
+	Attack,Object54,Object24,1
+	Createp,Object19,"bs_domin",5,"enemy1"
+	Attack,Object19,Object23,1
+	Createp,Object19,"bs_domin",5,"enemy1"
+	Attack,Object19,Object23,1
+	Createp,Object18,"bs_domin",5,"enemy1"
+	Attack,Object18,Object22,1
+	Createp,Object18,"bs_domin",5,"enemy1"
+	Attack,Object18,Object22,1
+	Createp,Object17,"bs_domin",5,"enemy1"
+	Attack,Object17,Object21,1
+	Createp,Object17,"bs_domin",5,"enemy1"
+	Attack,Object17,Object21,1
+	Wait,15
+LOC_311:
+	IsAround,Object27
+	IfEQ,1,LOC_314
+	JumpTo,LOC_317
+LOC_314:
+	DistObject,Object27,Object20
+	IfLT,220,LOC_317
+	JumpTo,LOC_311
+LOC_317:
+	IsAround,Object26
+	IfEQ,1,LOC_320
+	JumpTo,LOC_323
+LOC_320:
+	DistObject,Object26,Object20
+	IfLT,220,LOC_323
+	JumpTo,LOC_317
+LOC_323:
+	IsAround,Object25
+	IfEQ,1,LOC_326
+	JumpTo,LOC_329
+LOC_326:
+	DistObject,Object25,Object20
+	IfLT,220,LOC_329
+	JumpTo,LOC_323
+LOC_329:
+	IsAround,Object24
+	IfEQ,1,LOC_332
+	JumpTo,LOC_335
+LOC_332:
+	DistObject,Object24,Object20
+	IfLT,220,LOC_335
+	JumpTo,LOC_329
+LOC_335:
+	IsAround,Object23
+	IfEQ,1,LOC_338
+	JumpTo,LOC_341
+LOC_338:
+	DistObject,Object23,Object20
+	IfLT,220,LOC_341
+	JumpTo,LOC_335
+LOC_341:
+	IsAround,Object22
+	IfEQ,1,LOC_344
+	JumpTo,LOC_347
+LOC_344:
+	DistObject,Object22,Object20
+	IfLT,220,LOC_347
+	JumpTo,LOC_341
+LOC_347:
+	Wait,5
+	RunSpeed,_Routine11,0,false
+	Clear
+	Display,_Text11,green
+	StartSound,"locked3.wav"
+	Wait,1
+	StartSound,"b16_sound_18.wav"
+	Remove,Object27
+	Remove,Object26
+	Remove,Object25
+	Remove,Object24
+	Remove,Object23
+	Remove,Object22
+	Wait,60
+	StartSound,"b16_sound_13.wav"
+	Remove,Object20
+	Createp,Object20,"ibnav",1,"enemy3"
+	SetName,Object20,"Unknown Jump Point!!
+"
+	BeaconOn,Object20
+	Clear
+	Display,_Text12,white
+	StartSound,"locked3.wav"
+	Createp,Object16,"b_jugger",5,"enemy3"
+	RunSpeed,_Routine6,1,true
+LOC_371:
+	GetPlayer,Object64
+	DistObject,Object64,Object16
+	IfGT,670,LOC_371
+	StartSound,"b16_sound_24.wav"
+	CamObject,Object64,Position8,Object16,6
+	StartSound,"b16_sound_19.wav"
+	Clear
+	Display,_Text12,red
+	Display,_Text13,white
+	StartSound,"locked3.wav"
+	Set,Variable20,0
+LOC_382:
+	Create,Object49,"ivspaceta",1,Position7
+	SetSkill,Object49,3
+	SetGroup,Object49,7
+	Follow,Object49,Object64,0
+	Add,Variable20,1,Variable20
+	IfLT,14,LOC_382
+	Set,Variable20,0
+	Wait,15
+	Createp,Object15,"ISDF_mother",1,"enemy3"
+	RunSpeed,_Routine5,1,true
+	RunSpeed,_Routine4,1,true
+	CamOf,Object15,-400,2
+	RunSpeed,_Routine7,1,true
+LOC_395:
+	DistObject,Object15,Object16
+	IfGT,900,LOC_395
+	RunSpeed,_Routine8,1,true
+	StartSound,"b16_sound_20.wav"
+	Clear
+	Display,_Text13,green
+	Display,_Text14,white
+	StartSound,"locked3.wav"
+	Wait,1
+LOC_404:
+	IsAround,Object16
+	IfEQ,1,LOC_404
+	Clear
+	Display,_Text13,green
+	Display,_Text14,green
+	StartSound,"locked3.wav"
+	RunSpeed,_Routine7,0,false
+	Wait,10
+	Clear
+	Display,_Text15,white
+	StartSound,"locked3.wav"
+	Create,Object27,"ivsupport",2,Position7
+	SetName,Object27,"Transport ship"
+	GoTo,Object27,"error",1
+	Wait,1
+	Create,Object26,"ivsupport",2,Position7
+	SetName,Object26,"Transport ship"
+	GoTo,Object26,"exit",1
+	Wait,1
+	Create,Object25,"ivsupport",2,Position7
+	SetName,Object25,"Transport ship"
+	GoTo,Object25,"enemy3",1
+	Wait,1
+	Create,Object24,"ivsupport",2,Position7
+	SetName,Object24,"Transport ship"
+	GoTo,Object24,"spawn",1
+	Create,Object23,"ivsupport",2,Position7
+	SetName,Object23,"Transport ship"
+	GoTo,Object23,"patrol02e",1
+	Wait,3
+	Create,Object22,"ivsupport",2,Position7
+	SetName,Object22,"Transport ship"
+	GoTo,Object22,"patrol02e",1
+	Wait,120
+	GoTo,Object26,"error",1
+	GoTo,Object24,"exit",1
+	GoTo,Object27,"enemy3",1
+	GoTo,Object25,"spawn",1
+	Wait,60
+	GoTo,Object24,"error",1
+	GoTo,Object26,"exit",1
+	GoTo,Object25,"enemy3",1
+	GoTo,Object27,"spawn",1
+	Wait,60
+	GoTo,Object25,"error",1
+	GoTo,Object27,"exit",1
+	GoTo,Object24,"enemy3",1
+	GoTo,Object26,"spawn",1
+	Wait,60
+	GoTo,Object25,"spawn",1
+	GoTo,Object27,"spawn",1
+	GoTo,Object24,"spawn",1
+	GoTo,Object26,"spawn",1
+LOC_457:
+	IsAround,Object23
+	IfEQ,1,LOC_457
+	StartSound,"b12_sound_8.wav"
+	CamOf,Object22,-40,2
+	Remove,Object25
+	Remove,Object27
+	Remove,Object24
+	Remove,Object26
+	Create,Object5,"ivspta_E",0,Position7
+	KillPilot,Object5
+	BeaconOn,Object5
+	StartSound,"b16_sound_25.wav"
+	CamOf,Object5,-40,9
+	GetByLabel,Object4,"unnamed_bb_station"
+	GetByLabel,Object2,"unnamed_b_lbcanp"
+	RunSpeed,_Routine2,1,true
+	Clear
+	Display,_Text15,green
+	Display,_Text16,white
+	StartSound,"locked3.wav"
+LOC_477:
+	GetPlayer,Object3
+	DistObject,Object3,Object4
+	IfGT,500,LOC_477
+	Wait,15
+	StartSound,"b16_sound_26.wav"
+	CamObject,Object4,Position8,Object2,19
+	Clear
+	Display,_Text17,white
+	StartSound,"locked3.wav"
+	BeaconOn,Object2
+	BeaconOn,Object4
+	BeaconOn,Object15
+	AddHealth,Object15,-31072
+	Attack,Object15,Object4,1
+	RunSpeed,_Routine3,1,true
+	RunSpeed,_Routine5,0,false
+LOC_493:
+	IsAround,Object4
+	IfEQ,1,LOC_493
+	Succeed,1,"b16_textw1.obj"
+
+//--------------------------------------------------------------------
+[routine,_Routine2,0,false]
+LOC_497:
+	Create,Object49,"ivspaceta",1,Position7
+	SetSkill,Object49,3
+	SetGroup,Object49,7
+	Follow,Object49,Object64,0
+	Add,Variable20,1,Variable20
+	IfLT,14,LOC_497
+	Set,Variable20,0
+	Wait,160
+	JumpTo,LOC_497
+
+//--------------------------------------------------------------------
+[routine,_Routine3,0,false]
+LOC_507:
+	Wait,6
+	Attack,Object15,Object4,1
+	Add,Variable1,1,Variable1
+	IfLT,8,LOC_507
+	Set,Variable1,0
+
+//--------------------------------------------------------------------
+[routine,_Routine4,0,false]
+	Wait,5
+	GetMaxHealth,Object16,Variable9
+	Wait,1
+	SetMaxHealthV,Object16,Variable9
+	Mult,Variable15,225,Variable8
+	Mult,Variable15,160,Variable7
+	Mult,Variable15,85,Variable6
+LOC_520:
+	Wait,1
+	GetCurHealth,Object16
+	IfGTV,Variable8,LOC_520
+	StartSound,"b16_sound_21.wav"
+	Wait,1
+LOC_525:
+	Wait,1
+	GetCurHealth,Object16
+	IfGTV,Variable7,LOC_525
+	StartSound,"b16_sound_22.wav"
+	Wait,6
+	StartSound,"M_connon_h.wav"
+LOC_531:
+	Wait,1
+	GetCurHealth,Object16
+	IfGTV,Variable6,LOC_531
+	StartSound,"b16_sound_23.wav"
+
+//--------------------------------------------------------------------
+[routine,_Routine5,0,false]
+	Wait,5
+	GetMaxHealth,Object15,Variable10
+	Wait,1
+	SetMaxHealthV,Object15,Variable10
+	Mult,Variable15,150,Variable5
+	Mult,Variable15,100,Variable4
+	Mult,Variable15,70,Variable3
+	Mult,Variable15,30,Variable2
+LOC_544:
+	Wait,1
+	GetCurHealth,Object15
+	IfGTV,Variable5,LOC_544
+	StartSound,"Mother_1.wav",Variable19
+	Wait,1
+LOC_549:
+	Wait,1
+	GetCurHealth,Object15
+	IfGTV,Variable4,LOC_549
+	StopSound,Variable19
+	StartSound,"M_damage_2.wav",Variable18
+LOC_554:
+	Wait,1
+	GetCurHealth,Object15
+	IfGTV,Variable3,LOC_554
+	StopSound,Variable18
+	StartSound,"M_redline.wav",Variable17
+LOC_559:
+	Wait,1
+	GetCurHealth,Object15
+	IfGTV,Variable2,LOC_559
+	StopSound,Variable18
+	StartSound,"M_critical.wav",Variable17
+	Wait,1
+LOC_565:
+	IsAround,Object15
+	IfEQ,1,LOC_565
+	Fail,1,"b16_textf2.obj"
+
+//--------------------------------------------------------------------
+[routine,_Routine6,0,false]
+LOC_569:
+	Wait,6
+	Attack,Object16,Object67,1
+	DistObject,Object67,Object16
+	IfGT,1200,LOC_569
+	Stop,Object16,1
+	RunSpeed,_Routine6,0,false
+
+//--------------------------------------------------------------------
+[routine,_Routine7,0,false]
+LOC_576:
+	Wait,6
+	Attack,Object15,Object16,1
+	Attack,Object16,Object15,1
+	JumpTo,LOC_576
+
+//--------------------------------------------------------------------
+[routine,_Routine8,0,false]
+	Wait,20
+LOC_582:
+	GetPlayer,Object64
+	IsAround,Object15
+	IfEQ,1,LOC_587
+	RunSpeed,_Routine8,0,false
+	RunSpeed,_Routine7,0,false
+LOC_587:
+	IsAround,Object16
+	IfEQ,1,LOC_591
+	RunSpeed,_Routine8,0,false
+	RunSpeed,_Routine7,0,false
+LOC_591:
+	GetPos,Object16,Position3
+	GetPos,Object15,Position2
+	Set,Variable20,0
+LOC_594:
+	Create,Object12,"Bs_Cube",5,Position3
+	Create,Object49,"ivspaceta",1,Position2
+	SetSkill,Object49,3
+	SetGroup,Object49,2
+	SetSkill,Object12,3
+	Attack,Object12,Object49,0
+	Attack,Object49,Object12,0
+	Add,Variable20,1,Variable20
+	IfLT,4,LOC_594
+	Set,Variable20,0
+LOC_604:
+	Create,Object11,"BS_Scout",5,Position3
+	Create,Object10,"ivspacesc",1,Position2
+	SetSkill,Object10,3
+	SetGroup,Object10,2
+	SetSkill,Object11,3
+	Attack,Object11,Object10,0
+	Attack,Object10,Object11,0
+	Add,Variable20,1,Variable20
+	IfLT,3,LOC_604
+	Set,Variable20,0
+	IsAround,Object9
+	IfEQ,1,LOC_619
+	Create,Object9,"BS_Scout",5,Position3
+	SetSkill,Object9,3
+	Attack,Object9,Object64,0
+LOC_619:
+	Wait,40
+	JumpTo,LOC_582
+
+//--------------------------------------------------------------------
+[routine,_Routine9,1,true]
+	Wait,5
+LOC_623:
+	IsAround,Object51
+	IfEQ,1,LOC_628
+	Display,_Text6,red
+	StartSound,"locked3.wav"
+	JumpTo,LOC_667
+LOC_628:
+	Wait,1
+	GetPlayer,Object64
+	DistObject,Object51,Object64
+	IfGT,150,LOC_634
+	AddAmmo,Object64,250
+	AddHealth,Object64,250
+LOC_634:
+	DistObject,Object51,Object52
+	IfGT,150,LOC_638
+	AddAmmo,Object52,500
+	AddHealth,Object52,1500
+LOC_638:
+	DistObject,Object51,Object53
+	IfGT,150,LOC_642
+	AddAmmo,Object53,500
+	AddHealth,Object53,1500
+LOC_642:
+	DistObject,Object51,Object34
+	IfGT,150,LOC_646
+	AddAmmo,Object34,500
+	AddHealth,Object34,1500
+LOC_646:
+	DistObject,Object51,Object33
+	IfGT,150,LOC_650
+	AddAmmo,Object33,500
+	AddHealth,Object33,1500
+LOC_650:
+	DistObject,Object51,Object32
+	IfGT,150,LOC_654
+	AddAmmo,Object32,500
+	AddHealth,Object32,1500
+LOC_654:
+	DistObject,Object51,Object31
+	IfGT,150,LOC_658
+	AddAmmo,Object31,500
+	AddHealth,Object31,1500
+LOC_658:
+	DistObject,Object51,Object30
+	IfGT,150,LOC_662
+	AddAmmo,Object30,500
+	AddHealth,Object30,1500
+LOC_662:
+	DistObject,Object51,Object29
+	IfGT,150,LOC_666
+	AddAmmo,Object29,500
+	AddHealth,Object29,1500
+LOC_666:
+	JumpTo,LOC_623
+LOC_667:
+	Wait,600
+	Createp,Object51,"ivsupport",1,"spawn"
+	StartSound,"avrcktva.wav"
+	JumpTo,LOC_623
+
+//--------------------------------------------------------------------
+[routine,_Routine10,1,true]
+	Wait,5
+	GetMaxHealth,Object67,Variable16
+	Wait,1
+	SetMaxHealthV,Object67,Variable16
+	Mult,Variable15,200,Variable14
+	Mult,Variable15,100,Variable13
+	Mult,Variable15,50,Variable12
+LOC_679:
+	Wait,1
+	GetCurHealth,Object67
+	IfGTV,Variable14,LOC_679
+	StartSound,"Enif_87.wav",Variable19
+	Wait,1
+LOC_684:
+	Wait,1
+	GetCurHealth,Object67
+	IfGTV,Variable13,LOC_684
+	StopSound,Variable19
+	StartSound,"Enif_50.wav",Variable18
+	RunSpeed,_Routine13,1,true
+LOC_690:
+	Wait,1
+	GetCurHealth,Object67
+	IfGTV,Variable12,LOC_690
+	StopSound,Variable18
+	StartSound,"Enif_15.wav",Variable17
+LOC_695:
+	Wait,1
+	IsAround,Object67
+	IfEQ,1,LOC_695
+	StartSound,"Enif_Lost.wav"
+	Fail,4,"b16_textf3.obj"
+
+//--------------------------------------------------------------------
+[routine,_Routine11,0,false]
+	Wait,15
+LOC_702:
+	IsAround,Object27
+	IfEQ,1,LOC_702
+	StartSound,"b16_sound_16.wav"
+LOC_705:
+	IsAround,Object26
+	IfEQ,1,LOC_705
+LOC_707:
+	IsAround,Object25
+	IfEQ,1,LOC_707
+	StartSound,"b16_sound_16.wav"
+LOC_710:
+	IsAround,Object24
+	IfEQ,1,LOC_710
+LOC_712:
+	IsAround,Object23
+	IfEQ,1,LOC_712
+LOC_714:
+	IsAround,Object22
+	IfEQ,1,LOC_714
+	StartSound,"b16_sound_17.wav"
+	Fail,1,"b16_textf4.obj"
+
+//--------------------------------------------------------------------
+[routine,_Routine12,0,false]
+	Createp,Object28,"isdf_hc1",5,"enemy3"
+	SetSkill,Object28,3
+	SetName,Object28,"Assimilated Heavy Cruiser"
+	Attack,Object28,Object67,1
+LOC_723:
+	IsAround,Object28
+	IfEQ,1,LOC_726
+	JumpTo,LOC_730
+LOC_726:
+	Wait,1
+	DistObject,Object28,Object67
+	IfGT,1200,LOC_723
+	StartSound,"b16_sound_13.wav"
+LOC_730:
+	Wait,10
+	Createp,Object46,"bs_domin",5,"enemy1"
+	SetSkill,Object46,3
+	Attack,Object46,Object67,1
+	Wait,4
+	Createp,Object38,"Bs_sphere",5,"enemy1"
+	SetSkill,Object38,3
+	Attack,Object38,Object67,1
+	Wait,15
+	Createp,Object38,"Bs_sphere",5,"enemy3"
+	SetSkill,Object38,3
+	Attack,Object38,Object67,1
+	Wait,1
+	Createp,Object38,"Bs_Cube",5,"enemy1"
+	SetSkill,Object38,3
+	Attack,Object38,Object67,1
+	Wait,1
+	Createp,Object38,"Bs_sphere",5,"enemy2"
+	SetSkill,Object38,3
+	Attack,Object38,Object67,1
+	Wait,30
+	Wait,1
+	Createp,Object38,"Bs_Cube",5,"enemy1"
+	SetSkill,Object38,3
+	Attack,Object38,Object67,1
+	Wait,1
+	Createp,Object38,"Bs_Cube",5,"enemy4"
+	SetSkill,Object38,3
+	Attack,Object38,Object67,1
+	Wait,1
+	Createp,Object38,"Bs_scout",5,"enemy1"
+	SetSkill,Object38,3
+	Attack,Object38,Object67,1
+	Wait,20
+	JumpTo,LOC_730
+
+//--------------------------------------------------------------------
+[routine,_Routine13,0,false]
+LOC_766:
+	Create,Object44,"ivsupport",2,Position7
+	SetName,Object44,"Evac Ship"
+	GoTo,Object44,"exit",1
+	Wait,1
+	Create,Object43,"ivsupport",2,Position7
+	SetName,Object43,"Evac Ship"
+	GoTo,Object43,"exit",1
+	Wait,1
+	Create,Object42,"ivsupport",2,Position7
+	SetName,Object42,"Evac Ship"
+	GoTo,Object42,"exit",1
+	Wait,60
+	Remove,Object44
+	Wait,1
+	Remove,Object43
+	Wait,1
+	Remove,Object42
+	JumpTo,LOC_766
+
+//--------------------------------------------------------------------
+[routine,_Routine14,0,false]
+	Wait,210
+	StartSound,"beem1up.wav"
+	Wait,1
+	StartSound,"beem1up.wav"
+	Wait,1
+	StartSound,"beem1up.wav"
+	Wait,1
+	StartSound,"beem1up.wav"
+	Wait,1
+LOC_794:
+	GetByLabel,Object41,"power"
+	IsAround,Object41
+	IfEQ,0,LOC_801
+	GetPos,Object41,Position6
+	Remove,Object41
+	Create,Object41,"tmpgun",0,Position6
+	JumpTo,LOC_794
+LOC_801:
+	ConsoleWord,"Power Replace 2"
+	GetByLabel,Object41,"unnamed_tmpgun"
+	IsAround,Object41
+	IfEQ,0,LOC_809
+	GetPos,Object41,Position5
+	Remove,Object41
+	Create,Object40,"b_lbcanp",1,Position5
+	JumpTo,LOC_801
+LOC_809:
+	Clear
+	Display,_Text7,red
+	Display,_Text8,green
+	StartSound,"locked3.wav"
+LOC_813:
+	IsAround,Object40
+	IfEQ,1,LOC_813
+LOC_815:
+	Create,Object40,"b_lbcanp",1,Position5
+	Create,Object37,"b_lbcanp",1,Position5
+	Create,Object36,"b_lbcanp",1,Position5
+	Create,Object35,"b_lbcanp",1,Position5
+LOC_819:
+	IsAround,Object35
+	IfEQ,1,LOC_819
+	Clear
+	Display,_Text7,red
+	Display,_Text9,white
+	StartSound,"locked3.wav"
+	Wait,60
+	JumpTo,LOC_815
+
+//--------------------------------------------------------------------
+[routine,_Routine15,1,true]
+	ConsoleWord,"Rocks 1"
+LOC_829:
+	GetByLabel,Object14,"unnamed_B_astrmc4"
+	IsAround,Object14
+	IfEQ,0,LOC_837
+	GetPos,Object14,Position4
+	Remove,Object14
+	Create,Object13,"B_astrma4",5,Position4
+	Stop,Object13,0
+	JumpTo,LOC_829
+LOC_837:
+	ConsoleWord,"Rocks 2"
+	GetByLabel,Object14,"unnamed_B_astrma1"
+	IsAround,Object14
+	IfEQ,0,LOC_846
+	GetPos,Object14,Position4
+	Remove,Object14
+	Create,Object13,"B_astrma2",5,Position4
+	Stop,Object13,0
+	JumpTo,LOC_837
+LOC_846:
+	ConsoleWord,"Rocks 3"
+	GetByLabel,Object14,"unnamed_B_astrma5"
+	IsAround,Object14
+	IfEQ,0,LOC_855
+	GetPos,Object14,Position4
+	Remove,Object14
+	Create,Object13,"B_astrmc4",5,Position4
+	Stop,Object13,0
+	JumpTo,LOC_846
+LOC_855:
+	ConsoleWord,"Rocks 4"
+	GetByLabel,Object14,"unnamed_B_astrma6"
+	IsAround,Object14
+	IfEQ,0,LOC_864
+	GetPos,Object14,Position4
+	Remove,Object14
+	Create,Object13,"B_astrmb4",5,Position4
+	Stop,Object13,0
+	JumpTo,LOC_855
+LOC_864:
+	ConsoleWord,"Rocks 5"
+	GetByLabel,Object14,"unnamed_B_astrmc5"
+	IsAround,Object14
+	IfEQ,0,LOC_873
+	GetPos,Object14,Position4
+	Remove,Object14
+	Create,Object13,"B_astrma5",5,Position4
+	Stop,Object13,0
+	JumpTo,LOC_864
+LOC_873:
+	ConsoleWord,"Rocks 6"
+	GetByLabel,Object14,"unnamed_B_astrmb4"
+	IsAround,Object14
+	IfEQ,0,LOC_882
+	GetPos,Object14,Position4
+	Remove,Object14
+	Create,Object13,"B_astrmb5",5,Position4
+	Stop,Object13,0
+	JumpTo,LOC_873
+LOC_882:
+	ConsoleWord,"Rocks 7"
+	GetByLabel,Object14,"unnamed_B_astrmc6"
+	IsAround,Object14
+	IfEQ,0,LOC_891
+	GetPos,Object14,Position4
+	Remove,Object14
+	Create,Object13,"B_astrmb6",5,Position4
+	Stop,Object13,0
+	JumpTo,LOC_882
+LOC_891:
+	ConsoleWord,"Rocks Done"
+
+//--------------------------------------------------------------------
+[routine,_Routine16,1,true]
+LOC_893:
+	GetByLabel,Object6,"unnamed_fspilo"
+	GetByLabel,Object1,"unnamed_ispilo"
+	Remove,Object6
+	Remove,Object1
+	JumpTo,LOC_893
+

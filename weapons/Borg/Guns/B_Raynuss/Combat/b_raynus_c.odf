@@ -1,0 +1,29 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+renderName = "b_raynus_c.render"
+
+ammoCost = 3.40
+lifeSpan = 0.35 // 105m
+shotSpeed = 350.0
+
+damageValue(N) = 2 // none // 200
+damageValue(L) = 1 // light // 160
+damageValue(H) = 55 // heavy // 100
+
+damageValue(S) = 3 // standard // 160
+damageValue(D) = 1 // deflection // 100
+damageValue(A) = 2 // absorbtion // 200
+
+[Render]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+textureName = "trail.tga"
+startColor = "255 0 0 140"
+finishColor = "166 255 124 150"
+startRadius = 0.02
+finishRadius = 0.10
+segmentTime = 0.05

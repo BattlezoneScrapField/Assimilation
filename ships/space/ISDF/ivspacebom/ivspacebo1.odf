@@ -1,0 +1,103 @@
+[GameObjectClass]
+baseName = "ivspaceta"
+geometryName = "ivspacebom.xsi"
+classLabel = "wingman"
+geometryScale = 0.7
+scrapValue = 0
+scrapCost = 0
+customCost = 0
+buildTime = 0
+customTime = 0
+maxHealth = 4500
+maxAmmo = 3200
+addAmmo = 10
+unitName = "ISDF Space Bomber"
+aiName = "RocketTankFriend"
+aiName2 = "RocketTankEnemy"
+explosionName = "xplshipssp"
+
+heatSignature = 0.2
+imageSignature = 0.1
+radarSignature = 0.0
+
+isAssault = 0
+
+armorClass = L
+
+/////// weapons ///////////////////
+
+weaponMask = 1011
+
+weaponHard1 = "hp_gun_1"
+weaponName1 = "gblueg_c"
+
+weaponHard2 = "hp_gun_2"
+weaponName2 = "gblueg_c"
+
+weaponHard3 = "hp_rocket_1"
+weaponName3 = "b_bomb_c"
+
+weaponHard4 = "hp_special_1"
+weaponName4 = "b_smine_o"
+
+////////////////////////////////////
+
+[CraftClass]
+rangeScan = 360.0f
+periodScan = 5.0f
+velocJam = 10.0f
+engageRange = 430
+
+braccelFactor = 0.05
+velFactor = 0.3
+steerFactor = 1.7
+omegaFactor = 1.0
+strafeFactor = 2.6
+
+topSpeed = 60
+
+selectWaitMsg = "bbomber07.wav"
+selectAttackMsg = "bbomber08.wav"
+selectFollowMsg = "bbomber07.wav"
+selectGoMsg = "bbomber02.wav"
+selectOtherMsg = "bbomber07.wav"
+holdMsg = "bbomber06.wav"
+
+goMsg = "bbomber02.wav"
+attackMsg = "bbomber03.wav"
+followMeMsg = "bbomber07.wav"
+followMsg = "bbomber02.wav"
+repairMsg = "bbomber05.wav"
+reloadMsg = "bbomber05.wav"
+rescueMsg = "bbomber07.wav"
+recycleMsg = "bbomber02.wav"
+otherMsg = "bbomber02.wav" 
+holdMsg = "bbomber07.wav"
+user1Msg = ""  
+killedMsg = "bbomber09.wav"
+diedMsg = "bbomber10.wav"
+
+[HoverCraftClass]
+velocForward = 50.0
+velocReverse = 50.0
+velocStrafe = 60.0
+accelThrust = 50.0
+accelDragStop = 0.0
+accelJump = 50.0
+aiAccelDrag = 0.0
+
+setAltitude = 80.0
+
+alphaTrack = 15.0
+alphaDamp = 8.0
+
+pitchPitch = 1.0 //nose up and down by mouse..
+pitchThrust = 0.1 //nose down when thrustors are on..
+
+rollStrafe = 0.5 //rolls while strafing []
+omegaSpin = 3.0 //spinning in place speed []
+omegaTurn = 2.1 //turning while moving speed []
+alphaSteer = 6.0 //how fast it responds to steering []
+rollSteer = 0.5 //rolls while steering []
+
+soundThrust = "Bengin.wav"
