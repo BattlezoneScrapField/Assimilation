@@ -4,7 +4,7 @@ countScion = 0
 
 [ISDF 1]
 missionTitle = "A Day Out"
-missionInfo = "b1_text1.intro.obj"
+missionInfo = "b1_text1.des"
 missionFile = "bmap01.bzn"
 planetName = "Dark Planet"
 planetInfo = "dark.des"
@@ -25,7 +25,7 @@ mailInfo2 = "mes02.mgs"
 mailGeom2 = ""
 mailWave2 = ""
 
-briefInfo = "b1_text2.intro.obj"
+briefInfo = "b1_text2.des"
 
 launchMessage = "screen.wav"
 launchBackground = "pic1.tga"
